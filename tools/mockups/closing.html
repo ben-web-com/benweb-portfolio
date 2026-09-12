@@ -1,0 +1,76 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<link rel="stylesheet" href="_base.css">
+<style>
+.art { position:absolute; inset:0; display:grid; place-items:center; }
+.funnel { position:relative; width:760px; }
+.row { display:flex; align-items:center; gap:16px; margin-bottom:42px; }
+.row .lab { width:196px; text-align:right; flex:none; }
+.row .lab b { display:block; font-size:16px; font-weight:600; letter-spacing:-.02em; }
+.row .lab span { font-size:12px; color:#9a9ba3; }
+.bar { height:86px; border-radius:14px; display:flex; align-items:center; gap:10px; padding:0 18px;
+  border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.04); backdrop-filter:blur(6px); }
+.bar .dots { display:flex; gap:-6px; }
+.bar i { width:26px; height:26px; border-radius:50%; display:block; margin-right:-8px; border:2px solid #0e1013; }
+.bar .n { margin-left:auto; font-size:12.5px; color:#9a9ba3; font-variant-numeric:tabular-nums; }
+.r1 .bar { width:470px; margin-inline:auto; }
+.r2 .bar { width:380px; margin-inline:auto; background:rgba(255,255,255,.055); }
+.r3 .bar { width:300px; margin-inline:auto; background:rgba(203,255,77,.08); border-color:rgba(203,255,77,.3); }
+.r4 .bar { width:236px; margin-inline:auto; background:rgba(203,255,77,.16); border-color:rgba(203,255,77,.55); }
+.r4 .check { width:30px; height:30px; border-radius:50%; background:#cbff4d; display:grid; place-items:center; }
+.r4 .check svg { width:16px; height:16px; stroke:#17150f; }
+.r4 .bar b { font-size:14px; font-weight:600; }
+.arrow { position:absolute; left:204px; width:2px; background:linear-gradient(rgba(255,255,255,.22), rgba(203,255,77,.5)); }
+.title { position:absolute; left:96px; top:186px; max-width:430px; }
+.title h1 { font-size:44px; letter-spacing:-.04em; line-height:1.06; font-weight:500; }
+.title em { font-family:"Instrument Serif",serif; font-style:italic; }
+.title p { margin-top:14px; font-size:15px; color:#9a9ba3; line-height:1.55; }
+.chips { position:absolute; left:96px; top:470px; display:flex; flex-wrap:wrap; gap:8px; max-width:420px; }
+.chips span { font-size:12.5px; padding:7px 13px; border-radius:999px; border:1px solid rgba(255,255,255,.14);
+  color:#c6c7cd; background:rgba(255,255,255,.03); }
+.stage-right { position:absolute; right:80px; top:150px; width:700px; }
+</style></head>
+<body>
+<div class="bg"></div><div class="grid"></div>
+<div class="stage">
+  <div class="title">
+    <h1>De la première réponse<br><em>à la vente conclue.</em></h1>
+    <p>Chaque message est traité, qualifié, transformé en rendez-vous, puis mené jusqu'à une décision claire.</p>
+  </div>
+
+  <div class="chips">
+    <span>Messages privés</span><span>Formulaires</span><span>WhatsApp</span>
+    <span>Qualification</span><span>Rendez-vous</span><span>Objections</span><span>Relance</span>
+  </div>
+
+  <div class="stage-right">
+    <div class="row r1" style="width:100%">
+      <div class="lab"><b>Leads entrants</b><span>DM, formulaire, WhatsApp</span></div>
+      <div class="bar">
+        <span class="dots">
+          <i style="background:linear-gradient(140deg,#f58529,#dd2a7b)"></i>
+          <i style="background:linear-gradient(140deg,#25d366,#128c7e)"></i>
+          <i style="background:linear-gradient(140deg,#8ea2ff,#4f6bd6)"></i>
+          <i style="background:linear-gradient(140deg,#ffb86b,#e07b39)"></i>
+          <i style="background:linear-gradient(140deg,#a7a5ff,#6f6ce0)"></i>
+        </span>
+        <span class="n">réponse en quelques minutes</span>
+      </div>
+    </div>
+    <div class="row r2">
+      <div class="lab"><b>Qualifiés</b><span>Besoin, budget, échéance</span></div>
+      <div class="bar"><span class="n">ceux qui ont une raison d'acheter</span></div>
+    </div>
+    <div class="row r3">
+      <div class="lab"><b>Rendez-vous posés</b><span>Agenda, confirmation, rappel</span></div>
+      <div class="bar"><span class="n">visio préparée</span></div>
+    </div>
+    <div class="row r4">
+      <div class="lab"><b>Conclu</b><span>Décision claire, oui ou non</span></div>
+      <div class="bar">
+        <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <b>Vente signée</b>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

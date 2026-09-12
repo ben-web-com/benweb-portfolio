@@ -1,0 +1,17 @@
+Photos utilisées dans les maquettes de démonstration
+====================================================
+
+Toutes les images de ce dossier proviennent de la banque Openverse, filtrées
+sur la licence CC0 1.0 (domaine public). Elles sont librement utilisables,
+y compris commercialement, sans obligation d'attribution ni de mention.
+
+Licence : https://creativecommons.org/publicdomain/zero/1.0/
+Recherche effectuée via l'API publique d'Openverse (api.openverse.org).
+
+Fichiers :
+  resto-hero.webp     assiette dressée, recadrée 16/9 et étalonnée en tons chauds
+  resto-salle.webp    salle de bistrot, recadrée 1/1 et étalonnée en tons chauds
+  avocat-hero.webp    plan de travail et prise de notes, recadré 4/5, étalonné bleu
+  avocat-livres.webp  reliures anciennes, recadrées 16/9, étalonnées bleu
+  sport-hero.webp     soulevé de terre, recadré 16/9, désaturé et contrasté
+  sport-detail.webp   disques de fonte, recadrés 1/1, désaturés et contrastés

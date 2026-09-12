@@ -1,0 +1,141 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<link rel="stylesheet" href="_base.css">
+<style>
+.window { left:70px; top:96px; width:940px; }
+.app { display:grid; grid-template-columns:196px 1fr; height:612px; background:#0f1114; }
+.side { border-right:1px solid rgba(255,255,255,.08); padding:18px 14px; display:grid; align-content:start; gap:4px; }
+.side .logo { display:flex; align-items:center; gap:9px; margin-bottom:18px; }
+.side .logo i { width:26px; height:26px; border-radius:8px; background:#cbff4d; display:block; }
+.side .logo b { font-size:13.5px; letter-spacing:-.02em; }
+.side a { display:flex; align-items:center; gap:9px; padding:9px 10px; border-radius:9px; font-size:13px; color:#9a9ba3; text-decoration:none; }
+.side a.on { background:rgba(255,255,255,.07); color:#f0eee9; font-weight:500; }
+.side a svg { width:15px; height:15px; }
+.side .sep { height:1px; background:rgba(255,255,255,.08); margin:12px 0; }
+.main { padding:20px 22px; display:grid; align-content:start; gap:16px; overflow:hidden; }
+.m-head { display:flex; align-items:center; gap:12px; }
+.m-head h1 { font-size:18px; font-weight:600; }
+.m-head .who { margin-left:auto; display:flex; align-items:center; gap:8px; font-size:12px; color:#9a9ba3; }
+.m-head .who i { width:26px; height:26px; border-radius:50%; background:linear-gradient(140deg,#cbff4d,#6f9c1f); display:block; }
+.cards { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+.card { background:#16181c; border:1px solid rgba(255,255,255,.09); border-radius:13px; padding:13px 14px; }
+.card span { font-size:11px; color:#9a9ba3; }
+.card b { display:block; font-size:22px; font-weight:600; letter-spacing:-.03em; margin-top:3px; font-variant-numeric:tabular-nums; }
+.card u { text-decoration:none; font-size:10.5px; color:#a8d63c; }
+.split { display:grid; grid-template-columns:1.35fr .65fr; gap:12px; }
+.tbl { background:#16181c; border:1px solid rgba(255,255,255,.09); border-radius:13px; overflow:hidden; }
+.tbl .th, .tbl .tr { display:grid; grid-template-columns:1.2fr 1fr .8fr .7fr; gap:10px; padding:10px 14px; font-size:12.5px; align-items:center; }
+.tbl .th { color:#7e8087; font-size:11px; letter-spacing:.05em; text-transform:uppercase; border-bottom:1px solid rgba(255,255,255,.08); }
+.tbl .tr { border-bottom:1px solid rgba(255,255,255,.05); }
+.tbl .tr:last-child { border-bottom:0; }
+.badge { font-size:10.5px; padding:3px 8px; border-radius:999px; justify-self:start; }
+.b-ok { background:rgba(78,168,111,.16); color:#7fd39b; }
+.b-run { background:rgba(203,255,77,.14); color:#cbff4d; }
+.b-wait { background:rgba(255,255,255,.08); color:#b6b7bd; }
+.side-panel { background:#16181c; border:1px solid rgba(255,255,255,.09); border-radius:13px; padding:14px; display:grid; align-content:start; gap:12px; }
+.side-panel h2 { font-size:13px; font-weight:600; }
+.ring { display:grid; place-items:center; padding:4px 0; }
+.ring svg { width:118px; height:118px; }
+.legend { display:grid; gap:7px; font-size:11.5px; color:#9a9ba3; }
+.legend div { display:flex; align-items:center; gap:8px; }
+.legend i { width:8px; height:8px; border-radius:3px; display:block; }
+.legend span { margin-left:auto; color:#f0eee9; font-variant-numeric:tabular-nums; }
+
+/* Téléphone : même application sur mobile */
+.phone { right:64px; bottom:52px; width:300px; height:630px; transform:rotate(2.5deg); }
+.phone-screen { background:#0f1114; color:#f0eee9; }
+.p-head { padding:6px 16px 12px; display:flex; align-items:center; gap:9px; }
+.p-head i { width:26px; height:26px; border-radius:8px; background:#cbff4d; display:block; }
+.p-head b { font-size:14px; }
+.p-head u { margin-left:auto; text-decoration:none; font-size:11px; color:#9a9ba3; }
+.p-kpi { margin:0 16px 12px; background:#16181c; border:1px solid rgba(255,255,255,.09); border-radius:13px; padding:14px; }
+.p-kpi span { font-size:11px; color:#9a9ba3; }
+.p-kpi b { display:block; font-size:25px; font-weight:600; letter-spacing:-.03em; margin-top:3px; }
+.p-list { margin:0 16px; display:grid; gap:8px; }
+.p-item { background:#16181c; border:1px solid rgba(255,255,255,.09); border-radius:12px; padding:11px 12px; display:grid; gap:5px; }
+.p-item .r1 { display:flex; align-items:center; gap:8px; font-size:12.5px; }
+.p-item .r1 span { margin-left:auto; font-size:11px; color:#9a9ba3; }
+.p-item .r2 { font-size:11px; color:#9a9ba3; }
+.p-install { position:absolute; left:16px; right:16px; bottom:18px; background:#cbff4d; color:#17150f; border-radius:999px;
+  padding:12px; text-align:center; font-size:12.5px; font-weight:700; }
+.tag-float { position:absolute; display:flex; align-items:center; gap:9px; padding:10px 14px; border-radius:14px;
+  background:rgba(18,20,23,.92); border:1px solid rgba(255,255,255,.16); backdrop-filter:blur(10px);
+  box-shadow:0 24px 40px -22px rgba(0,0,0,.9); font-size:12.5px; }
+.tag-float b { font-size:13.5px; font-weight:600; }
+.tag-float span { color:#9a9ba3; font-size:11px; display:block; }
+.f1 { left:70px; top:748px; }
+</style></head>
+<body>
+<div class="bg"></div><div class="grid"></div>
+<div class="stage">
+
+  <div class="window">
+    <div class="window-bar"><i></i><i></i><i></i><u>votre-outil.fr / tableau de bord</u></div>
+    <div class="app">
+      <nav class="side">
+        <div class="logo"><i></i><b>Votre outil</b></div>
+        <a class="on" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Tableau de bord</a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Commandes</a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>Clients</a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>Documents</a>
+        <div class="sep"></div>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>Réglages</a>
+      </nav>
+      <div class="main">
+        <div class="m-head">
+          <h1>Tableau de bord</h1>
+          <div class="who"><i></i>Équipe · 4 membres</div>
+        </div>
+        <div class="cards">
+          <div class="card"><span>Dossiers en cours</span><b>28</b><u>+4 cette semaine</u></div>
+          <div class="card"><span>À valider</span><b>6</b><u>2 urgents</u></div>
+          <div class="card"><span>Délai moyen</span><b>3,2 j</b><u>stable</u></div>
+          <div class="card"><span>Documents générés</span><b>142</b><u>automatiquement</u></div>
+        </div>
+        <div class="split">
+          <div class="tbl">
+            <div class="th"><span>Dossier</span><span>Client</span><span>Étape</span><span>Mise à jour</span></div>
+            <div class="tr"><span>#2418</span><span>Atelier Lombard</span><span class="badge b-run">En cours</span><span>il y a 5 min</span></div>
+            <div class="tr"><span>#2417</span><span>Cabinet Perrin</span><span class="badge b-ok">Validé</span><span>il y a 1 h</span></div>
+            <div class="tr"><span>#2416</span><span>Studio Nord</span><span class="badge b-wait">En attente</span><span>hier</span></div>
+            <div class="tr"><span>#2415</span><span>Garage Dalmas</span><span class="badge b-ok">Validé</span><span>hier</span></div>
+            <div class="tr"><span>#2414</span><span>Fleurs & Co</span><span class="badge b-run">En cours</span><span>2 jours</span></div>
+          </div>
+          <div class="side-panel">
+            <h2>Répartition</h2>
+            <div class="ring">
+              <svg viewBox="0 0 42 42">
+                <circle cx="21" cy="21" r="16" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="7"/>
+                <circle cx="21" cy="21" r="16" fill="none" stroke="#cbff4d" stroke-width="7" stroke-dasharray="52 100" stroke-dashoffset="0" transform="rotate(-90 21 21)" stroke-linecap="round"/>
+                <circle cx="21" cy="21" r="16" fill="none" stroke="#4ea86f" stroke-width="7" stroke-dasharray="28 100" stroke-dashoffset="-52" transform="rotate(-90 21 21)" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="legend">
+              <div><i style="background:#cbff4d"></i>En cours<span>52 %</span></div>
+              <div><i style="background:#4ea86f"></i>Validés<span>28 %</span></div>
+              <div><i style="background:rgba(255,255,255,.25)"></i>En attente<span>20 %</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phone">
+    <div class="phone-screen">
+      <div class="notch"></div>
+      <div class="statusbar"><span>9:41</span><span>••• ▮</span></div>
+      <div class="p-head"><i></i><b>Votre outil</b><u>Mobile</u></div>
+      <div class="p-kpi"><span>Dossiers à traiter aujourd'hui</span><b>6</b></div>
+      <div class="p-list">
+        <div class="p-item"><div class="r1">#2418 · Atelier Lombard<span>5 min</span></div><div class="r2">Étape : devis à valider</div></div>
+        <div class="p-item"><div class="r1">#2417 · Cabinet Perrin<span>1 h</span></div><div class="r2">Étape : validé, à facturer</div></div>
+        <div class="p-item"><div class="r1">#2416 · Studio Nord<span>hier</span></div><div class="r2">Étape : en attente client</div></div>
+        <div class="p-item"><div class="r1">#2415 · Garage Dalmas<span>hier</span></div><div class="r2">Étape : clôturé</div></div>
+      </div>
+      <div class="p-install">Installer sur l'écran d'accueil</div>
+    </div>
+  </div>
+
+  <div class="tag-float f1"><div><b>Une application, deux écrans</b><span>Même outil au bureau et sur le téléphone</span></div></div>
+</div>
+</body></html>

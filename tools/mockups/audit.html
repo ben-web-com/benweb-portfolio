@@ -1,0 +1,81 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<link rel="stylesheet" href="_base.css">
+<style>
+.title { position:absolute; left:96px; top:190px; max-width:430px; }
+.title h1 { font-size:44px; letter-spacing:-.04em; line-height:1.06; font-weight:500; }
+.title em { font-family:"Instrument Serif",serif; font-style:italic; }
+.title p { margin-top:14px; font-size:15px; color:#9a9ba3; line-height:1.55; }
+.chips { position:absolute; left:96px; top:470px; display:flex; flex-wrap:wrap; gap:8px; max-width:430px; }
+.chips span { font-size:12.5px; padding:7px 13px; border-radius:999px; border:1px solid rgba(255,255,255,.14);
+  color:#c6c7cd; background:rgba(255,255,255,.03); }
+
+.report { position:absolute; right:96px; top:150px; width:640px; display:grid; gap:14px; }
+.line { display:grid; grid-template-columns:34px 1fr auto; gap:14px; align-items:center;
+  padding:18px 20px; border-radius:16px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.035); }
+.line .rk { width:34px; height:34px; border-radius:11px; display:grid; place-items:center; font-size:13px; font-weight:700; }
+.line b { display:block; font-size:15.5px; font-weight:600; letter-spacing:-.02em; }
+.line small { font-size:12.5px; color:#9a9ba3; }
+.sev { font-size:11.5px; padding:5px 11px; border-radius:999px; white-space:nowrap; }
+.crit .rk { background:rgba(224,120,74,.18); color:#f0865a; }
+.crit .sev { background:rgba(224,120,74,.16); color:#f0865a; }
+.crit { border-color:rgba(224,120,74,.3); }
+.moy .rk { background:rgba(203,255,77,.16); color:#cbff4d; }
+.moy .sev { background:rgba(203,255,77,.14); color:#cbff4d; }
+.ok .rk { background:rgba(78,168,111,.18); color:#7fd39b; }
+.ok .sev { background:rgba(78,168,111,.16); color:#7fd39b; }
+
+.score { position:absolute; right:96px; top:150px; }
+.gauge { position:absolute; right:96px; bottom:196px; width:640px; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.g { border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.035); border-radius:14px; padding:14px 16px; }
+.g span { font-size:11.5px; color:#9a9ba3; }
+.g .track { height:6px; border-radius:999px; background:rgba(255,255,255,.1); margin-top:10px; overflow:hidden; }
+.g .fill { height:100%; border-radius:999px; }
+</style></head>
+<body>
+<div class="bg"></div><div class="grid"></div>
+<div class="stage">
+  <div class="title">
+    <h1>On regarde d'abord<br><em>ce qui cloche.</em></h1>
+    <p>Un rapport court, classé par impact, que vous pouvez faire exécuter par n'importe qui. Ensuite seulement, on construit.</p>
+  </div>
+  <div class="chips">
+    <span>Performance</span><span>SEO technique</span><span>Mobile</span>
+    <span>Parcours</span><span>Conversion</span><span>Contenus</span>
+  </div>
+
+  <div class="report">
+    <div class="line crit">
+      <span class="rk">1</span>
+      <span><b>Pages trop lourdes sur mobile</b><small>Images non compressées, chargement au-delà de 4 secondes</small></span>
+      <span class="sev">Impact fort</span>
+    </div>
+    <div class="line crit">
+      <span class="rk">2</span>
+      <span><b>Aucune balise de description</b><small>Google affiche un extrait choisi au hasard dans la page</small></span>
+      <span class="sev">Impact fort</span>
+    </div>
+    <div class="line moy">
+      <span class="rk">3</span>
+      <span><b>Appel à l'action invisible</b><small>Le bouton de contact n'apparaît qu'en bas de page</small></span>
+      <span class="sev">Impact moyen</span>
+    </div>
+    <div class="line moy">
+      <span class="rk">4</span>
+      <span><b>Titres mal hiérarchisés</b><small>Trois titres principaux sur la même page</small></span>
+      <span class="sev">Impact moyen</span>
+    </div>
+    <div class="line ok">
+      <span class="rk">5</span>
+      <span><b>Certificat et redirections</b><small>Configuration correcte, rien à changer</small></span>
+      <span class="sev">Conforme</span>
+    </div>
+  </div>
+
+  <div class="gauge">
+    <div class="g"><span>Performance</span><div class="track"><i class="fill" style="width:38%;background:#f0865a;display:block"></i></div></div>
+    <div class="g"><span>SEO</span><div class="track"><i class="fill" style="width:54%;background:#cbff4d;display:block"></i></div></div>
+    <div class="g"><span>Mobile</span><div class="track"><i class="fill" style="width:46%;background:#f0865a;display:block"></i></div></div>
+    <div class="g"><span>Conversion</span><div class="track"><i class="fill" style="width:62%;background:#cbff4d;display:block"></i></div></div>
+  </div>
+</div>
+</body></html>

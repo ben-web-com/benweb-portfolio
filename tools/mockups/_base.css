@@ -1,0 +1,105 @@
+/* Base commune aux maquettes d'interface — rendues en image pour le site */
+@font-face { font-family: "Inter Tight"; font-style: normal; font-weight: 300 800; font-display: block; src: url("../../assets/fonts/InterTight-300_800.woff2") format("woff2"); }
+@font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: block; src: url("../../assets/fonts/InstrumentSerif-400-italic.woff2") format("woff2"); }
+
+* { box-sizing: border-box; margin: 0; }
+body {
+  width: 1440px;
+  height: 1000px;
+  overflow: hidden;
+  position: relative;
+  background: #0e1013;
+  font-family: "Inter Tight", -apple-system, sans-serif;
+  color: #f0eee9;
+  -webkit-font-smoothing: antialiased;
+}
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 55% at 12% 0%, rgba(203, 255, 77, 0.13), transparent 62%),
+    radial-gradient(60% 60% at 92% 100%, rgba(86, 132, 255, 0.16), transparent 64%);
+}
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(75% 75% at 50% 45%, #000, transparent 80%);
+}
+.stage { position: absolute; inset: 0; }
+
+/* Cadre téléphone */
+.phone {
+  position: absolute;
+  width: 330px;
+  height: 690px;
+  border-radius: 42px;
+  background: #0a0b0c;
+  padding: 9px;
+  box-shadow: 0 60px 90px -40px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 34px;
+  overflow: hidden;
+  position: relative;
+  background: #fbf7f0;
+  color: #1b1714;
+}
+.notch {
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88px;
+  height: 22px;
+  border-radius: 999px;
+  background: #0a0b0c;
+  z-index: 5;
+}
+.statusbar {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Fenêtre navigateur */
+.window {
+  position: absolute;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #16181c;
+  box-shadow: 0 70px 110px -50px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+.window-bar {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.window-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255, 255, 255, 0.18); }
+.window-bar u {
+  flex: 1;
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  padding: 4px 12px;
+  max-width: 60%;
+}
+
+a { color: inherit; text-decoration: none; }

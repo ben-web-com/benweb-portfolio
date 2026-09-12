@@ -1,0 +1,196 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<link rel="stylesheet" href="_base.css">
+<style>
+/* ---- Écran cuisine ---- */
+.kds { position:absolute; right:56px; top:96px; width:740px; padding:22px; border-radius:20px;
+  background:#141210; box-shadow:0 70px 110px -50px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.12); }
+.kds-head { display:flex; align-items:center; gap:12px; padding-bottom:16px; border-bottom:1px solid rgba(255,255,255,.1); }
+.kds-head b { font-size:16px; letter-spacing:-.02em; }
+.kds-head .live { margin-left:auto; display:flex; align-items:center; gap:7px; font-size:12px; color:#a2978c; }
+.kds-head .live i { width:7px; height:7px; border-radius:50%; background:#cbff4d; box-shadow:0 0 0 4px rgba(203,255,77,.16); }
+.tickets { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px; }
+.ticket { background:#1e1b18; border-radius:14px; padding:14px; border-left:3px solid #c98a12; display:grid; gap:10px; }
+.ticket[data-s="prep"] { border-left-color:#c4562f; }
+.ticket[data-s="ok"] { border-left-color:#4ea86f; }
+.t-head { display:flex; align-items:baseline; gap:8px; }
+.t-head b { font-size:15px; }
+.t-head span { margin-left:auto; font-size:12px; color:#a2978c; font-variant-numeric:tabular-nums; }
+.ticket ul { list-style:none; padding:0; display:grid; gap:5px; }
+.ticket li { display:flex; gap:9px; font-size:13.5px; color:#e8e0d6; }
+.ticket li b { color:#c98a12; min-width:16px; }
+.t-state { font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:#a2978c; }
+.t-state.ok { color:#4ea86f; }
+.t-state.prep { color:#e0784a; }
+
+/* ---- Téléphone : la carte ---- */
+.phone { left:86px; top:150px; transform:rotate(-3deg); }
+.appbar { display:flex; align-items:center; gap:10px; padding:6px 18px 12px; }
+.appbar .r { display:grid; line-height:1.15; }
+.appbar .r b { font-size:15px; font-weight:600; letter-spacing:-.02em; }
+.appbar .r span { font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:#7a6f66; }
+.table { margin-left:auto; background:#1b1714; color:#fbf7f0; font-size:11px; font-weight:500; padding:5px 10px; border-radius:999px; }
+.langs { display:flex; border:1px solid rgba(27,23,20,.14); border-radius:999px; overflow:hidden; margin-left:6px; }
+.langs span { font-size:10.5px; padding:5px 8px; color:#7a6f66; }
+.langs span.on { background:#1b1714; color:#fbf7f0; font-weight:600; }
+.cats { display:flex; gap:7px; padding:0 18px 12px; }
+.cats span { font-size:12px; padding:7px 12px; border-radius:999px; border:1px solid rgba(27,23,20,.14); color:#3d352f; white-space:nowrap; }
+.cats span.on { background:#1b1714; color:#fbf7f0; border-color:#1b1714; font-weight:600; }
+.dishes { padding:0 18px; display:grid; gap:9px; }
+.dish { display:grid; grid-template-columns:64px 1fr; gap:11px; background:#fff; border:1px solid rgba(27,23,20,.1); border-radius:14px; padding:9px; }
+.thumb { width:64px; height:64px; border-radius:10px; display:grid; place-items:center; }
+.thumb svg { width:30px; height:30px; }
+.d-body { min-width:0; display:grid; gap:4px; align-content:start; }
+.d-top { display:flex; align-items:baseline; gap:8px; }
+.d-top b { font-size:12.5px; font-weight:600; }
+.d-top .p { margin-left:auto; font-size:12.5px; font-weight:700; }
+.d-body small { font-size:10.5px; color:#7a6f66; line-height:1.35; }
+.tags { display:flex; gap:4px; }
+.tags i { font-style:normal; font-size:9px; padding:2px 6px; border-radius:999px; background:#f3ece0; color:#3d352f; }
+.tags i.v { background:rgba(47,107,79,.14); color:#2f6b4f; }
+.tags i.h { background:rgba(196,86,47,.14); color:#c4562f; }
+.cart { position:absolute; left:14px; right:14px; bottom:16px; background:#1b1714; color:#fbf7f0;
+  border-radius:999px; padding:10px 10px 10px 16px; display:flex; align-items:center; gap:10px;
+  box-shadow:0 20px 32px -14px rgba(0,0,0,.5); }
+.cart b { font-size:13px; }
+.cart small { display:block; font-size:10px; opacity:.65; }
+.cart .go { margin-left:auto; background:#cbff4d; color:#17150f; font-size:12px; font-weight:700; padding:8px 14px; border-radius:999px; }
+
+/* ---- Étiquettes flottantes ---- */
+.tag-float { position:absolute; display:flex; align-items:center; gap:9px; padding:10px 14px; border-radius:14px;
+  background:rgba(18,20,23,.92); border:1px solid rgba(255,255,255,.16); backdrop-filter:blur(10px);
+  box-shadow:0 24px 40px -22px rgba(0,0,0,.9); font-size:12.5px; }
+.tag-float b { font-size:13.5px; font-weight:600; }
+.tag-float span { color:#9a9ba3; font-size:11px; display:block; }
+.tag-float .dot { width:8px; height:8px; border-radius:50%; background:#cbff4d; }
+.f1 { left:322px; top:132px; }
+.f2 { left:452px; top:508px; max-width:180px; }
+
+/* ---- Tableau de bord ---- */
+.kpis { position:absolute; right:56px; top:430px; width:740px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.kpi { background:#16181c; border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:16px 18px;
+  box-shadow:0 50px 80px -50px rgba(0,0,0,.9); }
+.kpi span { font-size:11.5px; color:#9a9ba3; letter-spacing:.02em; }
+.kpi b { display:block; font-size:27px; font-weight:600; letter-spacing:-.03em; margin-top:5px; font-variant-numeric:tabular-nums; }
+.kpi u { text-decoration:none; font-size:11.5px; color:#a8d63c; }
+.chartcard { position:absolute; right:56px; top:582px; width:740px; background:#16181c; border:1px solid rgba(255,255,255,.12);
+  border-radius:16px; padding:18px 20px 16px; box-shadow:0 50px 80px -50px rgba(0,0,0,.9); }
+.chartcard .ch-head { display:flex; align-items:baseline; gap:10px; margin-bottom:14px; }
+.chartcard b { font-size:14px; }
+.chartcard .ch-head span { margin-left:auto; font-size:11.5px; color:#9a9ba3; }
+.hours { display:flex; align-items:flex-end; gap:14px; height:150px; }
+.hours div { flex:1; display:grid; align-content:end; gap:6px; text-align:center; }
+.hours i { display:block; width:52px; margin-inline:auto; border-radius:6px 6px 0 0; background:linear-gradient(#cbff4d,#89b52f); }
+.hours span { font-size:10px; color:#7e8087; }
+</style></head>
+<body>
+<div class="bg"></div><div class="grid"></div>
+<div class="stage">
+
+  <!-- Écran cuisine -->
+  <div class="kds">
+    <div class="kds-head">
+      <b>Écran cuisine</b>
+      <span class="live"><i></i> en direct</span>
+    </div>
+    <div class="tickets">
+      <div class="ticket" data-s="new">
+        <div class="t-head"><b>Table 4</b><span>1 min</span></div>
+        <ul><li><b>2</b> Pad thaï poulet</li><li><b>1</b> Rouleaux de printemps</li><li><b>2</b> Thé glacé</li></ul>
+        <div class="t-state">Reçue</div>
+      </div>
+      <div class="ticket" data-s="prep">
+        <div class="t-head"><b>Table 9</b><span>6 min</span></div>
+        <ul><li><b>1</b> Curry vert bœuf</li><li><b>1</b> Riz gluant mangue</li></ul>
+        <div class="t-state prep">En préparation</div>
+      </div>
+      <div class="ticket" data-s="ok">
+        <div class="t-head"><b>Table 2</b><span>11 min</span></div>
+        <ul><li><b>3</b> Wok de légumes</li><li><b>1</b> Soupe tom kha</li></ul>
+        <div class="t-state ok">Prête à servir</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Téléphone -->
+  <div class="phone">
+    <div class="phone-screen">
+      <div class="notch"></div>
+      <div class="statusbar"><span>9:41</span><span>••• ▮</span></div>
+      <div class="appbar">
+        <div class="r"><b>Bistro Sombat</b><span>Cuisine franco-thaïe</span></div>
+        <span class="table">Table 4</span>
+        <span class="langs"><span class="on">FR</span><span>EN</span></span>
+      </div>
+      <div class="cats"><span class="on">Entrées</span><span>Plats</span><span>Desserts</span><span>Boissons</span></div>
+      <div class="dishes">
+        <div class="dish">
+          <div class="thumb" style="background:linear-gradient(150deg,#f6e6cf,#e7cfa8)">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#8a6a3a" stroke-width="2" stroke-linecap="round"><path d="M8 22h32a16 16 0 0 1-32 0z"/><path d="M14 22c0-5 4-9 10-9s10 4 10 9"/><path d="M6 38h36"/></svg>
+          </div>
+          <div class="d-body">
+            <div class="d-top"><b>Salade de papaye verte</b><span class="p">7,50 €</span></div>
+            <small>Papaye, cacahuètes, citron vert, piment.</small>
+            <div class="tags"><i class="v">Végétarien</i><i class="h">Épicé</i><i>Arachide</i></div>
+          </div>
+        </div>
+        <div class="dish">
+          <div class="thumb" style="background:linear-gradient(150deg,#e9dff6,#d3c2ea)">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#6b4f8a" stroke-width="2" stroke-linecap="round"><path d="M10 18h28l-3 20H13z"/><path d="M14 18c0-6 4-10 10-10s10 4 10 10"/><path d="M20 26v6M28 26v6"/></svg>
+          </div>
+          <div class="d-body">
+            <div class="d-top"><b>Rouleaux de printemps</b><span class="p">6,00 €</span></div>
+            <small>Crevette, menthe, vermicelles, sauce cacahuète.</small>
+            <div class="tags"><i>Crustacés</i><i>Sans gluten</i></div>
+          </div>
+        </div>
+        <div class="dish">
+          <div class="thumb" style="background:linear-gradient(150deg,#e3f0e2,#c7e0c6)">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#3f7a4f" stroke-width="2" stroke-linecap="round"><path d="M9 20h30a15 15 0 0 1-30 0z"/><path d="M24 20V9"/><path d="M18 12c0-3 3-5 6-5s6 2 6 5"/><path d="M7 36h34"/></svg>
+          </div>
+          <div class="d-body">
+            <div class="d-top"><b>Soupe tom kha</b><span class="p">8,00 €</span></div>
+            <small>Lait de coco, galanga, champignons, coriandre.</small>
+            <div class="tags"><i class="v">Végétarien</i><i>Lactose</i></div>
+          </div>
+        </div>
+      </div>
+        <div class="dish">
+          <div class="thumb" style="background:linear-gradient(150deg,#fbe3d6,#f1c3ab)">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#a8542c" stroke-width="2" stroke-linecap="round"><path d="M10 24h28a14 14 0 0 1-28 0z"/><path d="M16 24c1-6 5-9 8-9s7 3 8 9"/><path d="M24 15V8"/><path d="M8 38h32"/></svg>
+          </div>
+          <div class="d-body">
+            <div class="d-top"><b>Beignets de crevettes</b><span class="p">9,00 €</span></div>
+            <small>Panure croustillante, sauce aigre-douce maison.</small>
+            <div class="tags"><i>Crustacés</i><i>Gluten</i></div>
+          </div>
+        </div>
+      </div>
+      <div class="cart">
+        <div><b>3 articles</b><small>Table 4</small></div>
+        <span class="go">Commander · 21,50 €</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><span>Chiffre du service</span><b>1 284 €</b><u>+12 % vs hier</u></div>
+    <div class="kpi"><span>Panier moyen</span><b>27,30 €</b><u>38 commandes</u></div>
+    <div class="kpi"><span>Temps de préparation</span><b>9 min</b><u>moyenne du service</u></div>
+  </div>
+
+  <div class="chartcard">
+    <div class="ch-head"><b>Commandes par heure</b><span>service du soir</span></div>
+    <div class="hours">
+      <div><i style="height:42px"></i><span>18h</span></div>
+      <div><i style="height:118px"></i><span>19h</span></div>
+      <div><i style="height:118px"></i><span>20h</span></div>
+      <div><i style="height:144px"></i><span>21h</span></div>
+      <div><i style="height:86px"></i><span>22h</span></div>
+      <div><i style="height:36px"></i><span>23h</span></div>
+    </div>
+  </div>
+
+  <div class="tag-float f1"><span class="dot"></span><div><b>Commande envoyée en cuisine</b><span>0,8 seconde après validation</span></div></div>
+  <div class="tag-float f2"><div><b>Zéro commission</b><span>5 langues · les commandes passent par vous</span></div></div>
+</div>
+</body></html>

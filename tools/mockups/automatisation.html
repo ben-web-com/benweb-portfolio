@@ -1,0 +1,139 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<link rel="stylesheet" href="_base.css">
+<style>
+.canvas { position:absolute; left:64px; top:88px; width:836px; height:700px;
+  background:#111318; border:1px solid rgba(255,255,255,.1); border-radius:20px; overflow:hidden;
+  box-shadow:0 70px 110px -50px rgba(0,0,0,.95); }
+.canvas .c-head { display:flex; align-items:center; gap:10px; padding:14px 18px; border-bottom:1px solid rgba(255,255,255,.08); }
+.canvas .c-head b { font-size:14px; }
+.canvas .c-head .st { margin-left:auto; display:flex; align-items:center; gap:7px; font-size:11.5px; color:#9a9ba3; }
+.canvas .c-head .st i { width:7px; height:7px; border-radius:50%; background:#cbff4d; box-shadow:0 0 0 4px rgba(203,255,77,.16); }
+.dots { position:absolute; inset:49px 0 0 0;
+  background-image:radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px); background-size:26px 26px; }
+.flow { position:absolute; inset:49px 0 0 0; }
+.node { position:absolute; width:220px; background:#181b20; border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:13px 14px; display:grid; gap:8px; }
+.node .n-top { display:flex; align-items:center; gap:9px; }
+.node .n-ico { width:28px; height:28px; border-radius:9px; display:grid; place-items:center; }
+.node .n-ico svg { width:15px; height:15px; }
+.node b { font-size:13px; font-weight:600; letter-spacing:-.01em; }
+.node small { font-size:11px; color:#9a9ba3; line-height:1.4; }
+.node .n-tag { font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:#7e8087; }
+.n-trigger .n-ico { background:rgba(203,255,77,.15); color:#cbff4d; }
+.n-ai .n-ico { background:rgba(134,132,255,.18); color:#a7a5ff; }
+.n-ai { border-color:rgba(167,165,255,.35); }
+.n-act .n-ico { background:rgba(78,168,111,.16); color:#7fd39b; }
+.n1 { left:44px; top:60px; }
+.n2 { left:308px; top:60px; }
+.n3 { left:572px; top:22px; }
+.n4 { left:572px; top:170px; }
+.n5 { left:44px; top:360px; }
+.n6 { left:308px; top:360px; }
+.n7 { left:572px; top:360px; }
+.wires { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.wires path { fill:none; stroke:rgba(255,255,255,.22); stroke-width:1.6; stroke-dasharray:5 5; }
+.wires path.live { stroke:#cbff4d; stroke-dasharray:none; }
+.branch-label { position:absolute; font-size:10.5px; color:#7e8087; letter-spacing:.06em; text-transform:uppercase; }
+
+/* Journal d'exécution */
+.log { position:absolute; right:64px; top:88px; width:440px; background:#16181c; border:1px solid rgba(255,255,255,.1);
+  border-radius:20px; padding:18px 20px; box-shadow:0 70px 110px -50px rgba(0,0,0,.95); }
+.log h2 { font-size:14px; font-weight:600; margin-bottom:14px; }
+.log-line { display:grid; grid-template-columns:16px 1fr auto; gap:10px; align-items:start; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.06); }
+.log-line:last-child { border-bottom:0; }
+.log-line i { width:16px; height:16px; border-radius:50%; display:grid; place-items:center; margin-top:2px; }
+.log-line i svg { width:9px; height:9px; }
+.ok i { background:rgba(78,168,111,.2); color:#7fd39b; }
+.run i { background:rgba(203,255,77,.18); color:#cbff4d; }
+.log-line b { font-size:12.5px; font-weight:500; display:block; }
+.log-line small { font-size:11px; color:#9a9ba3; }
+.log-line span { font-size:11px; color:#7e8087; font-variant-numeric:tabular-nums; }
+.recap { position:absolute; right:64px; top:508px; width:440px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.rc { background:#16181c; border:1px solid rgba(255,255,255,.1); border-radius:16px; padding:16px 18px; }
+.rc span { font-size:11.5px; color:#9a9ba3; }
+.rc b { display:block; font-size:24px; font-weight:600; letter-spacing:-.03em; margin-top:4px; }
+.note { position:absolute; right:64px; top:672px; width:440px; background:rgba(18,20,23,.92); border:1px solid rgba(255,255,255,.16);
+  border-radius:16px; padding:14px 16px; font-size:12px; color:#9a9ba3; line-height:1.5; }
+.note b { color:#f0eee9; display:block; font-size:13px; margin-bottom:3px; }
+</style></head>
+<body>
+<div class="bg"></div><div class="grid"></div>
+<div class="stage">
+
+  <div class="canvas">
+    <div class="c-head"><b>Automatisation · Commandes et contenus</b><span class="st"><i></i> active</span></div>
+    <div class="dots"></div>
+    <div class="flow">
+      <svg class="wires" viewBox="0 0 836 651" preserveAspectRatio="none">
+        <path class="live" d="M264 100 C 288 100, 288 100, 308 100"/>
+        <path class="live" d="M528 100 C 550 100, 550 62, 572 62"/>
+        <path d="M528 100 C 550 100, 550 210, 572 210"/>
+        <path class="live" d="M264 400 C 288 400, 288 400, 308 400"/>
+        <path class="live" d="M528 400 C 550 400, 550 400, 572 400"/>
+      </svg>
+
+      <div class="node n-trigger n1">
+        <div class="n-top"><span class="n-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4.5 13.5H12l-1 8.5 8.5-11.5H12z"/></svg></span><b>Nouvelle commande</b></div>
+        <small>Déclencheur : le site envoie la commande dès sa validation.</small>
+        <span class="n-tag">Déclencheur</span>
+      </div>
+
+      <div class="node n-ai n2">
+        <div class="n-top"><span class="n-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg></span><b>Lecture par l'IA</b></div>
+        <small>Extrait le client, les articles, les allergènes et le mode de retrait.</small>
+        <span class="n-tag">Intelligence artificielle</span>
+      </div>
+
+      <div class="node n-act n3">
+        <div class="n-top"><span class="n-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg></span><b>Google Sheets</b></div>
+        <small>Ligne ajoutée au suivi des ventes, totaux recalculés.</small>
+        <span class="n-tag">Action</span>
+      </div>
+
+      <div class="node n-act n4">
+        <div class="n-top"><span class="n-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><b>E-mail de confirmation</b></div>
+        <small>Récapitulatif envoyé au client, copie au restaurant.</small>
+        <span class="n-tag">Action</span>
+      </div>
+
+      <span class="branch-label" style="left:44px; top:326px;">Second flux</span>
+
+      <div class="node n-trigger n5">
+        <div class="n-top"><span class="n-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg></span><b>Nouveau produit</b></div>
+        <small>Déclencheur : une fiche est créée dans le catalogue.</small>
+        <span class="n-tag">Déclencheur</span>
+      </div>
+
+      <div class="node n-ai n6">
+        <div class="n-top"><span class="n-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M9 19V9M14 19v-7M19 19V7"/></svg></span><b>Rédaction SEO</b></div>
+        <small>Titre, description et balises générés puis relus avant envoi.</small>
+        <span class="n-tag">Intelligence artificielle</span>
+      </div>
+
+      <div class="node n-act n7">
+        <div class="n-top"><span class="n-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><b>Publication</b></div>
+        <small>Fiche mise en ligne sur la boutique, prête à vendre.</small>
+        <span class="n-tag">Action</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="log">
+    <h2>Dernières exécutions</h2>
+    <div class="log-line run"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="9"/></svg></i>
+      <div><b>Commande table 4</b><small>Lecture IA en cours</small></div><span>maintenant</span></div>
+    <div class="log-line ok"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></i>
+      <div><b>Commande table 9</b><small>Ajoutée au suivi, e-mail envoyé</small></div><span>il y a 6 min</span></div>
+    <div class="log-line ok"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></i>
+      <div><b>Fiche « Curry vert »</b><small>Description SEO générée puis publiée</small></div><span>il y a 22 min</span></div>
+    <div class="log-line ok"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></i>
+      <div><b>Rapport du service</b><small>Envoyé au gérant avec le récapitulatif</small></div><span>hier, 23:40</span></div>
+  </div>
+
+  <div class="recap">
+    <div class="rc"><span>Étapes automatisées</span><b>7</b></div>
+    <div class="rc"><span>Intervention humaine</span><b>Validation</b></div>
+  </div>
+
+  <div class="note"><b>Vous gardez la main</b>Chaque flux peut demander une validation avant publication ou envoi. Rien ne part sans votre accord si vous le souhaitez.</div>
+</div>
+</body></html>
