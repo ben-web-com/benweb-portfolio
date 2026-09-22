@@ -13,7 +13,7 @@ Le générateur produit actuellement **15 pages HTML** :
 | --- | --- |
 | `index.html` | Accueil et sept services |
 | `sites-internet.html` | Aperçus restaurant, cabinet, sport et tourisme |
-| `cartes-restaurant.html` | Commande sur téléphone et suivi en cuisine |
+| `cartes-restaurant.html` | Commande sur téléphone, suivi en cuisine, tableau de bord admin |
 | `cartes-nfc.html` | Carte recto-verso, geste NFC simulé, fiche contact |
 | `audit-marketing.html` | Exemple de rapport d’audit |
 | `applications.html` | Exemple d’outil de suivi |
@@ -81,7 +81,7 @@ et l’insère dans le HTML de la page. Aucun iframe, chargement de fichier depu
 
 | Service | Fragment | Comportement |
 | --- | --- | --- |
-| Restaurant | `restaurant.html` | Quantités, envoi simulé, ticket correspondant, trois états, nouvelle commande |
+| Restaurant | `restaurant.html` | Menu de 6 plats avec photo, quantités, envoi simulé, ticket correspondant, trois états, tableau de bord admin (stats, rupture de stock synchronisée en direct, historique, plats populaires), nouvelle commande |
 | NFC | `nfc.html` | Recto-verso, approche simulée, coordonnées réelles et téléchargement vCard local |
 | Sites | `sites.html` | Quatre univers, volets natifs et bascule FR/EN dans l’aperçu touristique |
 | Audit | `audit.html` | Scores d’exemple et recommandations révélés progressivement |
