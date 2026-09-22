@@ -2,6 +2,7 @@
   <div class="demo-switch restaurant-switch" role="group" aria-label="Vue de la démonstration" data-demo-control>
     <button type="button" data-rest-view="client" aria-pressed="true">Côté client</button>
     <button type="button" data-rest-view="kitchen" aria-pressed="false">En cuisine <span data-ticket-count></span></button>
+    <button type="button" data-rest-view="admin" aria-pressed="false">Tableau de bord</button>
   </div>
   <div class="restaurant-layout">
     <div class="restaurant-client" data-rest-panel="client">
@@ -10,21 +11,42 @@
         <div class="restaurant-brand"><span class="demo-overline">Votre restaurant</span><span class="demo-pill">Table 4</span></div>
         <h3>Qu’est-ce qui<br><em>vous ferait plaisir ?</em></h3>
         <p class="restaurant-hint">Une petite carte, pour essayer.</p>
-        <div class="restaurant-dishes">
-          <div class="restaurant-dish">
-            <span class="dish-art" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="24" cy="27" rx="18" ry="12"/><path d="M14 27c5-8 9 8 17-3M13 22c7-7 12 8 20-2M19 29l7-10M28 11l9 18M33 9l9 17"/></svg></span>
-            <div><h4>Pad thaï</h4><p>Nouilles, légumes, citron vert.</p><small>Contient de l’arachide.</small></div>
-            <div class="dish-quantity" data-demo-control><button type="button" data-dish="pad" data-delta="-1" aria-label="Retirer un pad thaï" disabled>−</button><output data-quantity="pad" aria-label="Quantité de pad thaï">0</output><button type="button" data-dish="pad" data-delta="1" aria-label="Ajouter un pad thaï">+</button></div>
+        <div class="restaurant-dishes" data-dishes-scroll>
+          <div class="restaurant-dish" data-dish-item="tartare">
+            <span class="dish-art"><img src="assets/demos/images/tartare-boeuf.webp" alt="" width="120" height="120" loading="lazy" decoding="async"></span>
+            <div><h4>Tartare de bœuf</h4><p>Herbes fraîches, jaune d’œuf, pain grillé.</p><small>16&nbsp;€</small></div>
+            <div class="dish-quantity" data-demo-control><button type="button" data-dish="tartare" data-delta="-1" aria-label="Retirer un tartare de bœuf" disabled>−</button><output data-quantity="tartare" aria-label="Quantité de tartare de bœuf">0</output><button type="button" data-dish="tartare" data-delta="1" aria-label="Ajouter un tartare de bœuf">+</button></div>
+            <p class="dish-unavailable" data-dish-unavailable hidden>Rupture de stock</p>
           </div>
-          <div class="restaurant-dish">
-            <span class="dish-art" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 22h32a16 16 0 0 1-32 0ZM14 39h20M16 17c-5-6 4-7 0-12M24 17c-5-6 4-7 0-12M32 17c-5-6 4-7 0-12"/></svg></span>
-            <div><h4>Curry de légumes</h4><p>Lait de coco et riz parfumé.</p><small>Végétarien · légèrement épicé.</small></div>
-            <div class="dish-quantity" data-demo-control><button type="button" data-dish="curry" data-delta="-1" aria-label="Retirer un curry de légumes" disabled>−</button><output data-quantity="curry" aria-label="Quantité de curry">0</output><button type="button" data-dish="curry" data-delta="1" aria-label="Ajouter un curry de légumes">+</button></div>
+          <div class="restaurant-dish" data-dish-item="risotto">
+            <span class="dish-art"><img src="assets/demos/images/risotto-champignons.webp" alt="" width="120" height="120" loading="lazy" decoding="async"></span>
+            <div><h4>Risotto aux champignons</h4><p>Crémeux, copeaux de parmesan.</p><small>15&nbsp;€</small></div>
+            <div class="dish-quantity" data-demo-control><button type="button" data-dish="risotto" data-delta="-1" aria-label="Retirer un risotto" disabled>−</button><output data-quantity="risotto" aria-label="Quantité de risotto">0</output><button type="button" data-dish="risotto" data-delta="1" aria-label="Ajouter un risotto">+</button></div>
+            <p class="dish-unavailable" data-dish-unavailable hidden>Rupture de stock</p>
           </div>
-          <div class="restaurant-dish">
-            <span class="dish-art" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 14h22l-3 27H16ZM12 14h24M26 14l3-9h9M17 22h15M20 28l3 4 4-4"/></svg></span>
-            <div><h4>Thé glacé</h4><p>Citron et menthe fraîche.</p></div>
-            <div class="dish-quantity" data-demo-control><button type="button" data-dish="tea" data-delta="-1" aria-label="Retirer un thé glacé" disabled>−</button><output data-quantity="tea" aria-label="Quantité de thé glacé">0</output><button type="button" data-dish="tea" data-delta="1" aria-label="Ajouter un thé glacé">+</button></div>
+          <div class="restaurant-dish" data-dish-item="burger">
+            <span class="dish-art"><img src="assets/demos/images/burger-gourmet.webp" alt="" width="120" height="120" loading="lazy" decoding="async"></span>
+            <div><h4>Burger gourmet</h4><p>Frites maison, sauce du chef.</p><small>17&nbsp;€</small></div>
+            <div class="dish-quantity" data-demo-control><button type="button" data-dish="burger" data-delta="-1" aria-label="Retirer un burger" disabled>−</button><output data-quantity="burger" aria-label="Quantité de burger">0</output><button type="button" data-dish="burger" data-delta="1" aria-label="Ajouter un burger">+</button></div>
+            <p class="dish-unavailable" data-dish-unavailable hidden>Rupture de stock</p>
+          </div>
+          <div class="restaurant-dish" data-dish-item="salade">
+            <span class="dish-art"><img src="assets/demos/images/salade-composee.webp" alt="" width="120" height="120" loading="lazy" decoding="async"></span>
+            <div><h4>Salade composée</h4><p>Légumes de saison, vinaigrette maison.</p><small>12&nbsp;€</small></div>
+            <div class="dish-quantity" data-demo-control><button type="button" data-dish="salade" data-delta="-1" aria-label="Retirer une salade" disabled>−</button><output data-quantity="salade" aria-label="Quantité de salade">0</output><button type="button" data-dish="salade" data-delta="1" aria-label="Ajouter une salade">+</button></div>
+            <p class="dish-unavailable" data-dish-unavailable hidden>Rupture de stock</p>
+          </div>
+          <div class="restaurant-dish" data-dish-item="fondant">
+            <span class="dish-art"><img src="assets/demos/images/fondant-chocolat.webp" alt="" width="120" height="120" loading="lazy" decoding="async"></span>
+            <div><h4>Fondant au chocolat</h4><p>Cœur coulant, glace vanille.</p><small>8&nbsp;€</small></div>
+            <div class="dish-quantity" data-demo-control><button type="button" data-dish="fondant" data-delta="-1" aria-label="Retirer un fondant" disabled>−</button><output data-quantity="fondant" aria-label="Quantité de fondant">0</output><button type="button" data-dish="fondant" data-delta="1" aria-label="Ajouter un fondant">+</button></div>
+            <p class="dish-unavailable" data-dish-unavailable hidden>Rupture de stock</p>
+          </div>
+          <div class="restaurant-dish" data-dish-item="cocktail">
+            <span class="dish-art"><img src="assets/demos/images/cocktail-signature.webp" alt="" width="120" height="120" loading="lazy" decoding="async"></span>
+            <div><h4>Cocktail signature</h4><p>Recette maison, sans alcool possible.</p><small>9&nbsp;€</small></div>
+            <div class="dish-quantity" data-demo-control><button type="button" data-dish="cocktail" data-delta="-1" aria-label="Retirer un cocktail" disabled>−</button><output data-quantity="cocktail" aria-label="Quantité de cocktail">0</output><button type="button" data-dish="cocktail" data-delta="1" aria-label="Ajouter un cocktail">+</button></div>
+            <p class="dish-unavailable" data-dish-unavailable hidden>Rupture de stock</p>
           </div>
         </div>
         <div class="restaurant-cart" data-demo-control><span data-cart-summary aria-live="polite" aria-atomic="true">Choisissez un plat</span><button type="button" class="btn" data-send-order disabled>Envoyer en cuisine <span aria-hidden="true">↗</span></button><p class="client-order-status" data-client-status hidden></p></div>
@@ -47,5 +69,50 @@
       </div>
     </div>
   </div>
-  <p class="demo-fallback-note">Exemple de parcours : le client choisit ses plats, la commande arrive en cuisine, puis son état est mis à jour.</p>
+  <div class="restaurant-admin" data-rest-panel="admin">
+    <div class="admin-head">
+      <div><span class="demo-overline">Tableau de bord</span><h3>Votre restaurant,<br><em>en un coup d’œil.</em></h3></div>
+      <span class="demo-pill">Simulation</span>
+    </div>
+    <div class="admin-stats">
+      <div class="admin-stat"><span class="admin-stat-value" data-stat-orders>14</span><span class="admin-stat-label">Commandes aujourd’hui</span></div>
+      <div class="admin-stat"><span class="admin-stat-value" data-stat-revenue>186&nbsp;€</span><span class="admin-stat-label">Chiffre d’affaires simulé</span></div>
+      <div class="admin-stat"><span class="admin-stat-value">9&nbsp;min</span><span class="admin-stat-label">Préparation moyenne</span></div>
+    </div>
+    <div class="admin-grid">
+      <div class="admin-menu">
+        <h4>Votre carte</h4>
+        <ul class="admin-menu-list">
+          <li class="admin-menu-row" data-admin-row="tartare"><img src="assets/demos/images/tartare-boeuf.webp" alt="" width="80" height="80" loading="lazy" decoding="async"><div><b>Tartare de bœuf</b><span>16&nbsp;€ · 22 vendus cette semaine</span></div><button type="button" class="admin-avail" data-toggle-dish="tartare" aria-pressed="false">Disponible</button></li>
+          <li class="admin-menu-row" data-admin-row="risotto"><img src="assets/demos/images/risotto-champignons.webp" alt="" width="80" height="80" loading="lazy" decoding="async"><div><b>Risotto aux champignons</b><span>15&nbsp;€ · 18 vendus cette semaine</span></div><button type="button" class="admin-avail" data-toggle-dish="risotto" aria-pressed="false">Disponible</button></li>
+          <li class="admin-menu-row" data-admin-row="burger"><img src="assets/demos/images/burger-gourmet.webp" alt="" width="80" height="80" loading="lazy" decoding="async"><div><b>Burger gourmet</b><span>17&nbsp;€ · 31 vendus cette semaine</span></div><button type="button" class="admin-avail" data-toggle-dish="burger" aria-pressed="false">Disponible</button></li>
+          <li class="admin-menu-row" data-admin-row="salade"><img src="assets/demos/images/salade-composee.webp" alt="" width="80" height="80" loading="lazy" decoding="async"><div><b>Salade composée</b><span>12&nbsp;€ · 14 vendus cette semaine</span></div><button type="button" class="admin-avail" data-toggle-dish="salade" aria-pressed="false">Disponible</button></li>
+          <li class="admin-menu-row" data-admin-row="fondant"><img src="assets/demos/images/fondant-chocolat.webp" alt="" width="80" height="80" loading="lazy" decoding="async"><div><b>Fondant au chocolat</b><span>8&nbsp;€ · 27 vendus cette semaine</span></div><button type="button" class="admin-avail" data-toggle-dish="fondant" aria-pressed="false">Disponible</button></li>
+          <li class="admin-menu-row" data-admin-row="cocktail"><img src="assets/demos/images/cocktail-signature.webp" alt="" width="80" height="80" loading="lazy" decoding="async"><div><b>Cocktail signature</b><span>9&nbsp;€ · 19 vendus cette semaine</span></div><button type="button" class="admin-avail" data-toggle-dish="cocktail" aria-pressed="false">Disponible</button></li>
+        </ul>
+        <p class="admin-hint">Cliquez « Disponible » pour simuler une rupture : le plat se grise immédiatement côté client.</p>
+      </div>
+      <div class="admin-side">
+        <div class="admin-popular">
+          <h4>Plats les plus commandés</h4>
+          <ul class="admin-bars">
+            <li><span>Burger gourmet</span><i style="--w:78%"></i></li>
+            <li><span>Fondant au chocolat</span><i style="--w:68%"></i></li>
+            <li><span>Tartare de bœuf</span><i style="--w:55%"></i></li>
+            <li><span>Cocktail signature</span><i style="--w:47%"></i></li>
+            <li><span>Risotto aux champignons</span><i style="--w:45%"></i></li>
+            <li><span>Salade composée</span><i style="--w:35%"></i></li>
+          </ul>
+        </div>
+        <div class="admin-history">
+          <h4>Commandes récentes</h4>
+          <ul data-admin-history>
+            <li><b>Table 7</b><span>Servie · il y a 12 min</span></li>
+            <li><b>Table 2</b><span>Servie · il y a 24 min</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="demo-fallback-note">Exemple de parcours : le client choisit ses plats, la commande arrive en cuisine, et le tableau de bord suit l’activité du jour.</p>
 </div>
