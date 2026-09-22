@@ -1,0 +1,39 @@
+/* Console d'automatisation : flux connecté + journal d'exécution en direct. */
+.ia-console { border: 1px solid var(--line-strong); border-radius: var(--radius-m); background: var(--ink-2); padding: clamp(1.1rem, 3vw, 1.8rem); }
+.ia-console-head { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; padding-bottom: 1.2rem; margin-bottom: 1.4rem; border-bottom: 1px solid var(--line); font-size: .8125rem; }
+.ia-console-example { color: var(--muted); font-size: .75rem; margin-left: auto; max-width: 32ch; text-align: right; }
+
+.ia-flow { display: flex; align-items: stretch; gap: 0; }
+.ia-connector { flex: 0 0 clamp(1rem, 3vw, 2rem); display: flex; align-items: center; justify-content: center; margin-top: 26px; }
+.ia-connector i { display: block; width: 100%; height: 2px; background: var(--line-strong); position: relative; overflow: hidden; }
+.ia-connector i::after { content: ""; position: absolute; inset: 0; width: 100%; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; }
+.ia-connector.is-filled i::after { transform: scaleX(1); }
+.ia-node { flex: 1 1 0; min-width: 0; border: 1px solid var(--line-strong); border-radius: 14px; padding: 1.1rem; background: var(--surface); transition: border-color .3s var(--ease); }
+.ia-node.is-active, .ia-node.is-done { border-color: var(--accent); }
+.ia-node-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line-strong); color: var(--muted); margin-bottom: .9rem; transition: background-color .3s, color .3s, border-color .3s; }
+.ia-node-icon svg { width: 20px; height: 20px; }
+.ia-node.is-active .ia-node-icon, .ia-node.is-done .ia-node-icon { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.ia-node h4 { font-size: .9375rem; line-height: 1.3; }
+.ia-node p { font-size: .8125rem; color: var(--muted); margin-top: .4rem; line-height: 1.45; }
+.ia-node-state { display: inline-block; margin-top: .8rem; font-size: .6875rem; text-transform: uppercase; letter-spacing: .07em; color: var(--muted-2); }
+.ia-node.is-active .ia-node-state { color: var(--accent); }
+.ia-node.is-done .ia-node-state { color: var(--muted); }
+
+.ia-log { margin-top: 1.6rem; border: 1px solid var(--line-strong); border-radius: var(--radius-m); padding: clamp(1rem, 2.5vw, 1.5rem); background: var(--ink-2); }
+.ia-log .demo-overline { color: var(--muted); display: block; margin-bottom: 1rem; }
+.ia-log ul { display: grid; gap: .6rem; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .8125rem; }
+.ia-log li { display: flex; gap: .9rem; opacity: .35; transition: opacity .3s var(--ease); }
+.ia-log li.is-active { opacity: 1; }
+.ia-log time { color: var(--muted); flex: none; font-variant-numeric: tabular-nums; }
+.ia-log li.is-active time { color: var(--accent); }
+.ia-log li span { color: var(--text); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .ia-connector i::after { transition: transform .5s var(--ease); }
+}
+
+@media (max-width: 860px) {
+  .ia-flow { flex-direction: column; gap: .8rem; }
+  .ia-connector { display: none; }
+  .ia-console-example { margin-left: 0; text-align: left; max-width: none; }
+}

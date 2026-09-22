@@ -5,7 +5,6 @@
 .story-header .demo-overline { color:var(--paper-muted); }
 .story-header h3 { margin-top:.65rem; max-width:25ch; }
 .story-header .demo-pill { color:var(--paper-muted); }
-.story-lead { font-size:.9375rem; line-height:1.55; color:var(--paper-muted); max-width:55ch; margin-top:1rem; }
 .audit-layout { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:clamp(1.5rem,4vw,3.5rem); margin-top:2rem; }
 .audit-metrics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; align-content:start; }
 .audit-metric { border:1px solid var(--paper-line); border-radius:12px; padding:1rem; }
@@ -20,8 +19,6 @@
 .audit-recommendation small { display:block; font-size:.6875rem; text-transform:uppercase; letter-spacing:.09em; color:var(--paper-muted); margin-bottom:.4rem; }
 .audit-recommendation p { margin-top:.5rem; color:var(--paper-muted); font-size:.8125rem; line-height:1.55; }
 .audit-recommendation .audit-action { color:var(--paper-text); }
-.story-foot { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-top:1.5rem; padding-top:1.1rem; border-top:1px solid var(--line-strong); }
-.story-foot p { color:var(--muted); font-size:.8125rem; max-width:48ch; }
 .story-paper .story-foot { border-color:var(--paper-line); }
 .story-paper .story-foot p, .story-paper .demo-text-button { color:var(--paper-muted); }
 .story-dashboard { border:1px solid var(--line-strong); border-radius:var(--radius-m); overflow:hidden; }

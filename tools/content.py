@@ -336,8 +336,8 @@ SERVICES = [
     },
     {
         "slug": "ia-automatisation",
-        "demo": {"id": "story", "fragment": "automatisation", "css": "story.css", "eyebrow": "Un aperçu concret", "title": "Les tâches répétitives s’enchaînent seules.",
-                 "hint": "Suivez une demande, du message reçu à la réponse préparée.",
+        "demo": {"id": "ia", "css": "ia.css", "eyebrow": "Un aperçu concret", "title": "Les tâches répétitives s’enchaînent seules.",
+                 "hint": "Un flux connecté, avec son journal d’exécution en direct.",
                  "caption": "Simulation : aucun outil externe ni aucune IA ne sont appelés ici. Le fonctionnement réel est adapté à votre activité."},
         "num": "06",
         "nav": "IA & automatisation",
