@@ -14,16 +14,28 @@ for(const path of pages){
  await test(path+' · mouvement réduit',async p=>{await p.command('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});await show(p,path);assert.ok(await p.evaluate('!document.querySelector("[data-demo=story]") || document.querySelector("[data-demo=story]").classList.contains("is-story-complete")'));if(path==='cartes-nfc')assert.ok(await p.evaluate('!document.querySelector("[data-nfc-contact]").hidden'));if(path==='cartes-restaurant'){await activate(p,'[data-dish=tartare][data-delta="1"]');await activate(p,'[data-send-order]');assert.ok(await p.evaluate('document.querySelector("[data-order-status]").textContent.includes("prête")'));}assert.ok(await p.evaluate('document.querySelector("[data-demo]").getAnimations({subtree:true}).filter(a=>a.playState==="running").length===0'),'Animation active en mouvement réduit');await fit(p);});
 }
 await test('Chargement différé et pause hors écran',async p=>{
- await p.navigate('audit-marketing.html');
+ await p.navigate('closing.html');
  assert.equal(await p.evaluate('Array.from(document.scripts).some(s=>s.src.includes("/story.js"))'),false,'Script chargé avant démo visible');
  await p.evaluate('document.querySelector("[data-demo]").scrollIntoView({block:"center",behavior:"instant"})');await p.until('document.querySelector(".is-story-complete")');
  await activate(p,'[data-replay-story]');await p.evaluate('window.scrollTo({top:0,behavior:"instant"})');await p.until('document.querySelector("[data-demo]").dataset.visible==="false"');
- const before=await p.evaluate('Array.from(document.querySelectorAll("[data-score]")).map(e=>e.textContent)');
+ const before=await p.evaluate('Array.from(document.querySelectorAll("[data-seq]")).map(e=>e.className)');
  await p.evaluate('new Promise(resolve=>setTimeout(resolve,2200))');
- assert.deepEqual(await p.evaluate('Array.from(document.querySelectorAll("[data-score]")).map(e=>e.textContent)'),before,'Animation hors écran');
- await p.evaluate('document.querySelector("[data-demo]").scrollIntoView({block:"center",behavior:"instant"})');await p.until('document.querySelector(".is-story-complete")');assert.deepEqual(await p.evaluate('Array.from(document.querySelectorAll("[data-score]")).map(e=>e.textContent)'),['38','54','46','62']);
+ assert.deepEqual(await p.evaluate('Array.from(document.querySelectorAll("[data-seq]")).map(e=>e.className)'),before,'Animation hors écran');
+ await p.evaluate('document.querySelector("[data-demo]").scrollIntoView({block:"center",behavior:"instant"})');await p.until('document.querySelector(".is-story-complete")');
  await activate(p,'[data-replay-story]');await p.command('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});await p.until('document.querySelector(".is-story-complete")');
 },390,350);
+await test('Audit : onglets, jauge et navigation clavier',async p=>{
+ await show(p,'audit-marketing');
+ assert.deepEqual(await p.evaluate('Array.from(document.querySelectorAll("[data-score]")).map(e=>e.textContent)'),['38','54','46','62']);
+ assert.equal(await p.evaluate('document.querySelector("[data-gauge-number]").textContent'),'50');
+ assert.equal(await p.evaluate('document.querySelector(\'[data-audit-panel="details"]\').hidden'),true);
+ await activate(p,'[data-goto-tab="actions"]');
+ assert.equal(await p.evaluate('document.querySelector(\'[data-audit-panel="actions"]\').hidden'),false);
+ assert.equal(await p.evaluate('document.activeElement.dataset.auditTab'),'actions');
+ await p.key('ArrowLeft');
+ assert.equal(await p.evaluate('document.querySelector(\'[data-audit-tab="details"]\').getAttribute("aria-selected")'),'true');
+ assert.equal(await p.evaluate('document.querySelector(\'[data-audit-panel="overview"]\').hidden'),true);
+});
 await test('Restaurant · commande au clavier puis devis',async p=>{
  await show(p,'cartes-restaurant');
  await activate(p,'[data-dish=tartare][data-delta="1"]');await p.key('Enter');await activate(p,'[data-dish=cocktail][data-delta="1"]');await activate(p,'[data-send-order]');

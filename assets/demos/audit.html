@@ -1,17 +1,93 @@
-<div class="story-paper story-audit" data-demo-light>
-  <div class="story-header"><div><span class="demo-overline">Rapport de démonstration</span><h3>Votre restaurant,<br><em>vu par vos clients.</em></h3><p class="story-lead">Ce qui freine une réservation. Ce qui mérite d’être corrigé en premier.</p></div><span class="demo-pill">Exemple de livrable</span></div>
-  <div class="audit-layout">
-    <div class="audit-metrics" aria-label="Scores illustratifs, sans mesure d’un site réel">
-      <div class="audit-metric"><h4>Vitesse du site</h4><p><span class="demo-sr-only">38 sur 100, score d’exemple.</span><b data-score="38" aria-hidden="true">38</b> <small aria-hidden="true">/ 100</small></p><div class="audit-track" aria-hidden="true"><i class="audit-fill" style="width:38%"></i></div></div>
-      <div class="audit-metric"><h4>Visibilité sur Google</h4><p><span class="demo-sr-only">54 sur 100, score d’exemple.</span><b data-score="54" aria-hidden="true">54</b> <small aria-hidden="true">/ 100</small></p><div class="audit-track" aria-hidden="true"><i class="audit-fill" style="width:54%"></i></div></div>
-      <div class="audit-metric"><h4>Confort sur téléphone</h4><p><span class="demo-sr-only">46 sur 100, score d’exemple.</span><b data-score="46" aria-hidden="true">46</b> <small aria-hidden="true">/ 100</small></p><div class="audit-track" aria-hidden="true"><i class="audit-fill" style="width:46%"></i></div></div>
-      <div class="audit-metric"><h4>Facilité de contact</h4><p><span class="demo-sr-only">62 sur 100, score d’exemple.</span><b data-score="62" aria-hidden="true">62</b> <small aria-hidden="true">/ 100</small></p><div class="audit-track" aria-hidden="true"><i class="audit-fill" style="width:62%"></i></div></div>
-    </div>
-    <ol class="audit-recommendations" aria-label="Exemples de recommandations prioritaires">
-      <li class="audit-recommendation" data-seq><small>À corriger en premier · effort léger</small><h4>Des photos qui retardent l’ouverture</h4><p>Le visiteur attend avant de pouvoir consulter la carte.</p><p class="audit-action"><strong>Action :</strong> alléger les photos et charger les images du bas de page plus tard.</p></li>
-      <li class="audit-recommendation" data-seq><small>À corriger en premier · effort léger</small><h4>Un bouton de réservation trop discret</h4><p>Sur téléphone, il faut parcourir toute la page pour le trouver.</p><p class="audit-action"><strong>Action :</strong> rapprocher le bouton de la carte et des horaires.</p></li>
-      <li class="audit-recommendation" data-seq><small>Ensuite · effort modéré</small><h4>Une présentation trop vague sur Google</h4><p>Le type de cuisine et le quartier sont difficiles à identifier.</p><p class="audit-action"><strong>Action :</strong> préciser l’activité et le lieu dans le titre et la présentation du site.</p></li>
-    </ol>
+<div class="audit-demo" data-audit-view="overview">
+  <div class="audit-tabs" role="tablist" aria-label="Sections du rapport" data-demo-control>
+    <button type="button" role="tab" data-audit-tab="overview" aria-selected="true" aria-controls="audit-panel-overview" id="audit-tab-overview">Vue d’ensemble</button>
+    <button type="button" role="tab" data-audit-tab="details" aria-selected="false" aria-controls="audit-panel-details" id="audit-tab-details" tabindex="-1">Détails techniques</button>
+    <button type="button" role="tab" data-audit-tab="actions" aria-selected="false" aria-controls="audit-panel-actions" id="audit-tab-actions" tabindex="-1">Recommandations</button>
   </div>
-  <div class="story-foot"><p>Un rapport utilisable pour décider, puis agir avec le prestataire de votre choix.</p><button type="button" class="demo-text-button" data-replay-story data-demo-control>Revoir le rapport</button></div>
+
+  <div class="audit-paper" data-demo-light>
+    <section class="audit-panel" id="audit-panel-overview" role="tabpanel" aria-labelledby="audit-tab-overview" data-audit-panel="overview">
+      <div class="audit-score-row">
+        <div class="audit-gauge-wrap">
+          <svg class="audit-gauge" viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
+            <circle cx="60" cy="60" r="52" fill="none" stroke-width="10" class="audit-gauge-track"/>
+            <circle cx="60" cy="60" r="52" fill="none" stroke-width="10" class="audit-gauge-fill" data-gauge-fill stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 60 60)"/>
+          </svg>
+          <div class="audit-gauge-label"><span data-gauge-number>0</span><small>/ 100</small></div>
+        </div>
+        <div class="audit-verdict">
+          <span class="demo-overline">Score global</span>
+          <h3>Des bases correctes,<br><em>mais des freins concrets<br>à la réservation.</em></h3>
+          <p class="story-lead">Sur les quatre points mesurés, deux ralentissent directement les demandes de réservation. Rien d’irréversible : les corrections tiennent dans un chantier court.</p>
+        </div>
+      </div>
+      <div class="audit-metrics" aria-label="Scores illustratifs, sans mesure d’un site réel">
+        <div class="audit-metric"><h4>Vitesse du site</h4><p><span class="demo-sr-only">38 sur 100, score d’exemple.</span><b data-score="38" aria-hidden="true">38</b> <small aria-hidden="true">/ 100</small></p><div class="audit-track" aria-hidden="true"><i class="audit-fill" data-fill="38"></i></div></div>
+        <div class="audit-metric"><h4>Visibilité sur Google</h4><p><span class="demo-sr-only">54 sur 100, score d’exemple.</span><b data-score="54" aria-hidden="true">54</b> <small aria-hidden="true">/ 100</small></p><div class="audit-track" aria-hidden="true"><i class="audit-fill" data-fill="54"></i></div></div>
+        <div class="audit-metric"><h4>Confort sur téléphone</h4><p><span class="demo-sr-only">46 sur 100, score d’exemple.</span><b data-score="46" aria-hidden="true">46</b> <small aria-hidden="true">/ 100</small></p><div class="audit-track" aria-hidden="true"><i class="audit-fill" data-fill="46"></i></div></div>
+        <div class="audit-metric"><h4>Facilité de contact</h4><p><span class="demo-sr-only">62 sur 100, score d’exemple.</span><b data-score="62" aria-hidden="true">62</b> <small aria-hidden="true">/ 100</small></p><div class="audit-track" aria-hidden="true"><i class="audit-fill" data-fill="62"></i></div></div>
+      </div>
+      <div class="audit-teaser">
+        <span class="demo-overline">Vos 3 priorités</span>
+        <ol>
+          <li><b>1</b><span>Des photos qui retardent l’ouverture</span><em>Effort léger</em></li>
+          <li><b>2</b><span>Un bouton de réservation trop discret</span><em>Effort léger</em></li>
+          <li><b>3</b><span>Une présentation trop vague sur Google</span><em>Effort modéré</em></li>
+        </ol>
+        <button type="button" class="demo-text-button" data-goto-tab="actions" data-demo-control>Voir le détail des actions →</button>
+      </div>
+    </section>
+
+    <section class="audit-panel" id="audit-panel-details" role="tabpanel" aria-labelledby="audit-tab-details" data-audit-panel="details" hidden>
+      <span class="demo-overline">Détails techniques</span>
+      <h3>Ce qui a été regardé,<br><em>catégorie par catégorie.</em></h3>
+      <div class="audit-groups">
+        <div class="audit-group">
+          <h4>Performance</h4>
+          <ul>
+            <li data-status="warn"><span class="audit-status" aria-hidden="true"></span><div><b>Poids des images</b><p>4,2 Mo chargés dès l’arrivée sur la page. Cible raisonnable : moins de 1 Mo.</p></div></li>
+            <li data-status="warn"><span class="audit-status" aria-hidden="true"></span><div><b>Temps d’affichage mobile</b><p>4,1 secondes avant que la page soit utilisable. Cible : moins de 2,5 secondes.</p></div></li>
+            <li data-status="ok"><span class="audit-status" aria-hidden="true"></span><div><b>Compression du texte</b><p>Le HTML et le CSS sont bien compressés à l’envoi.</p></div></li>
+          </ul>
+        </div>
+        <div class="audit-group">
+          <h4>Référencement</h4>
+          <ul>
+            <li data-status="bad"><span class="audit-status" aria-hidden="true"></span><div><b>Aucune balise de description</b><p>Google affiche un extrait choisi au hasard dans la page.</p></div></li>
+            <li data-status="warn"><span class="audit-status" aria-hidden="true"></span><div><b>Titre de page générique</b><p>La page d’accueil s’appelle simplement « Accueil » dans les résultats de recherche.</p></div></li>
+            <li data-status="ok"><span class="audit-status" aria-hidden="true"></span><div><b>Site indexé</b><p>Google connaît et référence déjà le site.</p></div></li>
+          </ul>
+        </div>
+        <div class="audit-group">
+          <h4>Mobile</h4>
+          <ul>
+            <li data-status="warn"><span class="audit-status" aria-hidden="true"></span><div><b>Bouton de réservation caché</b><p>Il faut faire défiler toute la page pour le trouver sur téléphone.</p></div></li>
+            <li data-status="ok"><span class="audit-status" aria-hidden="true"></span><div><b>Texte lisible</b><p>Aucun zoom nécessaire pour lire le contenu.</p></div></li>
+          </ul>
+        </div>
+        <div class="audit-group">
+          <h4>Confiance &amp; contact</h4>
+          <ul>
+            <li data-status="ok"><span class="audit-status" aria-hidden="true"></span><div><b>Connexion sécurisée</b><p>Le certificat HTTPS est valide et à jour.</p></div></li>
+            <li data-status="warn"><span class="audit-status" aria-hidden="true"></span><div><b>Téléphone non cliquable</b><p>Le numéro affiché n’ouvre pas l’appel sur mobile.</p></div></li>
+            <li data-status="bad"><span class="audit-status" aria-hidden="true"></span><div><b>Formulaire de contact</b><p>Le test d’envoi n’a pas abouti : le message ne part pas.</p></div></li>
+          </ul>
+        </div>
+      </div>
+      <p class="audit-legend"><span data-status="ok"></span> Conforme <span data-status="warn"></span> À améliorer <span data-status="bad"></span> Bloquant</p>
+    </section>
+
+    <section class="audit-panel" id="audit-panel-actions" role="tabpanel" aria-labelledby="audit-tab-actions" data-audit-panel="actions" hidden>
+      <span class="demo-overline">Recommandations</span>
+      <h3>Ce qui compte,<br><em>dans l’ordre.</em></h3>
+      <ol class="audit-recommendations">
+        <li class="audit-recommendation"><small>1 · Effort léger</small><h4>Des photos qui retardent l’ouverture</h4><p>Le visiteur attend avant de pouvoir consulter la carte.</p><p class="audit-action"><strong>Action :</strong> alléger les photos et charger celles du bas de page plus tard.</p><p class="audit-impact">Effet estimé : <b>ouverture 2 fois plus rapide</b></p></li>
+        <li class="audit-recommendation"><small>2 · Effort léger</small><h4>Un bouton de réservation trop discret</h4><p>Sur téléphone, il faut parcourir toute la page pour le trouver.</p><p class="audit-action"><strong>Action :</strong> rapprocher le bouton de la carte et des horaires.</p><p class="audit-impact">Effet estimé : <b>moins d’abandons avant réservation</b></p></li>
+        <li class="audit-recommendation"><small>3 · Effort modéré</small><h4>Une présentation trop vague sur Google</h4><p>Le type de cuisine et le quartier sont difficiles à identifier.</p><p class="audit-action"><strong>Action :</strong> préciser l’activité et le lieu dans le titre et la description du site.</p><p class="audit-impact">Effet estimé : <b>mieux ressortir sur les recherches locales</b></p></li>
+        <li class="audit-recommendation"><small>4 · Effort modéré</small><h4>Un formulaire de contact qui ne fonctionne pas</h4><p>Les demandes envoyées depuis le site n’arrivent nulle part.</p><p class="audit-action"><strong>Action :</strong> reconnecter le formulaire et vérifier la réception avant la mise en ligne.</p><p class="audit-impact">Effet estimé : <b>zéro demande perdue en silence</b></p></li>
+      </ol>
+    </section>
+  </div>
+
+  <div class="story-foot"><p data-audit-status role="status" aria-live="polite">Vue d’ensemble affichée.</p><a class="btn" href="contact.html?service=audit-marketing">Demander mon audit <span aria-hidden="true">↗</span></a></div>
 </div>

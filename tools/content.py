@@ -237,8 +237,8 @@ SERVICES = [
     },
     {
         "slug": "audit-marketing",
-        "demo": {"id": "story", "fragment": "audit", "css": "story.css", "eyebrow": "Un aperçu concret", "title": "Les bonnes priorités, noir sur blanc.",
-                 "hint": "Un exemple de rapport, pensé pour un restaurant.",
+        "demo": {"id": "audit", "css": "audit.css", "eyebrow": "Un aperçu concret", "title": "Les bonnes priorités, noir sur blanc.",
+                 "hint": "Un rapport complet, en trois volets : vue d'ensemble, détails, actions.",
                  "caption": "Données de démonstration : ces scores et constats illustrent le livrable, sans mesurer un client réel."},
         "num": "03",
         "nav": "Audit & Marketing",
