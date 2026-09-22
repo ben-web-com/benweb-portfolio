@@ -1,0 +1,134 @@
+/* Démos intégrées : tous les sélecteurs restent dans leur composant. */
+.service-demo-section { padding-block: 0 clamp(3rem, 6vw, 5rem); }
+.service-demo-section .container { max-width: var(--container); }
+.demo-intro { display:flex; align-items:end; justify-content:space-between; gap:1rem; margin-bottom:1.25rem; }
+.demo-intro h2 { font-size:clamp(1.5rem,3vw,2.25rem); margin-top:.6rem; }
+.demo-intro > p { max-width:36ch; color:var(--muted); font-size:.9375rem; }
+.service-demo { position:relative; border:1px solid var(--line-strong); border-radius:var(--radius-l); background:var(--ink-2); padding:clamp(1rem,3vw,2.5rem); isolation:isolate; }
+.service-demo h3 { font-size:clamp(1.4rem,2.3vw,1.95rem); line-height:1.12; }
+.service-demo h4 { font-size:1rem; line-height:1.25; letter-spacing:-.02em; }
+.demo-sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+.service-demo button { touch-action:manipulation; }
+.service-demo [hidden] { display:none!important; }
+.service-demo [data-demo-control], .service-demo [data-demo-enhanced] { display:none; }
+.service-demo:not(.is-ready) [data-demo-control], .service-demo:not(.is-ready) [data-demo-enhanced] { display:none!important; }
+.service-demo.is-ready [data-demo-control] { display:flex; }
+.service-demo.is-ready [data-demo-enhanced] { display:block; }
+.demo-overline { font-size:.6875rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase; }
+.demo-pill { display:inline-flex; align-items:center; padding:.35rem .65rem; border:1px solid currentColor; border-radius:999px; font-size:.6875rem; white-space:nowrap; line-height:1.2; }
+.demo-window-bar { display:flex; gap:1rem; align-items:center; padding:.8rem 1rem; border-bottom:1px solid var(--line); font-size:.6875rem; color:var(--muted); }
+.demo-window-bar > :first-child { letter-spacing:.15rem; }
+.demo-device-top { display:flex; justify-content:space-between; align-items:center; height:34px; padding:0 1.1rem; font-size:.625rem; }
+.demo-device-top i { width:64px; height:13px; background:var(--ink); border-radius:999px; }
+.demo-switch { display:flex; flex-wrap:wrap; gap:.4rem; }
+.demo-switch button { min-height:44px; padding:.65rem 1rem; border:1px solid var(--line-strong); border-radius:999px; color:var(--muted); font-size:.8125rem; }
+.demo-switch button[aria-pressed="true"] { color:var(--accent-ink); background:var(--accent); border-color:var(--accent); }
+.demo-switch button:hover { border-color:var(--accent); }
+.demo-text-button { min-height:44px; font-size:.8125rem; text-decoration:underline; text-underline-offset:4px; color:var(--muted); padding:.5rem; }
+.demo-fallback-note { font-size:.8125rem; color:var(--muted); margin-top:1.2rem; }
+.is-ready .demo-fallback-note { display:none; }
+.demo-caption { margin-top:.85rem; color:var(--muted-2); font-size:.75rem; }
+.page-hero--demo { padding-bottom:clamp(1.5rem,3vw,2.5rem); }
+.page-hero--demo .container { max-width:var(--container); }
+.page-hero--demo .crumbs { margin-bottom:1rem; }
+.page-hero--demo .display { font-size:clamp(2.2rem,4.5vw,4rem); max-width:20ch; margin-bottom:1rem; }
+.page-hero--demo .lead { max-width:60ch; }
+.page-hero--demo .hero-cta { margin-top:1.4rem; }
+.page-hero--demo .chip-row { display:none; }
+.service-inclusions { padding-top:0; }
+.service-details { border-block:1px solid var(--line-strong); }
+.service-details > summary { display:flex; justify-content:space-between; align-items:center; gap:1rem; cursor:pointer; padding:1.4rem .1rem; font-size:clamp(1.1rem,2vw,1.4rem); font-weight:500; list-style:none; }
+.service-details > summary::-webkit-details-marker { display:none; }
+.service-details > summary > span { font-size:1.6rem; color:var(--accent); }
+.service-details[open] > summary > span { transform:rotate(45deg); }
+.service-details-body { padding-bottom:1.5rem; }
+.service-details-body > .lead { margin-bottom:1.5rem; }
+.service-details .inc-grid { background:var(--line); border-color:var(--line); }
+.service-details .inc-card { background:var(--surface); }
+.service-details .inc-card p { color:var(--muted); }
+.service-details .honest-note { color:var(--muted); border-color:var(--line-strong); }
+.service-details .honest-note span { color:var(--text); }
+.restaurant-layout { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:clamp(1rem,3vw,2.5rem); align-items:center; }
+.restaurant-client { color:var(--paper-text); background:var(--paper); border:7px solid var(--surface-2); border-radius:32px; overflow:hidden; max-width:420px; width:100%; margin-inline:auto; }
+.restaurant-client :focus-visible { outline-color:var(--paper-text); }
+.restaurant-menu { padding:.6rem clamp(.8rem,2vw,1.3rem) 1.2rem; }
+.restaurant-brand { display:flex; justify-content:space-between; align-items:center; gap:.5rem; margin-bottom:1.1rem; }
+.restaurant-menu h3 { font-size:clamp(1.5rem,2.2vw,2rem); }
+.restaurant-hint { font-size:.8125rem; color:var(--paper-muted); margin-top:.6rem; }
+.restaurant-dishes { margin-top:1.2rem; }
+.restaurant-dish { display:grid; grid-template-columns:42px minmax(0,1fr); gap:.65rem; padding:.9rem 0; border-top:1px solid var(--paper-line); }
+.dish-art { width:42px; height:42px; background:var(--paper-2); border-radius:12px; display:grid; place-items:center; }
+.dish-art svg { width:34px; height:34px; }
+.restaurant-dish p, .restaurant-dish small { font-size:.75rem; line-height:1.4; color:var(--paper-muted); margin-top:.2rem; }
+.restaurant-dish small { display:block; font-size:.6875rem; }
+.dish-quantity { grid-column:2; align-items:center; gap:.55rem; justify-content:flex-end; margin-top:.15rem; }
+.dish-quantity button { display:grid; place-items:center; width:44px; height:44px; border-radius:50%; border:1px solid var(--paper-muted); line-height:1; font-size:1.25rem; background:var(--paper); }
+.dish-quantity button[data-delta="1"] { background:var(--paper-text); color:var(--paper); border-color:var(--paper-text); }
+.dish-quantity output { min-width:1rem; text-align:center; font-size:.875rem; font-variant-numeric:tabular-nums; }
+.dish-quantity button:disabled { opacity:.4; cursor:default; }
+.restaurant-cart { display:flex; flex-direction:column; gap:.55rem; padding-top:.7rem; border-top:1px solid var(--paper-line); }
+.restaurant-cart > span { text-align:center; font-size:.75rem; }
+.client-order-status { font-size:.8125rem; text-align:center; color:var(--paper-text); margin-top:.3rem; }
+.restaurant-cart .btn { width:100%; padding:.9rem 1rem; white-space:normal; line-height:1.3; }
+.restaurant-cart .btn:disabled { background:var(--paper-2); color:var(--paper-muted); cursor:default; transform:none; box-shadow:none; }
+.restaurant-kitchen { align-self:stretch; display:flex; flex-direction:column; border:1px solid var(--line-strong); border-radius:var(--radius-m); background:var(--surface); overflow:hidden; }
+.kitchen-body { padding:clamp(1rem,2.5vw,2rem); display:flex; flex-direction:column; flex:1; }
+.kitchen-heading { display:flex; justify-content:space-between; align-items:start; gap:.5rem; }
+.kitchen-heading .demo-overline { color:var(--muted); }
+.kitchen-heading h3 { margin-top:.7rem; }
+.kitchen-heading .demo-pill { color:var(--muted); }
+.kitchen-empty { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2.5rem 0; text-align:center; }
+.kitchen-empty svg { width:48px; height:48px; color:var(--muted-2); margin-bottom:1rem; }
+.kitchen-empty p { font-size:1.15rem; line-height:1.35; }
+.kitchen-empty > span { margin-top:.75rem; font-size:.8125rem; color:var(--muted); max-width:28ch; }
+.kitchen-note { font-size:.75rem; color:var(--muted); margin-top:1.1rem; }
+.kitchen-ticket { margin-top:1.6rem; border:1px solid var(--line-strong); border-left:3px solid var(--accent); border-radius:12px; padding:1.2rem; background:var(--ink-2); }
+.ticket-heading { display:flex; justify-content:space-between; align-items:center; gap:.5rem; padding-bottom:.9rem; border-bottom:1px dashed var(--line-strong); }
+.ticket-heading > span { font-size:.6875rem; color:var(--muted); }
+.kitchen-ticket ul { padding-block:1rem; display:grid; gap:.5rem; font-size:.9375rem; }
+.kitchen-ticket li b { display:inline-block; min-width:1.4rem; font-variant-numeric:tabular-nums; color:var(--accent); }
+.order-states { display:grid; grid-template-columns:repeat(3,1fr); gap:.35rem; margin-top:.5rem; }
+.order-states li { padding-top:.6rem; border-top:3px solid var(--line-strong); color:var(--muted); font-size:.6875rem; line-height:1.35; }
+.order-states li.is-done { border-color:var(--accent); color:var(--text); }
+.order-status { font-size:.875rem; color:var(--accent); margin-top:1rem; min-height:1.5em; }
+.kitchen-ticket .btn { margin-top:1rem; padding:.8rem 1rem; font-size:.8125rem; white-space:normal; line-height:1.3; }
+.restaurant-followup { display:grid; gap:.3rem; margin-top:auto; padding-top:1.5rem; }
+.restaurant-followup .btn { font-size:.8125rem; line-height:1.4; padding:.9rem 1rem; white-space:normal; text-align:center; }
+.service-demo.is-ready .restaurant-switch { display:none; }
+@media (min-width:760px) { .service-demo-section { content-visibility:auto; contain-intrinsic-size:auto 800px; } }
+@media (max-width:700px) {
+  .demo-intro { display:block; }
+  .demo-intro > p { margin-top:.5rem; }
+  .service-demo { padding:.8rem; }
+  .restaurant-layout { grid-template-columns:1fr; }
+  .service-demo.is-ready .restaurant-switch { display:flex; margin-bottom:.85rem; }
+  .is-ready [data-restaurant-view="client"] .restaurant-kitchen { display:none; }
+  .is-ready [data-restaurant-view="kitchen"] .restaurant-client { display:none; }
+  .restaurant-client { border-width:4px; border-radius:24px; }
+  .restaurant-menu h3 { font-size:1.45rem; }
+  .restaurant-brand { margin-bottom:.7rem; }
+  .restaurant-dishes { margin-top:.8rem; }
+  .restaurant-dish { grid-template-columns:34px minmax(0,1fr) 44px; gap:.5rem; padding:.65rem 0; align-items:center; }
+  .dish-art { width:34px; height:34px; }
+  .dish-art svg { width:28px; height:28px; }
+  .restaurant-dish h4 { font-size:.9375rem; }
+  .restaurant-dish small { display:none; }
+  .dish-quantity { grid-column:3; flex-wrap:wrap; gap:0; justify-content:center; }
+  .dish-quantity button[data-delta="-1"] { display:none; }
+  .dish-quantity output { font-size:.6875rem; width:100%; order:1; }
+  .dish-quantity.has-items { width:44px; }
+  .dish-quantity.has-items button[data-delta="-1"] { display:grid; height:44px; border:0; background:transparent; }
+  .restaurant-kitchen { min-height:460px; }
+  .page-hero--demo .display { font-size:clamp(2rem,8vw,2.65rem); }
+  .page-hero--demo .hero-cta { gap:.6rem; }
+  .page-hero--demo .hero-cta .btn { padding:.85rem 1.1rem; }
+  .page-hero--demo .crumbs { font-size:.75rem; }
+  .page-hero--demo .hero-cta { flex-direction:row; }
+  .page-hero--demo .hero-cta .btn { width:auto; font-size:.8125rem; }
+  .page-hero--demo .lead { font-size:.9375rem; line-height:1.5; }
+  .page-hero--demo .crumbs { display:none; }
+}
+@media (prefers-reduced-motion:no-preference) {
+  .kitchen-ticket { animation:ticket-in .35s var(--ease); }
+  @keyframes ticket-in { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+}

@@ -26,8 +26,12 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/InterTight-300_800.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/InstrumentSerif-400-italic.woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=20260912c">
-<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}.hero h1 .line>span{transform:none!important}</style></noscript>
+<link rel="stylesheet" href="assets/css/style.css?v=20260915a">
+<link rel="stylesheet" href="assets/css/accessibility.css?v=20260915a">
+
+
+
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important;filter:none!important}.hero h1 .line>span{transform:none!important}</style></noscript>
 </head>
 <body>
 <a class="skip-link" href="#main">Aller au contenu</a>
@@ -38,17 +42,18 @@
     <nav class="nav-links" aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
       <div class="nav-drop">
+        <a class="nav-services-fallback" href="index.html#services">Services</a>
         <button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="services-menu">
           Services
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
         </button>
-        <div class="nav-menu" id="services-menu"><a href="applications.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Outils métier, tableaux de bord, espaces clients et back-offices sur mesure.</small></span></a><a href="sites-internet.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Sites vitrines, landing pages, boutiques et refontes, conçus sur mesure, jamais sur template.</small></span></a><a href="audit-marketing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Ce qui cloche sur votre site existant, puis ce qui ramène vraiment des clients.</small></span></a><a href="cartes-restaurant.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Carte QR multilingue, commandes envoyées directement en cuisine, suivi client et tableau de bord.</small></span></a><a href="cartes-nfc.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Une carte physique NFC + une page de contact qui s'ouvre d'un simple contact avec le téléphone.</small></span></a><a href="ia-automatisation.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Supprimer les tâches répétitives : scripts, intégrations IA et outils connectés entre eux.</small></span></a><a href="closing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Setting & Closing</b><small>Vos leads traités, qualifiés et conclus : je réponds, je qualifie, je prends les rendez-vous et je closes.</small></span></a></div>
+        <div class="nav-menu" id="services-menu"><a href="sites-internet.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Un site à votre image pour présenter votre activité et recevoir des demandes.</small></span></a><a href="cartes-restaurant.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Vos clients choisissent leurs plats. Les commandes arrivent directement en cuisine.</small></span></a><a href="cartes-nfc.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Votre photo, vos coordonnées et vos liens, partagés en un geste.</small></span></a><a href="audit-marketing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Un regard clair sur votre site, et les améliorations à faire en priorité.</small></span></a><a href="applications.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Un outil pour organiser vos réservations, vos dossiers ou votre suivi client.</small></span></a><a href="ia-automatisation.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Vos tâches répétitives se font seules. Vous gardez la main.</small></span></a><a href="closing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Suivi commercial</b><small>Vos demandes sont suivies, vos prospects relancés et vos rendez-vous préparés.</small></span></a></div>
       </div>
       <a href="infos.html">Infos</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn" href="contact.html">Discuter de mon projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn" href="contact.html">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-panel" aria-label="Ouvrir le menu">
         <span></span><span></span>
       </button>
@@ -60,12 +65,12 @@
   <nav aria-label="Navigation mobile">
     <a href="index.html" style="--i:1">Accueil</a>
     <p class="mobile-label" style="--i:2">Services</p>
-    <a class="mobile-sub" href="applications.html" style="--i:3">Applications web & mobile</a><a class="mobile-sub" href="sites-internet.html" style="--i:4">Création de sites internet</a><a class="mobile-sub" href="audit-marketing.html" style="--i:5">Audit & Marketing</a><a class="mobile-sub" href="cartes-restaurant.html" style="--i:6">Cartes restaurant connectées</a><a class="mobile-sub" href="cartes-nfc.html" style="--i:7">Cartes digitales & NFC</a><a class="mobile-sub" href="ia-automatisation.html" style="--i:8">IA & automatisation</a><a class="mobile-sub" href="closing.html" style="--i:9">Setting & Closing</a>
+    <a class="mobile-sub" href="sites-internet.html" style="--i:3">Création de sites internet</a><a class="mobile-sub" href="cartes-restaurant.html" style="--i:4">Cartes restaurant connectées</a><a class="mobile-sub" href="cartes-nfc.html" style="--i:5">Cartes digitales & NFC</a><a class="mobile-sub" href="audit-marketing.html" style="--i:6">Audit & Marketing</a><a class="mobile-sub" href="applications.html" style="--i:7">Applications web & mobile</a><a class="mobile-sub" href="ia-automatisation.html" style="--i:8">IA & automatisation</a><a class="mobile-sub" href="closing.html" style="--i:9">Suivi commercial</a>
     <a href="infos.html" style="--i:9">Infos</a>
     <a href="contact.html" style="--i:10">Contact</a>
   </nav>
   <div class="mobile-foot">
-    <a class="btn" href="contact.html">Discuter de mon projet</a>
+    <a class="btn" href="contact.html">Demander un devis</a>
     <p class="mobile-meta">Réponse sous 24 h · FR / EN</p>
   </div>
 </div>
@@ -81,7 +86,7 @@
       </nav>
       <h1 class="h2">Conditions<br><em>générales de vente.</em></h1>
       <p class="lead" style="margin-top:1.25rem">Les règles qui encadrent chaque prestation : commande, paiement, retours inclus, délais, garantie et propriété des livrables.</p>
-      <p class="legal-date">Dernière mise à jour : 11 septembre 2026</p>
+      <p class="legal-date">Dernière mise à jour : 15 septembre 2026</p>
     </div>
   </section>
 
@@ -287,9 +292,9 @@
     <div class="footer-top">
       <div class="brand" aria-label="BEN WEB, accueil"><img class="brand-mark" src="assets/logo-mark.png" alt="" width="34" height="34" decoding="async"><span>BEN WEB<small>Freelance Digital & IA</small></span></div>
       <div class="footer-cols">
-        <div class="footer-col">
+        <div class="footer-col footer-services">
           <h4>Services</h4>
-          <a href="applications.html">Applications web & mobile</a><a href="sites-internet.html">Création de sites internet</a><a href="audit-marketing.html">Audit & Marketing</a><a href="cartes-restaurant.html">Cartes restaurant connectées</a><a href="cartes-nfc.html">Cartes digitales & NFC</a><a href="ia-automatisation.html">IA & automatisation</a><a href="closing.html">Setting & Closing</a>
+          <div class="footer-service-links"><a href="sites-internet.html">Création de sites internet</a><a href="cartes-restaurant.html">Cartes restaurant connectées</a><a href="cartes-nfc.html">Cartes digitales & NFC</a><a href="audit-marketing.html">Audit & Marketing</a><a href="applications.html">Applications web & mobile</a><a href="ia-automatisation.html">IA & automatisation</a><a href="closing.html">Suivi commercial</a></div>
         </div>
         <div class="footer-col">
           <h4>Le studio</h4>
@@ -317,6 +322,8 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20260912c" defer></script>
+<script src="assets/js/main.js?v=20260915a" defer></script>
+
+
 </body>
 </html>

@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-"""Contenu du site BEN WEB — une seule source de vérité pour les 11 pages."""
+"""Contenu du site BEN WEB — contenus commerciaux partagés des pages."""
 
 SITE = {
     "brand": "BEN WEB",
     "baseline": "Freelance Digital & IA",
     "domain": "https://ben-web.com",
     "email": "contact@ben-web.com",
+    "quote_endpoint": "https://formspree.io/f/mwlkgrjo",
     "whatsapp_display": "+66 97 049 9155",
     "whatsapp_link": "https://wa.me/66970499155",
     "instagram": "https://www.instagram.com/benweb",
@@ -163,11 +164,14 @@ CASES = {
 
 
 # --------------------------------------------------------------------------
-# Les 6 services, une page chacun
+# Les 7 services, une page chacun
 # --------------------------------------------------------------------------
 SERVICES = [
     {
         "slug": "applications",
+        "demo": {"id": "story", "fragment": "application", "css": "story.css", "eyebrow": "Un aperçu concret", "title": "Vos demandes, sans les allers-retours.",
+                 "hint": "Un exemple d’outil pour suivre le travail au quotidien.",
+                 "caption": "Démonstration locale : les demandes sont des exemples. Vos essais ne modifient aucun dossier réel."},
         "num": "01",
         "featured": True,
         "nav": "Applications web & mobile",
@@ -178,7 +182,7 @@ SERVICES = [
         "meta_title": "Création d'applications web & mobile : outils métier, dashboards, SaaS",
         "meta_desc": "Applications web sur mesure, installables sur mobile : outils métier, tableaux de bord, espaces clients, back-offices et MVP SaaS.",
         "h1": "Applications<br><em>web & mobile</em>",
-        "lead": "Quand le tableur ne suit plus, qu'on se transmet des informations par capture d'écran et que chaque fin de mois demande trois heures de recopie : c'est le moment de passer à un outil qui travaille pour vous.",
+        "lead": "Vos demandes, rendez-vous et documents réunis dans un outil adapté à votre métier. Accessible au bureau comme sur téléphone.",
         "chips": ["Installable sur mobile (PWA)", "Espaces client & admin", "Connecté à vos outils"],
         "problem": "Les logiciels du marché sont soit trop chers, soit trop larges : vous payez chaque mois pour quarante fonctions dont vous en utilisez trois, et jamais celles dont vous avez vraiment besoin. Alors tout finit dans un tableur partagé que personne ne maîtrise vraiment.",
         "solution": "Je construis l'outil qui correspond exactement à votre façon de travailler : vos étapes, votre vocabulaire, vos règles. Accessible depuis un navigateur, installable sur le téléphone comme une application, connecté à ce que vous utilisez déjà, et sans abonnement mensuel imposé.",
@@ -195,6 +199,9 @@ SERVICES = [
     },
     {
         "slug": "sites-internet",
+        "demo": {"id": "sites", "css": "sites.css", "title": "Une activité. Un univers à vous.",
+                 "hint": "Choisissez un style et explorez son aperçu.",
+                 "caption": "Trois interfaces de démonstration et un extrait adapté d’un projet de tourisme en cours."},
         "num": "02",
         "nav": "Création de sites internet",
         "icon": "site",
@@ -204,7 +211,7 @@ SERVICES = [
         "meta_title": "Création de site internet sur mesure : vitrine, e-commerce, refonte",
         "meta_desc": "Sites vitrines, landing pages, boutiques en ligne et refontes. Design sur mesure, code propre, performance et SEO technique. Première version en 48–72 h.",
         "h1": "Création de<br><em>sites internet</em>",
-        "lead": "Un site qui vous ressemble, qui charge instantanément et qui donne envie de vous écrire. Pas un template acheté et rempli à la hâte : une structure pensée pour votre activité et écrite à la main.",
+        "lead": "Un site qui présente votre activité et donne envie de vous contacter. Découvrez comment sa présentation peut changer selon votre métier.",
         "chips": ["Première version en 48–72 h", "Code propre et à vous", "Responsive irréprochable"],
         "problem": "Deux impasses classiques : le site fait sur un constructeur en ligne, lent, générique et impossible à faire évoluer, ou le devis d'agence à plusieurs milliers d'euros avec trois mois de délai. Entre les deux, il n'y a souvent rien.",
         "solution": "Je conçois et développe votre site sur mesure, avec les outils modernes et un workflow assisté par IA qui supprime le temps mécanique. Vous obtenez un site rapide, propre, référençable et évolutif, livré en quelques jours. Et le code vous appartient entièrement.",
@@ -228,6 +235,9 @@ SERVICES = [
     },
     {
         "slug": "audit-marketing",
+        "demo": {"id": "story", "fragment": "audit", "css": "story.css", "eyebrow": "Un aperçu concret", "title": "Les bonnes priorités, noir sur blanc.",
+                 "hint": "Un exemple de rapport, pensé pour un restaurant.",
+                 "caption": "Données de démonstration : ces scores et constats illustrent le livrable, sans mesurer un client réel."},
         "num": "03",
         "nav": "Audit & Marketing",
         "icon": "audit",
@@ -237,7 +247,7 @@ SERVICES = [
         "meta_title": "Audit de site et marketing digital pour entreprises",
         "meta_desc": "Audit complet de votre site existant, performance, SEO, mobile et conversion, avec un rapport priorisé. Puis acquisition, landing pages et contenus.",
         "h1": "Audit<br><em>&amp; marketing</em>",
-        "lead": "Avant de refaire quoi que ce soit, il faut savoir ce qui ne va pas. J'audite votre site existant, je vous rends les priorités classées par impact, puis je m'occupe de ce qui ramène des clients.",
+        "lead": "Votre site attire peu de demandes ? Recevez un regard clair sur ce qui bloque, avec une liste de corrections classées par priorité.",
         "chips": ["Rapport d'audit en 48 h", "Priorités classées par impact", "SEO, mobile, conversion"],
         "problem": "Beaucoup d'entreprises paient pour une visibilité qu'elles ne mesurent pas. Le site est lent, invisible sur Google, illisible sur téléphone, et personne ne sait vraiment pourquoi les visiteurs repartent sans écrire. Refaire le site en entier coûte cher et ne règle pas toujours le vrai problème.",
         "solution": "Je commence par regarder ce que vous avez déjà : vitesse, structure, référencement, parcours mobile, clarté du message. Vous recevez un rapport classé par impact et par effort, assez précis pour être exécuté par n'importe qui. Ensuite, si vous le souhaitez, je m'occupe des corrections et de tout ce qui ramène du trafic utile.",
@@ -259,21 +269,27 @@ SERVICES = [
                 ("Mesure", "Analytics et suivi des événements : vous savez ce qui ramène des clients, pas seulement des clics."),
             ]),
         ],
-        "cases": ["meen"],
+        "cases": [],
         "note": "L'audit se facture au forfait, annoncé avant de commencer. Il reste utile même si vous confiez ensuite les corrections à quelqu'un d'autre : le rapport est écrit pour être exécutable par n'importe quel prestataire.",
     },
     {
         "slug": "cartes-restaurant",
+        "demo": {"id": "restaurant", "title": "De la table à la cuisine.",
+                 "hint": "Ajoutez un plat, puis envoyez la commande.",
+                 "caption": "Démonstration interactive. Aucune commande réelle n’est envoyée."},
         "num": "04",
         "nav": "Cartes restaurant connectées",
         "icon": "resto",
-        "thumb": "assets/work/mockup-restaurant.webp",
-        "thumb_alt": "Maquette d'interface : carte sur téléphone, écran cuisine et tableau de bord",
+        "thumb": "assets/work/restaurant-demo.webp",
+        "thumb_alt": "Carte de restaurant sur téléphone et commande prête sur l’écran cuisine",
+        "thumb_width": 2272,
+        "thumb_height": 1674,
+        "thumb_contain": True,
         "hub_line": "Carte QR multilingue, commandes envoyées directement en cuisine, suivi client et tableau de bord.",
         "meta_title": "Carte de restaurant connectée : commandes en cuisine & suivi",
         "meta_desc": "Carte digitale multilingue par QR code : le client commande depuis sa table, la commande part directement en cuisine, avec suivi, paiement en ligne et tableau de bord.",
         "h1": "Cartes restaurant<br><em>connectées</em>",
-        "lead": "Le client scanne le QR posé sur la table. La carte s'ouvre dans sa langue, avec les photos et les prix à jour. Il commande depuis son téléphone : la commande s'affiche immédiatement en cuisine, et il suit son avancement sans avoir à chercher un serveur du regard.",
+        "lead": "Votre client choisit ses plats sur son téléphone. Sa commande arrive en cuisine, et il suit sa préparation. Essayez juste en dessous.",
         "chips": ["Sans commission par commande", "Carte modifiable en 10 secondes", "Multilingue"],
         "problem": "Une carte imprimée est périmée dès qu'un prix bouge ou qu'un plat manque. Les plateformes de commande prennent une commission sur chaque ticket. Et en salle, le temps passé à prendre les commandes est du temps qui n'est pas passé à servir, surtout quand la clientèle est internationale et que la barrière de la langue ralentit tout.",
         "solution": "Un site de commande à votre nom, sans intermédiaire et sans commission. La carte est multilingue et se met à jour en quelques secondes depuis votre téléphone. Les commandes arrivent directement sur l'écran de la cuisine, horodatées et numérotées par table. Le client suit son statut, paie en ligne s'il le souhaite, et vous récupérez les chiffres qui comptent dans un tableau de bord.",
@@ -285,11 +301,14 @@ SERVICES = [
             ("Paiement en ligne (option)", "Encaissement à la commande ou à la fin du repas, selon votre fonctionnement."),
             ("Tableau de bord & KPI", "Plats les plus vendus, panier moyen, heures de pointe, chiffre par service."),
         ],
-        "cases": ["resto"],
+        "cases": [],
         "note": "Le paiement en ligne dépend d'un prestataire d'encaissement (Stripe ou équivalent) : je réalise l'intégration, les frais de transaction restent ceux du prestataire.",
     },
     {
         "slug": "cartes-nfc",
+        "demo": {"id": "nfc", "css": "nfc.css", "title": "Un geste. Toutes vos coordonnées.",
+                 "hint": "Retournez la carte, puis approchez-la du téléphone.",
+                 "caption": "Simulation du geste NFC. Les coordonnées de Benjamin sont réelles."},
         "num": "05",
         "nav": "Cartes digitales & NFC",
         "icon": "nfc",
@@ -299,7 +318,7 @@ SERVICES = [
         "meta_title": "Cartes de visite digitales & NFC pour commerciaux",
         "meta_desc": "Carte de visite digitale reliée à une puce NFC : votre prospect approche son téléphone, votre fiche s'ouvre et il vous enregistre en un geste. Livrée en 48 h.",
         "h1": "Cartes digitales &<br><em>NFC</em>",
-        "lead": "Votre prospect approche son téléphone de votre carte. Votre fiche s'ouvre instantanément : photo, activité, boutons d'appel, WhatsApp, e-mail, LinkedIn. Il vous enregistre en un geste. Plus rien ne se perd au fond d'une poche.",
+        "lead": "Une carte à approcher du téléphone. Votre photo, vos liens et vos coordonnées s’ouvrent : votre interlocuteur peut vous retrouver en un geste.",
         "chips": ["Livrée en 48 h", "Commerciaux · indépendants · équipes", "Modifiable à distance"],
         "problem": "Une carte de visite papier coûte cher à réimprimer, se perd, et ne dit rien de plus que votre nom. Après un salon ou un rendez-vous, la moitié de vos contacts ne vous rappellent jamais, non pas parce qu'ils ne sont pas intéressés, mais parce qu'ils n'ont plus vos coordonnées sous la main.",
         "solution": "Je conçois votre page de contact digitale, rapide, élégante et à votre image, puis je l'encode sur une puce NFC. Un contact avec le téléphone ouvre la page. Pas d'application à installer, ni pour vous ni pour votre interlocuteur. Et quand votre numéro, votre poste ou votre offre change, je mets la page à jour : la carte physique, elle, ne bouge pas.",
@@ -316,6 +335,9 @@ SERVICES = [
     },
     {
         "slug": "ia-automatisation",
+        "demo": {"id": "story", "fragment": "automatisation", "css": "story.css", "eyebrow": "Un aperçu concret", "title": "Les tâches répétitives s’enchaînent seules.",
+                 "hint": "Suivez une demande, du message reçu à la réponse préparée.",
+                 "caption": "Simulation : aucun outil externe ni aucune IA ne sont appelés ici. Le fonctionnement réel est adapté à votre activité."},
         "num": "06",
         "nav": "IA & automatisation",
         "icon": "ia",
@@ -325,7 +347,7 @@ SERVICES = [
         "meta_title": "IA & automatisation : workflows, intégrations et assistants sur mesure",
         "meta_desc": "Automatisation des tâches répétitives, intégration de modèles IA, assistants et scripts métier. Objectif : du temps récupéré, pas de la technologie pour la technologie.",
         "h1": "IA &<br><em>automatisation</em>",
-        "lead": "Chaque semaine, la même série de gestes : recopier, renommer, relancer, republier. Ce temps-là est récupérable. L'objectif n'est jamais la technologie, c'est le nombre d'heures que vous ne passerez plus dessus.",
+        "lead": "Moins de messages à recopier et de documents à classer. Vos outils se transmettent les informations et préparent la suite, selon les règles que vous choisissez.",
         "chips": ["Gain de temps mesurable", "Connecté à vos outils", "Sans abonnement imposé"],
         "problem": "Les tâches répétitives ne se voient pas dans un bilan, mais elles coûtent : la saisie de commandes, la mise à jour d'un catalogue, la rédaction de fiches produits, les relances, les rapports mensuels. Ce sont souvent plusieurs heures par semaine, tous les mois de l'année.",
         "solution": "Je repère les tâches automatisables, puis je construis l'automatisation correspondante : un script, une intégration entre vos outils, ou un assistant connecté à un modèle IA. Vous gardez le contrôle et la validation ; la machine fait le travail mécanique.",
@@ -341,8 +363,11 @@ SERVICES = [
     },
     {
         "slug": "closing",
+        "demo": {"id": "story", "fragment": "closing", "css": "story.css", "eyebrow": "Un aperçu concret", "title": "Une demande qui ne reste pas sans suite.",
+                 "hint": "Suivez les étapes d’un échange commercial.",
+                 "caption": "Parcours illustratif, sans client réel ni résultat garanti. Le suivi mène à une décision claire, qu’elle soit positive ou négative."},
         "num": "07",
-        "nav": "Setting & Closing",
+        "nav": "Suivi commercial",
         "icon": "closing",
         "thumb": "assets/work/mockup-closing.webp",
         "thumb_alt": "Illustration : des leads entrants jusqu'à la vente conclue",
@@ -350,8 +375,8 @@ SERVICES = [
         "hub_line": "Vos leads traités, qualifiés et conclus : je réponds, je qualifie, je prends les rendez-vous et je closes.",
         "meta_title": "Setting et closing : traitement des leads et appels de vente",
         "meta_desc": "Réponse aux leads, qualification, prise de rendez-vous, appels de vente en visio, traitement des objections et relance. Commission sur les ventes ou forfait, sur devis.",
-        "h1": "Setting<br><em>&amp; closing</em>",
-        "lead": "Vous générez des leads, mais ils dorment dans vos messages privés. Les relances passent à la trappe, les rendez-vous ne se transforment pas. Je prends cette partie en charge, de la première réponse jusqu'à la vente conclue.",
+        "h1": "Des demandes<br><em>suivies jusqu’au bout.</em>",
+        "lead": "Vos messages reçoivent une réponse, vos rendez-vous sont préparés et vos devis relancés. Je prends le relais pour accompagner chaque demande jusqu’à une décision.",
         "chips": ["Commission ou forfait, sur devis", "Coachs, formateurs, agences, e-commerce, SaaS", "FR et EN"],
         "problem": "Un lead qui attend deux jours est un lead perdu. La plupart des indépendants et des petites structures répondent quand elles ont le temps, entre deux livraisons client. Résultat : des prospects tièdes, des rendez-vous non confirmés, des devis jamais relancés, et l'impression que la publicité ou le contenu ne rapportent rien. Le problème n'est presque jamais le volume de leads, c'est ce qu'on en fait dans les heures qui suivent.",
         "solution": "Je prends le relais sur toute la partie commerciale. Je réponds aux messages, je qualifie pour ne garder que les gens vraiment concernés, je pose les rendez-vous dans votre agenda et je les mène en visio jusqu'à la décision. Vous gardez votre produit et votre expertise, je m'occupe de la conversation qui mène à la vente. Tout est tracé, pour que vous sachiez précisément où en est chaque prospect.",
@@ -367,3 +392,20 @@ SERVICES = [
         "note": "Rémunération à la commission sur les ventes ou au forfait, sur devis. Le périmètre se fixe au cadrage : volume de leads, plages horaires, outils utilisés et ce qui reste de votre côté. Les missions commerciales étant confidentielles, cette page ne présente pas d'étude de cas publique, contrairement aux autres services.",
     },
 ]
+
+# Ordre de présentation : les besoins des commerces locaux d’abord.
+_SERVICE_ORDER = ["sites-internet", "cartes-restaurant", "cartes-nfc", "audit-marketing", "applications", "ia-automatisation", "closing"]
+_HUB_LINES = {
+    "sites-internet": "Un site à votre image pour présenter votre activité et recevoir des demandes.",
+    "cartes-restaurant": "Vos clients choisissent leurs plats. Les commandes arrivent directement en cuisine.",
+    "cartes-nfc": "Votre photo, vos coordonnées et vos liens, partagés en un geste.",
+    "audit-marketing": "Un regard clair sur votre site, et les améliorations à faire en priorité.",
+    "applications": "Un outil pour organiser vos réservations, vos dossiers ou votre suivi client.",
+    "ia-automatisation": "Vos tâches répétitives se font seules. Vous gardez la main.",
+    "closing": "Vos demandes sont suivies, vos prospects relancés et vos rendez-vous préparés.",
+}
+SERVICES.sort(key=lambda service: _SERVICE_ORDER.index(service["slug"]))
+for _index, _service in enumerate(SERVICES, 1):
+    _service["num"] = f"{_index:02d}"
+    _service["featured"] = _service["slug"] in ("sites-internet", "cartes-restaurant")
+    _service["hub_line"] = _HUB_LINES[_service["slug"]]

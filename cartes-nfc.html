@@ -26,8 +26,12 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/InterTight-300_800.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/InstrumentSerif-400-italic.woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=20260912c">
-<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}.hero h1 .line>span{transform:none!important}</style></noscript>
+<link rel="stylesheet" href="assets/css/style.css?v=20260915a">
+<link rel="stylesheet" href="assets/css/accessibility.css?v=20260915a">
+
+<link rel="stylesheet" href="assets/demos/demos.css?v=20260915a">
+<link rel="stylesheet" href="assets/demos/nfc.css?v=20260915a">
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important;filter:none!important}.hero h1 .line>span{transform:none!important}</style></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,17 +54,18 @@
     <nav class="nav-links" aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
       <div class="nav-drop">
+        <a class="nav-services-fallback" href="index.html#services">Services</a>
         <button type="button" class="nav-drop-btn is-active" aria-expanded="false" aria-controls="services-menu">
           Services
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
         </button>
-        <div class="nav-menu" id="services-menu"><a href="applications.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Outils métier, tableaux de bord, espaces clients et back-offices sur mesure.</small></span></a><a href="sites-internet.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Sites vitrines, landing pages, boutiques et refontes, conçus sur mesure, jamais sur template.</small></span></a><a href="audit-marketing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Ce qui cloche sur votre site existant, puis ce qui ramène vraiment des clients.</small></span></a><a href="cartes-restaurant.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Carte QR multilingue, commandes envoyées directement en cuisine, suivi client et tableau de bord.</small></span></a><a href="cartes-nfc.html" aria-current="page"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Une carte physique NFC + une page de contact qui s'ouvre d'un simple contact avec le téléphone.</small></span></a><a href="ia-automatisation.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Supprimer les tâches répétitives : scripts, intégrations IA et outils connectés entre eux.</small></span></a><a href="closing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Setting & Closing</b><small>Vos leads traités, qualifiés et conclus : je réponds, je qualifie, je prends les rendez-vous et je closes.</small></span></a></div>
+        <div class="nav-menu" id="services-menu"><a href="sites-internet.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Un site à votre image pour présenter votre activité et recevoir des demandes.</small></span></a><a href="cartes-restaurant.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Vos clients choisissent leurs plats. Les commandes arrivent directement en cuisine.</small></span></a><a href="cartes-nfc.html" aria-current="page"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Votre photo, vos coordonnées et vos liens, partagés en un geste.</small></span></a><a href="audit-marketing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Un regard clair sur votre site, et les améliorations à faire en priorité.</small></span></a><a href="applications.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Un outil pour organiser vos réservations, vos dossiers ou votre suivi client.</small></span></a><a href="ia-automatisation.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Vos tâches répétitives se font seules. Vous gardez la main.</small></span></a><a href="closing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Suivi commercial</b><small>Vos demandes sont suivies, vos prospects relancés et vos rendez-vous préparés.</small></span></a></div>
       </div>
       <a href="infos.html">Infos</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn" href="contact.html">Discuter de mon projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn" href="contact.html">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-panel" aria-label="Ouvrir le menu">
         <span></span><span></span>
       </button>
@@ -72,19 +77,19 @@
   <nav aria-label="Navigation mobile">
     <a href="index.html" style="--i:1">Accueil</a>
     <p class="mobile-label" style="--i:2">Services</p>
-    <a class="mobile-sub" href="applications.html" style="--i:3">Applications web & mobile</a><a class="mobile-sub" href="sites-internet.html" style="--i:4">Création de sites internet</a><a class="mobile-sub" href="audit-marketing.html" style="--i:5">Audit & Marketing</a><a class="mobile-sub" href="cartes-restaurant.html" style="--i:6">Cartes restaurant connectées</a><a class="mobile-sub" href="cartes-nfc.html" style="--i:7">Cartes digitales & NFC</a><a class="mobile-sub" href="ia-automatisation.html" style="--i:8">IA & automatisation</a><a class="mobile-sub" href="closing.html" style="--i:9">Setting & Closing</a>
+    <a class="mobile-sub" href="sites-internet.html" style="--i:3">Création de sites internet</a><a class="mobile-sub" href="cartes-restaurant.html" style="--i:4">Cartes restaurant connectées</a><a class="mobile-sub" href="cartes-nfc.html" style="--i:5">Cartes digitales & NFC</a><a class="mobile-sub" href="audit-marketing.html" style="--i:6">Audit & Marketing</a><a class="mobile-sub" href="applications.html" style="--i:7">Applications web & mobile</a><a class="mobile-sub" href="ia-automatisation.html" style="--i:8">IA & automatisation</a><a class="mobile-sub" href="closing.html" style="--i:9">Suivi commercial</a>
     <a href="infos.html" style="--i:9">Infos</a>
     <a href="contact.html" style="--i:10">Contact</a>
   </nav>
   <div class="mobile-foot">
-    <a class="btn" href="contact.html">Discuter de mon projet</a>
+    <a class="btn" href="contact.html">Demander un devis</a>
     <p class="mobile-meta">Réponse sous 24 h · FR / EN</p>
   </div>
 </div>
 
 <main id="main">
 
-  <section class="page-hero">
+  <section class="page-hero page-hero--demo">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="grid-lines" aria-hidden="true"></div>
     <div class="container">
@@ -93,59 +98,98 @@
         <a href="index.html#services">Services</a><span aria-hidden="true">/</span>
         <span aria-current="page">Cartes digitales & NFC</span>
       </nav>
-      <span class="eyebrow">Service 05 / 07</span>
+      <span class="eyebrow">Service 03 / 07</span>
       <h1 class="display">Cartes digitales &<br><em>NFC</em></h1>
-      <p class="lead">Votre prospect approche son téléphone de votre carte. Votre fiche s'ouvre instantanément : photo, activité, boutons d'appel, WhatsApp, e-mail, LinkedIn. Il vous enregistre en un geste. Plus rien ne se perd au fond d'une poche.</p>
+      <p class="lead">Une carte à approcher du téléphone. Votre photo, vos liens et vos coordonnées s’ouvrent : votre interlocuteur peut vous retrouver en un geste.</p>
       <div class="hero-cta">
-        <a class="btn btn--lg" href="contact.html">Contactez-moi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn--ghost btn--lg" href="#realisations">Voir les réalisations</a>
+        <a class="btn btn--lg" href="contact.html?service=cartes-nfc">Demander mon devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost btn--lg" href="#demo">Essayer la démo ↓</a>
       </div>
       <div class="chip-row"><span class="chip">Livrée en 48 h</span><span class="chip">Commerciaux · indépendants · équipes</span><span class="chip">Modifiable à distance</span></div>
     </div>
   </section>
 
-  
-  <section class="section section--paper">
-    <div class="container">
-      <div class="two-col">
-        <div data-reveal>
-          <span class="eyebrow">Le problème</span>
-          <p class="big-text">Une carte de visite papier coûte cher à réimprimer, se perd, et ne dit rien de plus que votre nom. Après un salon ou un rendez-vous, la moitié de vos contacts ne vous rappellent jamais, non pas parce qu'ils ne sont pas intéressés, mais parce qu'ils n'ont plus vos coordonnées sous la main.</p>
+  <section class="service-demo-section" id="demo" aria-labelledby="demo-title">
+  <div class="container">
+    <div class="demo-intro"><div><span class="eyebrow">À vous d’essayer</span><h2 id="demo-title">Un geste. Toutes vos coordonnées.</h2></div><p>Retournez la carte, puis approchez-la du téléphone.</p></div>
+    <div class="service-demo" data-demo="nfc"><div class="nfc-demo">
+  <div class="nfc-layout">
+    <div class="nfc-card-area">
+      <p class="demo-overline nfc-label">La carte, en main</p>
+      <div class="nfc-card-stage" data-nfc-stage>
+        <div class="nfc-card" id="nfc-physical-card" data-nfc-card>
+          <div class="nfc-face nfc-front" data-nfc-front>
+            <div class="nfc-card-top"><span>BEN WEB</span><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 11a7 7 0 0 1 0 10M18 7a13 13 0 0 1 0 18M23 3a19 19 0 0 1 0 26"/><circle cx="8" cy="16" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+            <p class="nfc-card-title">On garde<br><em>le contact.</em></p>
+            <div class="nfc-card-bottom"><span>Digital &amp; IA</span><span>ben-web.com</span></div>
+          </div>
+          <div class="nfc-face nfc-back" data-nfc-back aria-hidden="true" inert hidden>
+            <span class="nfc-back-label">BEN WEB</span>
+            <div><p class="nfc-owner">Benjamin<br>Ikhmim</p><p class="nfc-owner-role">Freelance digital &amp; IA</p></div>
+            <p class="nfc-card-address">contact@ben-web.com</p>
+          </div>
         </div>
-        <div data-reveal style="--d:1">
-          <span class="eyebrow">Ma réponse</span>
-          <p class="big-text">Je conçois votre page de contact digitale, rapide, élégante et à votre image, puis je l'encode sur une puce NFC. Un contact avec le téléphone ouvre la page. Pas d'application à installer, ni pour vous ni pour votre interlocuteur. Et quand votre numéro, votre poste ou votre offre change, je mets la page à jour : la carte physique, elle, ne bouge pas.</p>
-        </div>
+        <button type="button" class="nfc-card-trigger" data-nfc-card-trigger data-demo-control aria-label="Retourner la carte" aria-controls="nfc-physical-card"></button>
       </div>
-
-      <div class="section-head" style="margin-top:clamp(3.5rem,7vw,6rem)" data-reveal>
-        <div><span class="eyebrow">Ce qui est inclus</span>
-          <h2 class="h2" style="margin-top:1rem">Le détail<br><em>de la prestation.</em></h2></div>
+      <div class="nfc-controls" data-demo-control>
+        <button type="button" class="nfc-flip" data-nfc-flip aria-controls="nfc-physical-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 8a8 8 0 0 1 13-3l3 3M20 3v5h-5M20 16a8 8 0 0 1-13 3l-3-3M4 21v-5h5"/></svg><span data-nfc-flip-label>Retourner la carte</span></button>
+        <button type="button" class="nfc-tap" data-nfc-tap aria-controls="nfc-contact"><span data-nfc-tap-label>Approcher du téléphone</span><span aria-hidden="true">↗</span></button>
       </div>
-      <div class="inc-grid"><div class="inc-card" data-reveal style="--d:0"><b>Page de contact sur mesure</b><p>Votre identité, votre photo, votre message en une phrase. Pas un template générique.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Actions en un clic</b><p>Appeler, envoyer un WhatsApp, un e-mail, ouvrir LinkedIn, enregistrer le contact.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Fiche contact téléchargeable</b><p>Un bouton ajoute vos coordonnées au répertoire du téléphone, avec votre photo.</p></div><div class="inc-card" data-reveal style="--d:0"><b>Puce NFC + QR code</b><p>La puce pour le geste rapide, le QR imprimé en secours pour les téléphones plus anciens.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Mise à jour à distance</b><p>Un changement de numéro ou de poste ne coûte plus une réimpression.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Version équipe</b><p>Une carte par commercial, une charte commune, une page d'entreprise centrale.</p></div></div>
-      <p class="honest-note" data-reveal><span>À savoir</span>Je réalise la page, l'encodage NFC et le visuel de la carte. Les cartes physiques (PVC, métal, bois) sont commandées chez un imprimeur spécialisé. Je vous accompagne sur le choix et la quantité.</p>
+      <p class="nfc-hint">Un geste. Vos coordonnées<br>à portée de main.</p>
     </div>
-  </section>
+    <section class="nfc-phone" data-nfc-phone aria-label="Aperçu de la fiche de contact sur téléphone">
+      <div class="nfc-phone-top" aria-hidden="true"><span>BEN WEB</span><i></i><span>•••</span></div>
+      <div class="nfc-phone-body">
+        <div class="nfc-waiting" data-nfc-waiting hidden>
+          <div class="nfc-touch-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="13" y="5" width="23" height="38" rx="5"/><path d="M21 37h7M20 18a8 8 0 0 1 0 12M25 14a14 14 0 0 1 0 20"/></svg></div>
+          <p>Votre contact.<br><em>En un geste.</em></p>
+          <span>Touchez « Approcher du téléphone » pour essayer.</span>
+        </div>
+        <div class="nfc-contact" id="nfc-contact" data-nfc-contact>
+          <picture class="nfc-portrait"><source srcset="assets/ben.webp" type="image/webp"><img src="assets/ben.png" alt="Benjamin Ikhmim" width="800" height="800" loading="lazy" decoding="async"></picture>
+          <span class="nfc-contact-brand">BEN WEB</span>
+          <h3>Benjamin Ikhmim</h3>
+          <p class="nfc-contact-role">Freelance digital &amp; IA</p>
+          <p class="nfc-contact-description">Des outils simples pour<br>faire avancer votre activité.</p>
+          <button type="button" class="nfc-save" data-nfc-save data-demo-control><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg>Enregistrer le contact</button>
+          <div class="nfc-contact-links">
+            <a href="mailto:contact@ben-web.com" aria-label="Écrire à Benjamin par e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><span>E-mail</span></a>
+            <a href="https://wa.me/66970499155" target="_blank" rel="noopener noreferrer" aria-label="Contacter Benjamin sur WhatsApp, nouvel onglet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 11.6A8.5 8.5 0 0 1 8 19.1L3 21l1.6-5.2a8.5 8.5 0 1 1 15.9-4.2Z"/><path d="M9 7.5c0 4 3 7 7 7l1-2.2-2.5-1-1.2 1.2-2.8-2.8 1.2-1.2-1-2.5Z"/></svg><span>WhatsApp</span></a>
+            <a href="tel:+66970499155" aria-label="Appeler Benjamin au +66 97 049 9155"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 3h4l2 5-3 2a14 14 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2C10 21 3 14 3 5a2 2 0 0 1 2-2Z"/></svg><span>Appeler</span></a>
+          </div>
+          <p class="nfc-contact-email">contact@ben-web.com</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <p class="nfc-status" data-nfc-status role="status" aria-atomic="true"></p>
+  <p class="nfc-simulation">Le geste NFC est simulé ici. Les coordonnées sont celles de Benjamin.</p>
+</div>
+</div>
+    <p class="demo-caption">Simulation du geste NFC. Les coordonnées de Benjamin sont réelles.</p>
+  </div>
+</section>
+  <section class="section section--tight service-inclusions">
+  <div class="container"><details class="service-details">
+    <summary>Ce qui est inclus dans votre projet <span aria-hidden="true">+</span></summary>
+    <div class="service-details-body"><p class="lead">Je conçois votre page de contact digitale, rapide, élégante et à votre image, puis je l'encode sur une puce NFC. Un contact avec le téléphone ouvre la page. Pas d'application à installer, ni pour vous ni pour votre interlocuteur. Et quand votre numéro, votre poste ou votre offre change, je mets la page à jour : la carte physique, elle, ne bouge pas.</p><div class="inc-grid"><div class="inc-card" data-reveal style="--d:0"><b>Page de contact sur mesure</b><p>Votre identité, votre photo, votre message en une phrase. Pas un template générique.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Actions en un clic</b><p>Appeler, envoyer un WhatsApp, un e-mail, ouvrir LinkedIn, enregistrer le contact.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Fiche contact téléchargeable</b><p>Un bouton ajoute vos coordonnées au répertoire du téléphone, avec votre photo.</p></div><div class="inc-card" data-reveal style="--d:0"><b>Puce NFC + QR code</b><p>La puce pour le geste rapide, le QR imprimé en secours pour les téléphones plus anciens.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Mise à jour à distance</b><p>Un changement de numéro ou de poste ne coûte plus une réimpression.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Version équipe</b><p>Une carte par commercial, une charte commune, une page d'entreprise centrale.</p></div></div><p class="honest-note" data-reveal><span>À savoir</span>Je réalise la page, l'encodage NFC et le visuel de la carte. Les cartes physiques (PVC, métal, bois) sont commandées chez un imprimeur spécialisé. Je vous accompagne sur le choix et la quantité.</p></div>
+  </details></div>
+</section>
 
     <section class="section" id="realisations">
     <div class="container">
       <div class="section-head" data-reveal>
         <div><span class="eyebrow">Réalisations</span>
-          <h2 class="h2" style="margin-top:1rem">Ce que j'ai<br><em>déjà construit.</em></h2></div>
-        <p class="lead">Des projets réels, avec leur contexte et leur statut. Rien n'est mis en scène.</p>
+          <h2 class="h2" style="margin-top:1rem">Quelques<br><em>réalisations.</em></h2></div>
+        <p class="lead">Des projets à découvrir, avec leur contexte et leur statut.</p>
       </div>
-      <div class="cases"><article class="case" data-reveal>
+      <div class="cases cases--mini"><article class="case-mini" data-reveal data-spot>
           <div class="case-visual" data-spot><div class="case-frame" aria-hidden="true"><i></i><i></i><i></i><u>carte de visite digitale</u></div><div class="case-media"><img src="assets/work/carte-visite.webp" alt="Carte de visite digitale interactive avec coordonnées et liens directs" width="1440" height="1000" loading="lazy" decoding="async"></div></div>
-          <div class="case-body">
-            
-            <div class="case-tags"><span class="chip chip--type">Carte digitale</span><span class="chip">Mobile-first</span><span class="chip">Partage instantané</span></div>
+          <div class="case-mini-body">
+            <div class="case-tags"><span class="chip chip--type">Carte digitale</span><span class="chip">Mobile-first</span></div>
             <h3>Carte de visite digitale interactive</h3>
-            <p class="case-sub">Une page unique que l'on partage par lien, par QR code, ou d'un simple contact NFC.</p>
-            <div class="case-block"><h4>Problématique</h4><p>Après une rencontre professionnelle, tout se joue dans les minutes qui suivent. Une carte papier se perd ; un lien reste dans la conversation.</p></div>
-            <div class="case-block"><h4>Solution</h4><p>Une carte animée en une page : identité, message court, coordonnées cliquables et boutons directs vers WhatsApp, LINE, LinkedIn et l'e-mail. Chargement immédiat, lisible en une main, et prête à être diffusée par QR code ou puce NFC.</p></div>
-            <ul class="case-features"><li>Animation d'ouverture et effet de profondeur maîtrisé</li><li>Actions directes : appel, e-mail, WhatsApp, LINE, LinkedIn</li><li>Conçue pour être diffusée par lien court, QR code ou NFC</li><li>Poids minimal, aucun framework, hébergement gratuit</li></ul>
-            <div class="case-stack"><span class="chip">HTML · CSS · JS</span><span class="chip">Design mobile-first</span><span class="chip">QR / NFC</span></div>
-            <div class="case-foot"><span class="chip">Réalisé en une journée</span><p class="case-note">Format idéal pour tester une identité avant un site complet.</p></div>
+            <p>Une page unique que l'on partage par lien, par QR code, ou d'un simple contact NFC.</p>
+            <div class="case-foot"><span class="chip">Réalisé en une journée</span></div>
           </div>
         </article></div>
     </div>
@@ -157,7 +201,7 @@
         <h2 class="h2">Un projet de<br><em>cartes digitales & nfc</em> ?</h2>
         <p class="lead" style="margin-top:1.1rem">Décrivez-le en quelques lignes. Vous recevez sous 24 h un avis honnête, un délai et un prix fixe, sans engagement.</p>
       </div>
-      <a class="btn btn--lg" href="contact.html">Contactez-moi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--lg" href="contact.html?service=cartes-nfc">Demander mon devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -167,7 +211,7 @@
       <div><span class="eyebrow">Autres services</span>
         <h2 class="h2" style="margin-top:1rem">Explorer le reste</h2></div>
     </div>
-    <div class="os-grid" data-reveal><a class="os-card" href="applications.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Outils métier, tableaux de bord, espaces clients et back-offices sur mesure.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="sites-internet.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Sites vitrines, landing pages, boutiques et refontes, conçus sur mesure, jamais sur template.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="audit-marketing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Ce qui cloche sur votre site existant, puis ce qui ramène vraiment des clients.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="cartes-restaurant.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Carte QR multilingue, commandes envoyées directement en cuisine, suivi client et tableau de bord.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="ia-automatisation.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Supprimer les tâches répétitives : scripts, intégrations IA et outils connectés entre eux.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="closing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Setting & Closing</b><small>Vos leads traités, qualifiés et conclus : je réponds, je qualifie, je prends les rendez-vous et je closes.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    <div class="os-grid" data-reveal><a class="os-card" href="sites-internet.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Un site à votre image pour présenter votre activité et recevoir des demandes.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="cartes-restaurant.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Vos clients choisissent leurs plats. Les commandes arrivent directement en cuisine.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="audit-marketing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Un regard clair sur votre site, et les améliorations à faire en priorité.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="applications.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Un outil pour organiser vos réservations, vos dossiers ou votre suivi client.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="ia-automatisation.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Vos tâches répétitives se font seules. Vous gardez la main.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="closing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Suivi commercial</b><small>Vos demandes sont suivies, vos prospects relancés et vos rendez-vous préparés.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
   </div>
 </section>
 </main>
@@ -177,9 +221,9 @@
     <div class="footer-top">
       <div class="brand" aria-label="BEN WEB, accueil"><img class="brand-mark" src="assets/logo-mark.png" alt="" width="34" height="34" decoding="async"><span>BEN WEB<small>Freelance Digital & IA</small></span></div>
       <div class="footer-cols">
-        <div class="footer-col">
+        <div class="footer-col footer-services">
           <h4>Services</h4>
-          <a href="applications.html">Applications web & mobile</a><a href="sites-internet.html">Création de sites internet</a><a href="audit-marketing.html">Audit & Marketing</a><a href="cartes-restaurant.html">Cartes restaurant connectées</a><a href="cartes-nfc.html">Cartes digitales & NFC</a><a href="ia-automatisation.html">IA & automatisation</a><a href="closing.html">Setting & Closing</a>
+          <div class="footer-service-links"><a href="sites-internet.html">Création de sites internet</a><a href="cartes-restaurant.html">Cartes restaurant connectées</a><a href="cartes-nfc.html">Cartes digitales & NFC</a><a href="audit-marketing.html">Audit & Marketing</a><a href="applications.html">Applications web & mobile</a><a href="ia-automatisation.html">IA & automatisation</a><a href="closing.html">Suivi commercial</a></div>
         </div>
         <div class="footer-col">
           <h4>Le studio</h4>
@@ -207,6 +251,8 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20260912c" defer></script>
+<script src="assets/js/main.js?v=20260915a" defer></script>
+<script src="assets/demos/loader.js?v=20260915a" defer></script>
+
 </body>
 </html>

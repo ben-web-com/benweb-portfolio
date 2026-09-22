@@ -204,3 +204,34 @@ partir en cuisine, compris ce qu'il achetait — et il est dans le questionnaire
 de devis.
 
 C'est tout. Le reste est au service de ça.
+
+---
+
+## 7. Précisions du 22/09 — à respecter en plus de ce qui précède
+
+**La grille d'accueil existe déjà, ne la reconstruis pas.** `index.html`, section
+`#services` (`.hub-grid`), affiche déjà les 7 services en un seul bloc de
+cartes cliquables (`.hub-card`), chacune menant à sa page. Le seul chantier
+ici est que `hub-media` pointe aujourd'hui vers des captures figées de
+`assets/work/` : quand une démo devient interactive dans le CHANTIER 1,
+remplace la capture correspondante par une nouvelle capture de la démo
+finalisée. Ne change ni le markup de la grille, ni son CSS, ni l'ordre des
+7 cartes.
+
+**Sections « réalisations » : seulement 2 pages sur 7.** Une section montrant
+de vraies réalisations passées ne s'ajoute que sur `sites-internet.html`
+(déjà présente : Azzeddine, et potentiellement Tuktuk Ella si tu l'intègres)
+et `cartes-nfc.html` (à étoffer si des designs de cartes déjà livrés à des
+clients existent dans le dossier, réutilisables tels quels sans les modifier).
+Les 5 autres pages (`cartes-restaurant`, `audit-marketing`, `applications`,
+`ia-automatisation`, `closing`) reçoivent uniquement la démo interactive du
+CHANTIER 1 — n'y ajoute aucune section « réalisations », il n'y a pas encore
+de vrais clients à y montrer.
+
+**Photos pour la démo restaurant.** Le mockup `restaurant.html` actuel n'a
+qu'un écran cuisine (tickets texte) — s'il devient un vrai flux « le
+visiteur commande, ça arrive en cuisine », il faut un menu visuel. Des
+photos de plats génériques (pas de vrai client, clairement une démo) seront
+fournies dans `assets/demo-food/` avant que tu démarres ce chantier. Utilise-
+les seulement si elles sont présentes ; sinon construis le menu en attendant
+avec des blocs de couleur nommés, sans placeholder photo générique.

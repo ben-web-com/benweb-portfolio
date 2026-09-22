@@ -2076,3 +2076,38 @@ body.is-leaving { animation: none; opacity: 0; transition: opacity 0.18s ease; }
 .case-mini .cover-node span { font-size: 0.62rem; }
 .case-mini .cover-foot { font-size: 0.65rem; }
 .case-mini .case-gallery { display: none; }
+
+/* 22. Présentation plus calme : deux services mis en avant, grille régulière. */
+@media (min-width:1081px) {
+  .hub-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+  .hub-card { grid-column:span 2; }
+  .hub-card--featured { grid-column:span 3; }
+  .hub-card:nth-last-child(-n+2) { grid-column:span 3; }
+}
+.hub-link { padding-top:.65rem; }
+.hero-bg::before, .hero-bg::after { animation:none; will-change:auto; }
+.dot { animation:none; }
+.inc-label span { color:var(--paper-text); }
+.service-details .inc-label span { color:var(--accent); }
+.hub-media, .case-media { background:var(--ink-2); }
+.hub-media--contain img { object-fit:contain; }
+/* Sept services : quatre liens à gauche, trois à droite. */
+.footer-service-links {
+  display:grid;
+  grid-template-rows:repeat(4,auto);
+  grid-auto-flow:column;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0.55rem 1.5rem;
+  align-items:start;
+}
+.footer-cols { min-width:0; gap:clamp(1.5rem,3vw,3rem); }
+.footer-services { min-width:0; }
+.footer-service-links a { overflow-wrap:anywhere; }
+@media (max-width:1080px) {
+  .footer-cols { width:100%; }
+  .footer-services { grid-column:1 / -1; }
+}
+@media (max-width:360px) {
+  .cases--mini { grid-template-columns:minmax(0,1fr); }
+  .btn { white-space:normal; text-align:center; line-height:1.3; }
+}

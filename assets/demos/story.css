@@ -1,0 +1,96 @@
+/* Les quatre aperçus animés partagent le même rythme et le même moteur léger. */
+.story-paper { background:var(--paper); color:var(--paper-text); border-radius:var(--radius-m); padding:clamp(1.2rem,3.5vw,3rem); }
+.story-paper :focus-visible { outline-color:var(--paper-text); }
+.story-header { display:flex; justify-content:space-between; align-items:start; gap:1rem; padding-bottom:1.5rem; border-bottom:1px solid var(--paper-line); }
+.story-header .demo-overline { color:var(--paper-muted); }
+.story-header h3 { margin-top:.65rem; max-width:25ch; }
+.story-header .demo-pill { color:var(--paper-muted); }
+.story-lead { font-size:.9375rem; line-height:1.55; color:var(--paper-muted); max-width:55ch; margin-top:1rem; }
+.audit-layout { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:clamp(1.5rem,4vw,3.5rem); margin-top:2rem; }
+.audit-metrics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; align-content:start; }
+.audit-metric { border:1px solid var(--paper-line); border-radius:12px; padding:1rem; }
+.audit-metric h4 { color:var(--paper-muted); font-size:.8125rem; font-weight:400; line-height:1.4; }
+.audit-metric p { margin-top:.7rem; font-size:2.1rem; font-weight:500; line-height:1; font-variant-numeric:tabular-nums; letter-spacing:-.04em; }
+.audit-metric p small { font-size:.8125rem; color:var(--paper-muted); font-weight:400; letter-spacing:0; }
+.audit-track { height:5px; background:var(--paper-2); margin-top:1rem; border-radius:999px; overflow:hidden; }
+.audit-fill { display:block; height:100%; background:var(--paper-text); border-radius:999px; }
+.audit-recommendations { display:grid; gap:1.2rem; }
+.audit-recommendation { border-left:2px solid var(--paper-line); padding-left:1rem; }
+.audit-recommendation.is-revealed { border-color:var(--paper-text); }
+.audit-recommendation small { display:block; font-size:.6875rem; text-transform:uppercase; letter-spacing:.09em; color:var(--paper-muted); margin-bottom:.4rem; }
+.audit-recommendation p { margin-top:.5rem; color:var(--paper-muted); font-size:.8125rem; line-height:1.55; }
+.audit-recommendation .audit-action { color:var(--paper-text); }
+.story-foot { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-top:1.5rem; padding-top:1.1rem; border-top:1px solid var(--line-strong); }
+.story-foot p { color:var(--muted); font-size:.8125rem; max-width:48ch; }
+.story-paper .story-foot { border-color:var(--paper-line); }
+.story-paper .story-foot p, .story-paper .demo-text-button { color:var(--paper-muted); }
+.story-dashboard { border:1px solid var(--line-strong); border-radius:var(--radius-m); overflow:hidden; }
+.story-dashboard-body { padding:clamp(1rem,3vw,2.4rem); }
+.story-dashboard-heading { display:flex; align-items:start; justify-content:space-between; gap:1rem; margin-bottom:1.5rem; }
+.story-dashboard-heading .demo-overline { color:var(--muted); }
+.story-dashboard-heading h3 { margin-top:.6rem; }
+.story-dashboard-heading .demo-pill { color:var(--muted); }
+.app-toolbar { display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; align-items:center; padding-bottom:1rem; }
+.app-count { font-size:.8125rem; color:var(--muted); }
+.app-records { display:grid; gap:.7rem; }
+.app-record { display:grid; grid-template-columns:44px minmax(0,1fr) auto; align-items:center; gap:1rem; padding:1.1rem; background:var(--surface); border:1px solid var(--line-strong); border-radius:12px; }
+.app-record-icon { width:44px; height:44px; border:1px solid var(--line-strong); border-radius:12px; display:grid; place-items:center; color:var(--accent); }
+.app-record-icon svg { width:20px; height:20px; }
+.app-record p { font-size:.8125rem; color:var(--muted); margin-top:.4rem; }
+.app-record-badge { display:block; font-size:.6875rem; color:var(--accent); margin-top:.5rem; }
+.app-record .demo-text-button { color:var(--text); }
+.app-record.is-revealed .app-record-icon { background:var(--accent); color:var(--accent-ink); }
+.app-empty { color:var(--muted); padding:1rem; }
+.workflow-intro { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:2rem; align-items:start; }
+.workflow-intro h3 { max-width:23ch; margin-top:.6rem; }
+.workflow-message { border:1px solid var(--line-strong); border-radius:14px; padding:1rem 1.2rem; background:var(--surface); }
+.workflow-message small { font-size:.6875rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+.workflow-message p { margin-top:.5rem; font-size:.9375rem; }
+.workflow-nodes { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; margin-block:2rem; }
+.workflow-node { position:relative; padding:1.2rem; border:1px solid var(--line-strong); border-radius:14px; background:var(--surface); }
+.workflow-node:not(:last-child)::after { content:"→"; position:absolute; right:-.9rem; top:2rem; color:var(--muted); }
+.workflow-node.is-revealed { border-color:var(--accent); }
+.workflow-node > span { display:grid; place-items:center; width:34px; height:34px; border:1px solid var(--line-strong); border-radius:10px; font-size:.875rem; margin-bottom:1rem; }
+.workflow-node.is-revealed > span { color:var(--accent-ink); background:var(--accent); border-color:var(--accent); }
+.workflow-node h4 { font-size:.9375rem; line-height:1.35; }
+.workflow-node p { font-size:.8125rem; line-height:1.5; margin-top:.6rem; color:var(--muted); }
+.workflow-result { display:flex; align-items:center; gap:.75rem; padding:1rem; border:1px solid var(--line-strong); border-radius:12px; color:var(--muted); }
+.workflow-result > span { color:var(--accent); }
+.workflow-result p { font-size:.875rem; }
+.closing-layout { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(1.5rem,4vw,4rem); }
+.closing-intro { padding:1rem 0; }
+.closing-intro h3 { margin-top:.75rem; }
+.closing-intro > p { font-size:.9375rem; color:var(--muted); margin-top:1rem; max-width:30ch; }
+.closing-request { border:1px solid var(--line-strong); border-radius:12px; padding:1rem; margin-top:1.5rem; }
+.closing-request > span { color:var(--muted); font-size:.6875rem; text-transform:uppercase; letter-spacing:.08em; }
+.closing-request p { margin-top:.5rem; font-size:.9375rem; }
+.closing-stages { display:grid; gap:.7rem; }
+.closing-stage { display:grid; grid-template-columns:38px minmax(0,1fr); gap:1rem; align-items:start; border:1px solid var(--line-strong); border-radius:12px; padding:1.1rem; background:var(--surface); }
+.closing-stage > span { width:38px; height:38px; display:grid; place-items:center; border:1px solid var(--line-strong); border-radius:50%; color:var(--muted); }
+.closing-stage.is-current { border-color:var(--accent); }
+.closing-stage.is-revealed > span { color:var(--accent-ink); background:var(--accent); border-color:var(--accent); }
+.closing-stage h4 { font-size:1rem; margin-top:.1rem; }
+.closing-stage p { color:var(--muted); font-size:.8125rem; margin-top:.4rem; }
+.story-status { color:var(--accent)!important; }
+@media (prefers-reduced-motion:no-preference) {
+  .story-enhanced .audit-recommendation { transition:opacity .35s,transform .35s; }
+  .story-enhanced .audit-recommendation:not(.is-revealed) { opacity:0; transform:translateY(8px); }
+  .workflow-node, .closing-stage { transition:border-color .25s; }
+  .app-record-icon { transition:background-color .3s,color .3s; }
+}
+@media (max-width:760px) {
+  .audit-layout, .workflow-intro, .closing-layout { grid-template-columns:minmax(0,1fr); gap:1.5rem; }
+  .workflow-nodes { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem; }
+  .workflow-node::after { display:none; }
+  .app-record { grid-template-columns:34px minmax(0,1fr); gap:.7rem; padding:.9rem; }
+  .app-record-icon { width:34px; height:34px; }
+  .app-record .demo-text-button { grid-column:2; justify-self:start; text-align:left; padding-left:0; }
+  .story-header { display:block; }
+  .story-header .demo-pill { margin-top:1rem; }
+}
+@media (max-width:380px) {
+  .workflow-nodes { grid-template-columns:minmax(0,1fr); }
+  .audit-metrics { gap:.65rem; }
+  .audit-metric { padding:.8rem; }
+  .audit-metric p { font-size:1.75rem; }
+}

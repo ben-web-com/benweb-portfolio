@@ -26,8 +26,12 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/InterTight-300_800.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/InstrumentSerif-400-italic.woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=20260912c">
-<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}.hero h1 .line>span{transform:none!important}</style></noscript>
+<link rel="stylesheet" href="assets/css/style.css?v=20260915a">
+<link rel="stylesheet" href="assets/css/accessibility.css?v=20260915a">
+
+<link rel="stylesheet" href="assets/demos/demos.css?v=20260915a">
+<link rel="stylesheet" href="assets/demos/sites.css?v=20260915a">
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important;filter:none!important}.hero h1 .line>span{transform:none!important}</style></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,17 +54,18 @@
     <nav class="nav-links" aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
       <div class="nav-drop">
+        <a class="nav-services-fallback" href="index.html#services">Services</a>
         <button type="button" class="nav-drop-btn is-active" aria-expanded="false" aria-controls="services-menu">
           Services
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
         </button>
-        <div class="nav-menu" id="services-menu"><a href="applications.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Outils métier, tableaux de bord, espaces clients et back-offices sur mesure.</small></span></a><a href="sites-internet.html" aria-current="page"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Sites vitrines, landing pages, boutiques et refontes, conçus sur mesure, jamais sur template.</small></span></a><a href="audit-marketing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Ce qui cloche sur votre site existant, puis ce qui ramène vraiment des clients.</small></span></a><a href="cartes-restaurant.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Carte QR multilingue, commandes envoyées directement en cuisine, suivi client et tableau de bord.</small></span></a><a href="cartes-nfc.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Une carte physique NFC + une page de contact qui s'ouvre d'un simple contact avec le téléphone.</small></span></a><a href="ia-automatisation.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Supprimer les tâches répétitives : scripts, intégrations IA et outils connectés entre eux.</small></span></a><a href="closing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Setting & Closing</b><small>Vos leads traités, qualifiés et conclus : je réponds, je qualifie, je prends les rendez-vous et je closes.</small></span></a></div>
+        <div class="nav-menu" id="services-menu"><a href="sites-internet.html" aria-current="page"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Un site à votre image pour présenter votre activité et recevoir des demandes.</small></span></a><a href="cartes-restaurant.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Vos clients choisissent leurs plats. Les commandes arrivent directement en cuisine.</small></span></a><a href="cartes-nfc.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Votre photo, vos coordonnées et vos liens, partagés en un geste.</small></span></a><a href="audit-marketing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Un regard clair sur votre site, et les améliorations à faire en priorité.</small></span></a><a href="applications.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Un outil pour organiser vos réservations, vos dossiers ou votre suivi client.</small></span></a><a href="ia-automatisation.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Vos tâches répétitives se font seules. Vous gardez la main.</small></span></a><a href="closing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Suivi commercial</b><small>Vos demandes sont suivies, vos prospects relancés et vos rendez-vous préparés.</small></span></a></div>
       </div>
       <a href="infos.html">Infos</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn" href="contact.html">Discuter de mon projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn" href="contact.html">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-panel" aria-label="Ouvrir le menu">
         <span></span><span></span>
       </button>
@@ -72,19 +77,19 @@
   <nav aria-label="Navigation mobile">
     <a href="index.html" style="--i:1">Accueil</a>
     <p class="mobile-label" style="--i:2">Services</p>
-    <a class="mobile-sub" href="applications.html" style="--i:3">Applications web & mobile</a><a class="mobile-sub" href="sites-internet.html" style="--i:4">Création de sites internet</a><a class="mobile-sub" href="audit-marketing.html" style="--i:5">Audit & Marketing</a><a class="mobile-sub" href="cartes-restaurant.html" style="--i:6">Cartes restaurant connectées</a><a class="mobile-sub" href="cartes-nfc.html" style="--i:7">Cartes digitales & NFC</a><a class="mobile-sub" href="ia-automatisation.html" style="--i:8">IA & automatisation</a><a class="mobile-sub" href="closing.html" style="--i:9">Setting & Closing</a>
+    <a class="mobile-sub" href="sites-internet.html" style="--i:3">Création de sites internet</a><a class="mobile-sub" href="cartes-restaurant.html" style="--i:4">Cartes restaurant connectées</a><a class="mobile-sub" href="cartes-nfc.html" style="--i:5">Cartes digitales & NFC</a><a class="mobile-sub" href="audit-marketing.html" style="--i:6">Audit & Marketing</a><a class="mobile-sub" href="applications.html" style="--i:7">Applications web & mobile</a><a class="mobile-sub" href="ia-automatisation.html" style="--i:8">IA & automatisation</a><a class="mobile-sub" href="closing.html" style="--i:9">Suivi commercial</a>
     <a href="infos.html" style="--i:9">Infos</a>
     <a href="contact.html" style="--i:10">Contact</a>
   </nav>
   <div class="mobile-foot">
-    <a class="btn" href="contact.html">Discuter de mon projet</a>
+    <a class="btn" href="contact.html">Demander un devis</a>
     <p class="mobile-meta">Réponse sous 24 h · FR / EN</p>
   </div>
 </div>
 
 <main id="main">
 
-  <section class="page-hero">
+  <section class="page-hero page-hero--demo">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="grid-lines" aria-hidden="true"></div>
     <div class="container">
@@ -93,50 +98,89 @@
         <a href="index.html#services">Services</a><span aria-hidden="true">/</span>
         <span aria-current="page">Création de sites internet</span>
       </nav>
-      <span class="eyebrow">Service 02 / 07</span>
+      <span class="eyebrow">Service 01 / 07</span>
       <h1 class="display">Création de<br><em>sites internet</em></h1>
-      <p class="lead">Un site qui vous ressemble, qui charge instantanément et qui donne envie de vous écrire. Pas un template acheté et rempli à la hâte : une structure pensée pour votre activité et écrite à la main.</p>
+      <p class="lead">Un site qui présente votre activité et donne envie de vous contacter. Découvrez comment sa présentation peut changer selon votre métier.</p>
       <div class="hero-cta">
-        <a class="btn btn--lg" href="contact.html">Contactez-moi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn--ghost btn--lg" href="#realisations">Voir les réalisations</a>
+        <a class="btn btn--lg" href="contact.html?service=sites-internet">Demander mon devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost btn--lg" href="#demo">Essayer la démo ↓</a>
       </div>
       <div class="chip-row"><span class="chip">Première version en 48–72 h</span><span class="chip">Code propre et à vous</span><span class="chip">Responsive irréprochable</span></div>
     </div>
   </section>
 
-  <section class="section section--tight showcase" id="apercu">
+  <section class="service-demo-section" id="demo" aria-labelledby="demo-title">
   <div class="container">
-    <div class="sc-grid">
-      <div class="sc-left">
-        <div class="sc-stage" data-spot>
-          <figure class="sc-shot is-active" id="u-resto"><img src="assets/work/u-resto.webp" alt="Maquette de site pour un restaurant : accroche éditoriale, réservation et version mobile" width="1440" height="1000" fetchpriority="high" decoding="async"></figure><figure class="sc-shot" id="u-avocat" aria-hidden="true"><img src="assets/work/u-avocat.webp" alt="Maquette de site pour un cabinet d'avocats : domaines d'expertise et prise de rendez-vous" width="1440" height="1000" loading="lazy" decoding="async"></figure><figure class="sc-shot" id="u-sport" aria-hidden="true"><img src="assets/work/u-sport.webp" alt="Maquette de site pour une salle de sport : planning des cours et réservation" width="1440" height="1000" loading="lazy" decoding="async"></figure>
+    <div class="demo-intro"><div><span class="eyebrow">À vous d’essayer</span><h2 id="demo-title">Une activité. Un univers à vous.</h2></div><p>Choisissez un style et explorez son aperçu.</p></div>
+    <div class="service-demo" data-demo="sites"><div class="sites-demo">
+  <div class="sites-selector" role="group" aria-label="Choisir un exemple de site" data-demo-control>
+    <button type="button" data-site-select="restaurant" aria-pressed="true" aria-controls="sites-preview">Restaurant</button>
+    <button type="button" data-site-select="avocat" aria-pressed="false" aria-controls="sites-preview">Cabinet d’avocats</button>
+    <button type="button" data-site-select="sport" aria-pressed="false" aria-controls="sites-preview">Salle de sport</button>
+    <button type="button" data-site-select="tourism" aria-pressed="false" aria-controls="sites-preview">Tourisme au Sri Lanka</button>
+  </div>
+  <div class="sites-browser">
+    <div class="sites-browser-bar"><span class="sites-browser-dots" aria-hidden="true"><i></i><i></i><i></i></span><span data-site-browser-label>Restaurant · aperçu</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18"/></svg></div>
+    <div id="sites-preview" data-sites-preview>
+      <section class="sites-panel sites-restaurant" data-site-panel="restaurant" aria-label="Exemple de site de restaurant">
+        <div class="sites-rest-hero">
+          <img class="sites-cover" src="assets/demos/images/resto-hero.webp" alt="" width="1400" height="787" loading="lazy" decoding="async">
+          <div class="sites-masthead"><span class="sites-rest-mark">Restaurant</span><span class="sites-kicker">Cuisine de saison</span></div>
+          <div class="sites-rest-copy"><h3>Une bonne table.<br><em>Une belle soirée.</em></h3><p>Une carte courte, le plaisir de partager.</p></div>
         </div>
-        <div class="sc-switch" role="group" aria-label="Changer d'univers">
-          <button type="button" class="sc-tab" data-target="u-resto" aria-pressed="true"><span class="sc-thumb"><img src="assets/work/u-resto.webp" alt="" width="1440" height="1000" loading="lazy" decoding="async"></span><span class="sc-lab"><b>Restaurant</b><small>Bangkok</small></span></button><button type="button" class="sc-tab" data-target="u-avocat" aria-pressed="false"><span class="sc-thumb"><img src="assets/work/u-avocat.webp" alt="" width="1440" height="1000" loading="lazy" decoding="async"></span><span class="sc-lab"><b>Cabinet d'avocats</b><small>Lyon</small></span></button><button type="button" class="sc-tab" data-target="u-sport" aria-pressed="false"><span class="sc-thumb"><img src="assets/work/u-sport.webp" alt="" width="1440" height="1000" loading="lazy" decoding="async"></span><span class="sc-lab"><b>Salle de sport</b><small>Paris</small></span></button>
+        <div class="sites-rest-bottom">
+          <details class="sites-disclosure"><summary>Voir la carte <span aria-hidden="true">+</span></summary><div class="sites-detail-body"><p class="sites-detail-note">Exemple de carte</p><ul class="sites-menu-list"><li><b>Papaye verte</b><span>Cacahuète, citron vert, piment.</span></li><li><b>Pad thaï du marché</b><span>Poulet, nouilles et tamarin.</span></li><li><b>Riz gluant mangue</b><span>Lait de coco et sésame.</span></li></ul></div></details>
+          <details class="sites-disclosure"><summary>Les horaires <span aria-hidden="true">+</span></summary><div class="sites-detail-body"><p class="sites-detail-note">Exemple d’horaires</p><dl class="sites-hours"><div><dt>Mardi à jeudi</dt><dd>18 h – 23 h</dd></div><div><dt>Vendredi et samedi</dt><dd>12 h – 14 h · 18 h – minuit</dd></div><div><dt>Dimanche</dt><dd>Brunch · 11 h – 16 h</dd></div></dl></div></details>
         </div>
-        <p class="sc-note">Exemples d'interfaces conçus pour la démonstration. Les noms et les enseignes sont fictifs.</p>
-      </div>
-
-      <aside class="sc-sheet" data-reveal>
-        <span class="eyebrow">La prestation</span>
-        <h2 class="h3">Création de sites internet</h2>
-        <p>Je conçois et développe votre site sur mesure, avec les outils modernes et un workflow assisté par IA qui supprime le temps mécanique.</p>
-        <ul class="sc-list"><li><b>Site vitrine</b><span>Présenter votre activité, vos offres et votre crédibilité, et déclencher le contact.</span></li><li><b>Landing page</b><span>Une page unique pour une campagne, un produit ou une offre précise.</span></li><li><b>Boutique en ligne</b><span>Catalogue, tunnel d'achat, paiement, pages légales. Prêt à vendre.</span></li><li><b>Refonte</b><span>Repartir de l'existant : même contenu, meilleure structure, bien meilleure impression.</span></li><li><b>Multilingue</b><span>Une version par langue, avec une vraie structure d'URL, pas une traduction automatique.</span></li><li><b>Hébergement & domaine</b><span>Mise en ligne, nom de domaine, certificat, e-mails professionnels.</span></li></ul>
-        <div class="sc-chips"><span class="chip">Première version en 48–72 h</span><span class="chip">Code propre et à vous</span><span class="chip">Responsive irréprochable</span></div>
-        <a class="btn" href="contact.html">Contactez-moi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </aside>
+      </section>
     </div>
   </div>
-</section>
+  <p class="sites-demo-note" data-site-note>Exemple de site. Les contenus servent à la démonstration.</p>
+  <p class="sites-announcement" data-site-announcement role="status" aria-atomic="true"></p>
 
-  
+  <template data-site-template="avocat">
+    <section class="sites-panel sites-law" data-site-panel="avocat" aria-label="Exemple de site de cabinet d’avocats">
+      <div class="sites-masthead"><span class="sites-law-mark">Cabinet d’avocats</span><span class="sites-kicker">Conseil &amp; accompagnement</span></div>
+      <div class="sites-law-split"><div class="sites-law-copy"><p class="sites-kicker">Un premier échange</p><h3>Vos questions.<br><em>Un chemin clair.</em></h3><p>Comprendre votre situation, identifier les démarches et préparer la suite.</p></div><img src="assets/demos/images/avocat-livres.webp" alt="Des ouvrages juridiques dans une bibliothèque" width="1400" height="787" loading="lazy" decoding="async"></div>
+      <div class="sites-law-bottom">
+        <details class="sites-disclosure"><summary>Domaines d’intervention <span aria-hidden="true">+</span></summary><div class="sites-detail-body"><ul class="sites-menu-list"><li><b>Droit des affaires</b><span>Création d’entreprise et contrats commerciaux.</span></li><li><b>Droit social</b><span>Relations de travail et vie de l’entreprise.</span></li><li><b>Contentieux commercial</b><span>Différends entre professionnels.</span></li></ul></div></details>
+        <details class="sites-disclosure"><summary>Préparer un rendez-vous <span aria-hidden="true">+</span></summary><div class="sites-detail-body"><p>Présentez votre situation en quelques mots, puis rassemblez les documents et échanges qui permettent de la comprendre.</p><p class="sites-detail-note">Exemple de contenu d’accueil d’un cabinet.</p></div></details>
+      </div>
+    </section>
+  </template>
+
+  <template data-site-template="sport">
+    <section class="sites-panel sites-sport" data-site-panel="sport" aria-label="Exemple de site de salle de sport">
+      <div class="sites-sport-hero"><img class="sites-cover" src="assets/demos/images/sport-hero.webp" alt="" width="1400" height="787" loading="lazy" decoding="async"><div class="sites-masthead"><span class="sites-sport-mark">Salle de sport</span><span class="sites-kicker">À votre rythme</span></div><div class="sites-sport-copy"><h3>Bougez.<br>Progressez.<br><em>Recommencez.</em></h3><p>Force, énergie, mobilité.<br>Trouvez le cours qui vous correspond.</p></div></div>
+      <div class="sites-sport-bottom"><details class="sites-disclosure"><summary>Voir le planning <span aria-hidden="true">+</span></summary><div class="sites-detail-body"><p class="sites-detail-note">Exemple de planning · lundi</p><ul class="sites-class-list"><li><span>7 h</span><div><b>Force</b><small>Travail à la barre</small></div></li><li><span>12 h 30</span><div><b>Entraînement intensif</b><small>Enchaînements et cardio</small></div></li><li><span>19 h 30</span><div><b>Mobilité</b><small>Souplesse et récupération</small></div></li></ul></div></details></div>
+    </section>
+  </template>
+
+  <template data-site-template="tourism">
+    <section class="sites-panel sites-tourism" data-site-panel="tourism" aria-label="Extrait d’un site de tourisme au Sri Lanka" lang="fr">
+      <div class="sites-masthead"><span class="sites-tour-mark" data-tour-text="brand">Tourisme au Sri Lanka</span><div class="sites-language" role="group" aria-label="Langue de cet aperçu" lang="fr" data-demo-control><button type="button" data-site-language="fr" aria-pressed="true" aria-label="Français" lang="fr">FR</button><button type="button" data-site-language="en" aria-pressed="false" aria-label="English" lang="en">EN</button></div></div>
+      <div class="sites-tour-split"><div class="sites-tour-copy"><p class="sites-kicker">Ella, Sri Lanka</p><h3><span data-tour-text="title">De beaux jours.</span><br><em data-tour-text="titleEnd">Les chemins d’ici.</em></h3><p data-tour-text="intro">Découvrez Ella en tuk-tuk. Poursuivez le voyage au Sri Lanka en voiture ou en van.</p><span class="sites-tour-tag" data-tour-text="tag">À votre rythme.</span></div><figure class="sites-tour-photo"><img src="assets/demos/images/tourism-hero.webp" alt="Un moment partagé près d’un tuk-tuk bleu au Sri Lanka" data-tour-image width="640" height="481" loading="lazy" decoding="async"><figcaption data-tour-text="caption">Un peu d’aventure. Une belle journée.</figcaption></figure></div>
+      <div class="sites-tour-bottom"><details class="sites-disclosure"><summary><span data-tour-text="action">Découvrir l’excursion</span><span aria-hidden="true">+</span></summary><div class="sites-detail-body"><h4 data-tour-text="trip">Ella en tuk-tuk</h4><p data-tour-text="description">Le Nine Arch Bridge, Little Adam’s Peak et la boucle de Demodara : un aperçu des étapes proposées autour d’Ella.</p><p class="sites-detail-note" data-tour-text="note">Un itinéraire à préparer selon vos envies.</p></div></details></div>
+    </section>
+  </template>
+</div>
+</div>
+    <p class="demo-caption">Trois interfaces de démonstration et un extrait adapté d’un projet de tourisme en cours.</p>
+  </div>
+</section>
+  <section class="section section--tight service-inclusions">
+  <div class="container"><details class="service-details">
+    <summary>Ce qui est inclus dans votre projet <span aria-hidden="true">+</span></summary>
+    <div class="service-details-body"><p class="lead">Je conçois et développe votre site sur mesure, avec les outils modernes et un workflow assisté par IA qui supprime le temps mécanique. Vous obtenez un site rapide, propre, référençable et évolutif, livré en quelques jours. Et le code vous appartient entièrement.</p><div class="inc-grid"><div class="inc-card" data-reveal style="--d:0"><b>Site vitrine</b><p>Présenter votre activité, vos offres et votre crédibilité, et déclencher le contact.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Landing page</b><p>Une page unique pour une campagne, un produit ou une offre précise.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Boutique en ligne</b><p>Catalogue, tunnel d'achat, paiement, pages légales. Prêt à vendre.</p></div><div class="inc-card" data-reveal style="--d:0"><b>Refonte</b><p>Repartir de l'existant : même contenu, meilleure structure, bien meilleure impression.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Multilingue</b><p>Une version par langue, avec une vraie structure d'URL, pas une traduction automatique.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Hébergement & domaine</b><p>Mise en ligne, nom de domaine, certificat, e-mails professionnels.</p></div></div></div>
+  </details></div>
+</section>
 
     <section class="section" id="realisations">
     <div class="container">
       <div class="section-head" data-reveal>
         <div><span class="eyebrow">Réalisations</span>
-          <h2 class="h2" style="margin-top:1rem">Ce que j'ai<br><em>déjà construit.</em></h2></div>
-        <p class="lead">Des projets réels, avec leur contexte et leur statut. Rien n'est mis en scène.</p>
+          <h2 class="h2" style="margin-top:1rem">Quelques<br><em>réalisations.</em></h2></div>
+        <p class="lead">Des projets à découvrir, avec leur contexte et leur statut.</p>
       </div>
       <div class="cases cases--mini"><article class="case-mini" data-reveal data-spot>
           <div class="case-visual" data-spot><div class="case-frame" aria-hidden="true"><i></i><i></i><i></i><u>meen · boutique en ligne</u></div><div class="case-media"><img src="assets/work/meen.webp" alt="Page d'accueil de la boutique Meen : hero produit et bandeau de réassurance" width="1440" height="1000" loading="lazy" decoding="async"></div></div>
@@ -172,7 +216,7 @@
         <h2 class="h2">Un projet de<br><em>création de sites internet</em> ?</h2>
         <p class="lead" style="margin-top:1.1rem">Décrivez-le en quelques lignes. Vous recevez sous 24 h un avis honnête, un délai et un prix fixe, sans engagement.</p>
       </div>
-      <a class="btn btn--lg" href="contact.html">Contactez-moi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--lg" href="contact.html?service=sites-internet">Demander mon devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -182,7 +226,7 @@
       <div><span class="eyebrow">Autres services</span>
         <h2 class="h2" style="margin-top:1rem">Explorer le reste</h2></div>
     </div>
-    <div class="os-grid" data-reveal><a class="os-card" href="applications.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Outils métier, tableaux de bord, espaces clients et back-offices sur mesure.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="audit-marketing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Ce qui cloche sur votre site existant, puis ce qui ramène vraiment des clients.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="cartes-restaurant.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Carte QR multilingue, commandes envoyées directement en cuisine, suivi client et tableau de bord.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="cartes-nfc.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Une carte physique NFC + une page de contact qui s'ouvre d'un simple contact avec le téléphone.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="ia-automatisation.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Supprimer les tâches répétitives : scripts, intégrations IA et outils connectés entre eux.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="closing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Setting & Closing</b><small>Vos leads traités, qualifiés et conclus : je réponds, je qualifie, je prends les rendez-vous et je closes.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    <div class="os-grid" data-reveal><a class="os-card" href="cartes-restaurant.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Vos clients choisissent leurs plats. Les commandes arrivent directement en cuisine.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="cartes-nfc.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Votre photo, vos coordonnées et vos liens, partagés en un geste.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="audit-marketing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Un regard clair sur votre site, et les améliorations à faire en priorité.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="applications.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Un outil pour organiser vos réservations, vos dossiers ou votre suivi client.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="ia-automatisation.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Vos tâches répétitives se font seules. Vous gardez la main.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="closing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Suivi commercial</b><small>Vos demandes sont suivies, vos prospects relancés et vos rendez-vous préparés.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
   </div>
 </section>
 </main>
@@ -192,9 +236,9 @@
     <div class="footer-top">
       <div class="brand" aria-label="BEN WEB, accueil"><img class="brand-mark" src="assets/logo-mark.png" alt="" width="34" height="34" decoding="async"><span>BEN WEB<small>Freelance Digital & IA</small></span></div>
       <div class="footer-cols">
-        <div class="footer-col">
+        <div class="footer-col footer-services">
           <h4>Services</h4>
-          <a href="applications.html">Applications web & mobile</a><a href="sites-internet.html">Création de sites internet</a><a href="audit-marketing.html">Audit & Marketing</a><a href="cartes-restaurant.html">Cartes restaurant connectées</a><a href="cartes-nfc.html">Cartes digitales & NFC</a><a href="ia-automatisation.html">IA & automatisation</a><a href="closing.html">Setting & Closing</a>
+          <div class="footer-service-links"><a href="sites-internet.html">Création de sites internet</a><a href="cartes-restaurant.html">Cartes restaurant connectées</a><a href="cartes-nfc.html">Cartes digitales & NFC</a><a href="audit-marketing.html">Audit & Marketing</a><a href="applications.html">Applications web & mobile</a><a href="ia-automatisation.html">IA & automatisation</a><a href="closing.html">Suivi commercial</a></div>
         </div>
         <div class="footer-col">
           <h4>Le studio</h4>
@@ -222,6 +266,8 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20260912c" defer></script>
+<script src="assets/js/main.js?v=20260915a" defer></script>
+<script src="assets/demos/loader.js?v=20260915a" defer></script>
+
 </body>
 </html>

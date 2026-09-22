@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "ben-web-ab59e"
+  },
+  "targets": {
+    "ben-web-ab59e": {
+      "hosting": {
+        "ben-web": [
+          "ben-web-ab59e"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

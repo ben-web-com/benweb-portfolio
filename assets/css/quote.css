@@ -1,0 +1,97 @@
+/* Questionnaire de devis. Tokens et polices hérités du design system. */
+.quote-section { padding: 0 0 clamp(3.5rem, 8vw, 7rem); }
+.quote-container { max-width: 880px; }
+.quote-panel { padding: clamp(1.25rem, 4vw, 2.5rem); border: 1px solid var(--line-strong); border-radius: var(--radius-l); background: var(--ink-2); }
+.quote-panel [hidden] { display: none !important; }
+.quote-progress { margin-bottom: 2rem; }
+.quote-progress p { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: .65rem; color: var(--muted); font-size: .8rem; }
+.quote-progress p span:first-child { color: var(--text); }
+.quote-progress progress { display: block; width: 100%; height: 4px; border: 0; border-radius: 8px; background: var(--surface-2); color: var(--accent); appearance: none; }
+.quote-progress progress::-webkit-progress-bar { border-radius: 8px; background: var(--surface-2); }
+.quote-progress progress::-webkit-progress-value { border-radius: 8px; background: var(--accent); }
+.quote-progress progress::-moz-progress-bar { border-radius: 8px; background: var(--accent); }
+.quote-step { min-width: 0; padding: 0; border: 0; margin-bottom: 2.75rem; }
+.quote-form.is-enhanced .quote-step { margin-bottom: 0; }
+.quote-step legend { max-width: 100%; padding: 0; font-size: clamp(1.6rem, 4vw, 2.25rem); line-height: 1.12; letter-spacing: -.035em; font-weight: 500; }
+.quote-step legend:focus { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 2px; }
+.quote-hint { margin-top: .8rem; color: var(--muted); font-size: .95rem; }
+.quote-choice-help { margin-top: .7rem; color: var(--muted); font-size: .75rem; line-height: 1.5; max-width: 58ch; }
+.quote-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; margin-top: 1.6rem; }
+.quote-choice { position: relative; display: block; min-width: 0; cursor: pointer; }
+.quote-choice input { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.quote-choice-body { position: relative; display: flex; align-items: flex-start; gap: .7rem; height: 100%; min-height: 100px; padding: 1rem 2.4rem 1rem 1rem; border: 1px solid var(--muted-2); border-radius: var(--radius-s); background: var(--surface); transition: background-color .18s ease, border-color .18s ease; }
+.quote-choice-copy { display: grid; gap: .3rem; min-width: 0; }
+.quote-choice-copy strong { display: block; color: var(--text); font-size: .98rem; font-weight: 550; line-height: 1.25; letter-spacing: -.01em; }
+.quote-choice-copy > span { color: var(--muted); font-size: .79rem; line-height: 1.45; }
+.quote-choice-icon { flex: none; width: 22px; height: 22px; color: var(--accent); }
+.quote-choice-icon svg { width: 100%; height: 100%; }
+.quote-selected { position: absolute; right: .8rem; top: 1.1rem; width: 15px; height: 15px; border: 1px solid var(--muted-2); border-radius: 50%; }
+.quote-choice input:checked + .quote-choice-body { border-color: var(--accent); background: var(--surface-2); }
+.quote-choice input:checked + .quote-choice-body .quote-selected { border: 4px solid var(--accent); background: var(--ink); }
+.quote-choice input:focus-visible + .quote-choice-body { outline: 3px solid var(--accent); outline-offset: 4px; }
+.quote-choice input:hover + .quote-choice-body { background: var(--surface-2); }
+.quote-choice--service .quote-choice-body { flex-direction: column; min-height: 142px; }
+.quote-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; margin-top: 1.5rem; }
+.quote-field { display: flex; flex-direction: column; gap: .5rem; min-width: 0; }
+.quote-field--full { grid-column: 1 / -1; }
+.quote-field label { color: var(--text); font-size: .91rem; }
+.quote-field label span { color: var(--muted); font-size: .79rem; }
+.quote-field input, .quote-field textarea { width: 100%; min-height: 48px; padding: .8rem 1rem; border: 1px solid var(--muted-2); border-radius: var(--radius-s); background: var(--surface); color: var(--text); font-size: 1rem; }
+.quote-field textarea { resize: vertical; }
+.quote-field textarea::placeholder { color: var(--muted); opacity: 1; }
+.quote-field [aria-invalid="true"] { outline: 2px solid var(--accent); outline-offset: 1px; }
+.quote-field-error { color: var(--accent); font-size: .85rem; }
+.quote-field-error:empty { display: none; }
+.quote-privacy { margin-top: 1.2rem; color: var(--muted); font-size: .78rem; line-height: 1.6; }
+.quote-privacy a { text-decoration: underline; text-underline-offset: 3px; }
+.quote-error, .quote-send-status { font-size: .92rem; }
+.quote-error { color: var(--accent); }
+.quote-error:not(:empty), .quote-send-status:not(:empty) { margin-top: 1.5rem; }
+.quote-recap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem 1rem; padding: 1rem 0; margin-top: .8rem; border-block: 1px solid var(--line-strong); }
+.quote-recap > div { min-width: 0; }
+.quote-recap dt { color: var(--muted); font-size: .72rem; }
+.quote-recap dd { margin: .2rem 0 0; color: var(--text); font-size: .84rem; }
+.quote-actions { display: flex; justify-content: flex-end; align-items: center; gap: 1rem; margin-top: 1.6rem; }
+.quote-actions .btn { min-height: 48px; }
+.quote-back { margin-right: auto; min-height: 48px; padding: .7rem .4rem; color: var(--text); font-size: .9rem; white-space: nowrap; }
+.quote-actions button:disabled { opacity: .6; cursor: wait; transform: none; }
+.quote-save-note { margin-top: 1.1rem; color: var(--muted); font-size: .74rem; line-height: 1.5; }
+.quote-save-note button { display: block; min-height: 44px; padding: .5rem 0; text-decoration: underline; text-underline-offset: 3px; text-align: left; }
+.quote-direct { margin-top: 1.5rem; text-align: center; }
+.quote-direct p { color: var(--muted); font-size: .87rem; }
+.quote-direct > div { display: flex; justify-content: center; flex-wrap: wrap; gap: 0 1.5rem; }
+.quote-direct a { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; font-size: .88rem; }
+.quote-direct a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.quote-confirmation { padding-block: clamp(1rem, 4vw, 3rem); }
+.quote-confirmation-mark { display: inline-grid; place-items: center; width: 48px; height: 48px; margin-bottom: 1.2rem; border: 1px solid var(--accent); border-radius: 50%; color: var(--accent); font-size: 1.5rem; }
+.quote-confirmation h2 { font-size: clamp(1.9rem, 5vw, 2.8rem); }
+.quote-confirmation p { margin-block: 1rem 1.5rem; color: var(--muted); }
+.quote-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .quote-form.is-enhanced .quote-step:not([hidden]) { animation: quote-appear .2s ease both; }
+  @keyframes quote-appear { from { opacity: .45; } to { opacity: 1; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quote-panel *, .quote-panel *::before, .quote-panel *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media (max-width: 600px) {
+  .quote-panel { padding: 1.15rem; border-radius: var(--radius-m); }
+  .quote-progress { margin-bottom: 1rem; }
+  .quote-choice-body { padding: .9rem 1.7rem .9rem .75rem; min-height: 116px; }
+  .quote-choice--service .quote-choice-body { min-height: 92px; padding-top: .7rem; padding-bottom: .7rem; gap: .45rem; }
+  .quote-choices--services { margin-top: 1rem; gap: .5rem; }
+  .quote-step[data-quote-step="service"] .quote-hint { display: none; }
+  .quote-choice--service .quote-choice-copy > span { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+  .quote-selected { right: .6rem; top: 1rem; width: 12px; height: 12px; }
+  .quote-choice-copy strong { font-size: .9rem; }
+  .quote-choice-copy > span { font-size: .74rem; }
+  .quote-fields { grid-template-columns: 1fr; }
+  .quote-actions { gap: .65rem; margin-top: 1.1rem; }
+  .quote-save-note { margin-top: .6rem; }
+  .quote-actions .btn { width: auto; flex: 1; padding-inline: 1rem; }
+}
+@media (forced-colors: active) {
+  .quote-choice input { opacity: 1; width: 20px; height: 20px; inset: 1rem .5rem auto auto; }
+  .quote-selected { display: none; }
+  .quote-choice input:checked + .quote-choice-body { border: 2px solid Highlight; }
+}

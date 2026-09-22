@@ -1,24 +1,28 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Génère les 11 pages statiques du site BEN WEB à partir de content.py.
+Génère les 15 pages statiques du site BEN WEB à partir de content.py.
 
     python3 tools/build.py
 
 Le site produit reste du HTML/CSS/JS pur : ce script n'est qu'un gabarit
 partagé pour éviter de dupliquer l'en-tête, le pied de page et la navigation
-sur onze fichiers.
+sur les pages générées.
 """
 import os
 import sys
+import json
+sys.dont_write_bytecode = True
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content import SITE, SERVICES, CASES, ICONS  # noqa: E402
+from demos import demo_markup  # noqa: E402
+from quote import quote_markup, quote_success_markup  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Version des assets : évite qu'un navigateur serve un ancien CSS après mise à jour.
-ASSET_V = "20260912c"
+ASSET_V = "20260915a"
 
 ARROW = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
          'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>')
@@ -36,6 +40,9 @@ def icon(name, cls=""):
 # ---------------------------------------------------------------------------
 def head(title, desc, path, jsonld=""):
     url = SITE["domain"] + "/" + (path if path != "index.html" else "")
+    demo_css = "".join(
+        f'<link rel="stylesheet" href="assets/demos/{s["demo"]["css"]}?v={ASSET_V}">'
+        for s in SERVICES if s.get("demo", {}).get("css") and path == s["slug"] + ".html")
     return f"""<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -65,7 +72,11 @@ def head(title, desc, path, jsonld=""):
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/InterTight-300_800.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/InstrumentSerif-400-italic.woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css?v={ASSET_V}">
-<noscript><style>[data-reveal]{{opacity:1!important;transform:none!important}}.hero h1 .line>span{{transform:none!important}}</style></noscript>
+<link rel="stylesheet" href="assets/css/accessibility.css?v={ASSET_V}">
+{f'<link rel="stylesheet" href="assets/css/quote.css?v={ASSET_V}">' if path == "contact.html" else ""}
+{f'<link rel="stylesheet" href="assets/demos/demos.css?v={ASSET_V}">' if any(s.get('demo') and path == s['slug'] + '.html' for s in SERVICES) else ''}
+{demo_css}
+<noscript><style>[data-reveal]{{opacity:1!important;transform:none!important;filter:none!important}}.hero h1 .line>span{{transform:none!important}}</style></noscript>
 {jsonld}</head>
 <body>
 <a class="skip-link" href="#main">Aller au contenu</a>
@@ -97,6 +108,7 @@ def header(active=""):
     <nav class="nav-links" aria-label="Navigation principale">
       <a href="index.html"{cls('index')}>Accueil</a>
       <div class="nav-drop">
+        <a class="nav-services-fallback" href="index.html#services">Services</a>
         <button type="button" class="nav-drop-btn{' is-active' if active in [s['slug'] for s in SERVICES] else ''}" aria-expanded="false" aria-controls="services-menu">
           Services
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
@@ -107,7 +119,7 @@ def header(active=""):
       <a href="contact.html"{cls('contact')}>Contact</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn" href="contact.html">Discuter de mon projet {ARROW}</a>
+      <a class="btn" href="contact.html">Demander un devis {ARROW}</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-panel" aria-label="Ouvrir le menu">
         <span></span><span></span>
       </button>
@@ -124,7 +136,7 @@ def header(active=""):
     <a href="contact.html" style="--i:10">Contact</a>
   </nav>
   <div class="mobile-foot">
-    <a class="btn" href="contact.html">Discuter de mon projet</a>
+    <a class="btn" href="contact.html">Demander un devis</a>
     <p class="mobile-meta">Réponse sous 24 h · FR / EN</p>
   </div>
 </div>
@@ -133,7 +145,7 @@ def header(active=""):
 """
 
 
-def cta_band(title, text, label="Discuter de mon projet"):
+def cta_band(title, text, label="Demander un devis", href="contact.html"):
     return f"""<section class="section cta-band">
   <div class="container">
     <div class="cta-inner" data-reveal data-spot>
@@ -141,14 +153,14 @@ def cta_band(title, text, label="Discuter de mon projet"):
         <h2 class="h2">{title}</h2>
         <p class="lead" style="margin-top:1.1rem">{text}</p>
       </div>
-      <a class="btn btn--lg" href="contact.html">{label} {ARROW}</a>
+      <a class="btn btn--lg" href="{href}">{label} {ARROW}</a>
     </div>
   </div>
 </section>
 """
 
 
-def footer(active=""):
+def footer(active="", quote=False, demo=False):
     cols = "".join(f'<a href="{s["slug"]}.html">{s["nav"]}</a>' for s in SERVICES)
     return f"""</main>
 
@@ -157,9 +169,9 @@ def footer(active=""):
     <div class="footer-top">
       {brand('div', 'index.html').replace('<div class="brand" href="index.html"', '<div class="brand"')}
       <div class="footer-cols">
-        <div class="footer-col">
+        <div class="footer-col footer-services">
           <h4>Services</h4>
-          {cols}
+          <div class="footer-service-links">{cols}</div>
         </div>
         <div class="footer-col">
           <h4>Le studio</h4>
@@ -188,6 +200,8 @@ def footer(active=""):
 </footer>
 
 <script src="assets/js/main.js?v={ASSET_V}" defer></script>
+{f'<script src="assets/demos/loader.js?v={ASSET_V}" defer></script>' if demo else ""}
+{f'<script src="assets/js/quote.js?v={ASSET_V}" defer></script>' if quote else ""}
 </body>
 </html>
 """
@@ -195,7 +209,7 @@ def footer(active=""):
 
 def write(path, html):
     with open(os.path.join(ROOT, path), "w", encoding="utf-8") as f:
-        f.write(html)
+        f.write("\n".join(line.rstrip() for line in html.splitlines()) + "\n")
     print(f"  {path:26} {len(html) // 1024} Ko")
 
 
@@ -317,8 +331,8 @@ def build_index():
     cards = ""
     for s in SERVICES:
         if s.get("thumb"):
-            media = (f'<div class="hub-media"><img src="{s["thumb"]}" alt="{s.get("thumb_alt", "")}" '
-                     f'width="1440" height="1000" loading="lazy" decoding="async"></div>')
+            media = (f'<div class="hub-media{" hub-media--contain" if s.get("thumb_contain") else ""}"><img src="{s["thumb"]}" alt="{s.get("thumb_alt", "")}" '
+                     f'width="{s.get("thumb_width", 1440)}" height="{s.get("thumb_height", 1000)}" loading="lazy" decoding="async"></div>')
         else:
             media = f'<div class="hub-media hub-media--icon">{icon(s["icon"], "hub-glyph")}</div>'
         cards += f"""
@@ -328,7 +342,7 @@ def build_index():
             <span class="hub-num">{s['num']}</span>
             <h3>{s['nav']}</h3>
             <p>{s['hub_line']}</p>
-            <span class="hub-link">Voir le service et les réalisations {ARROW}</span>
+            <span class="hub-link">Découvrir le service {ARROW}</span>
           </div>
         </a>"""
 
@@ -345,8 +359,8 @@ def build_index():
       <div class="hub-intro">
         <span class="pill-status"><span class="dot" aria-hidden="true"></span> Disponible pour de nouveaux projets</span>
         <h1 class="display">
-          <span class="line" style="--i:1"><span>Votre idée devient <em>un produit digital.</em></span></span>
-          <span class="line" style="--i:2"><span>En quelques jours.</span></span>
+          <span class="line" style="--i:1"><span>Votre activité mérite <em>d’être vue.</em></span></span>
+          <span class="line" style="--i:2"><span>Et de donner envie.</span></span>
         </h1>
       </div>
     </div>
@@ -468,7 +482,7 @@ def build_service(s):
             for gi, (titre, items) in enumerate(s["includes_groups"], 1))
     else:
         includes = f'<div class="inc-grid">{cartes(s["includes"])}</div>' 
-    mini = bool(s.get("universes"))
+    mini = bool(s.get("universes") or s.get("demo"))
     cases = "".join((case_mini(k) if mini else case_block(k)) for k in s["cases"])
     a_des_cas = bool(s["cases"])
     note = (f'<p class="honest-note" data-reveal><span>À savoir</span>{s["note"]}</p>'
@@ -496,14 +510,21 @@ def build_service(s):
     </div>
   </section>"""
 
-    vitrine = showcase(s)
+    if s.get("demo"):
+        corps = f'''<section class="section section--tight service-inclusions">
+  <div class="container"><details class="service-details">
+    <summary>Ce qui est inclus dans votre projet <span aria-hidden="true">+</span></summary>
+    <div class="service-details-body"><p class="lead">{s['solution']}</p>{includes}{note}</div>
+  </details></div>
+</section>'''
+    vitrine = demo_markup(s) if s.get("demo") else showcase(s)
 
     realisations = f"""  <section class="section" id="realisations">
     <div class="container">
       <div class="section-head" data-reveal>
         <div><span class="eyebrow">Réalisations</span>
-          <h2 class="h2" style="margin-top:1rem">Ce que j'ai<br><em>déjà construit.</em></h2></div>
-        <p class="lead">Des projets réels, avec leur contexte et leur statut. Rien n'est mis en scène.</p>
+          <h2 class="h2" style="margin-top:1rem">Quelques<br><em>réalisations.</em></h2></div>
+        <p class="lead">Des projets à découvrir, avec leur contexte et leur statut.</p>
       </div>
       <div class="{'cases cases--mini' if mini else 'cases'}">{cases}</div>
     </div>
@@ -512,7 +533,7 @@ def build_service(s):
     html = head(f"{s['meta_title']} · {SITE['brand']}", s["meta_desc"], f"{s['slug']}.html", jsonld)
     html += header(s["slug"])
     html += f"""
-  <section class="page-hero">
+  <section class="page-hero{' page-hero--demo' if s.get('demo') else ''}">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="grid-lines" aria-hidden="true"></div>
     <div class="container">
@@ -525,8 +546,8 @@ def build_service(s):
       <h1 class="display">{s['h1']}</h1>
       <p class="lead">{s['lead']}</p>
       <div class="hero-cta">
-        <a class="btn btn--lg" href="contact.html">Contactez-moi {ARROW}</a>
-        {'<a class="btn btn--ghost btn--lg" href="#realisations">Voir les réalisations</a>' if a_des_cas else '<a class="btn btn--ghost btn--lg" href="infos.html">Comment ça se passe</a>'}
+        <a class="btn btn--lg" href="contact.html?service={s['slug']}">Demander mon devis {ARROW}</a>
+        {'<a class="btn btn--ghost btn--lg" href="#demo">Essayer la démo ↓</a>' if s.get('demo') else '<a class="btn btn--ghost btn--lg" href="#realisations">Voir les réalisations</a>' if a_des_cas else '<a class="btn btn--ghost btn--lg" href="infos.html">Comment ça se passe</a>'}
       </div>
       <div class="chip-row">{chips}</div>
     </div>
@@ -539,9 +560,9 @@ def build_service(s):
 """
     html += cta_band(f"Un projet de<br><em>{s['nav'].lower()}</em> ?",
                      "Décrivez-le en quelques lignes. Vous recevez sous 24 h un avis honnête, un délai et un prix fixe, sans engagement.",
-                     "Contactez-moi")
+                     "Demander mon devis", href=f"contact.html?service={s['slug']}")
     html += other_services(s["slug"])
-    html += footer()
+    html += footer(demo=bool(s.get("demo")))
     write(f"{s['slug']}.html", html)
 
 
@@ -569,7 +590,7 @@ FAQ = [
 def build_infos():
     faq_items = "".join(f"""
         <div class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-{i}">
+          <button class="faq-q" type="button" aria-expanded="true" aria-controls="faq-{i}">
             {q} <span class="faq-icon" aria-hidden="true"></span>
           </button>
           <div class="faq-a" id="faq-{i}"><div><p>{a}</p></div></div>
@@ -580,7 +601,7 @@ def build_infos():
 </script>
 """ % ",".join(
         '{"@type":"Question","name":%s,"acceptedAnswer":{"@type":"Answer","text":%s}}'
-        % (repr(q).replace("'", '"'), repr(a).replace("'", '"')) for q, a in FAQ)
+        % (json.dumps(q, ensure_ascii=False), json.dumps(a, ensure_ascii=False)) for q, a in FAQ)
 
     html = head(f"Rapidité, méthode et questions fréquentes · {SITE['brand']}",
                 "Pourquoi les délais sont courts sans sacrifier la finition, comment se déroule un projet, ce qui est livré à chaque fois, et les réponses aux questions qui reviennent avant de démarrer.",
@@ -601,7 +622,7 @@ def build_infos():
       </p>
       <div class="hero-cta">
         <a class="btn btn--lg" href="contact.html">Contactez-moi {ARROW}</a>
-        <a class="btn btn--ghost btn--lg" href="index.html#services">Voir les 6 services</a>
+        <a class="btn btn--ghost btn--lg" href="index.html#services">Voir les 7 services</a>
       </div>
     </div>
   </section>
@@ -731,100 +752,26 @@ def build_infos():
 # Page 11 — Contact
 # ---------------------------------------------------------------------------
 def build_contact():
-    jsonld = f"""<script type="application/ld+json">
-{{
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "url": "{SITE['domain']}/contact.html",
-  "mainEntity": {{
-    "@type": "ProfessionalService",
-    "name": "{SITE['brand']}",
-    "email": "mailto:{SITE['email']}",
-    "telephone": "+66970499155",
-    "sameAs": ["{SITE['instagram']}", "{SITE['tiktok']}"]
-  }}
-}}
-</script>
-"""
-    channels = [
-        ("gmail.png", SITE["email"], "E-mail", "Le plus complet pour décrire un projet",
-         f"mailto:{SITE['email']}?subject=Projet%20BEN%20WEB", "Écrire", SITE["email"]),
-        ("whatsapp.png", "WhatsApp", "WhatsApp", f"{SITE['whatsapp_display']} · réponse la plus rapide",
-         SITE["whatsapp_link"], "Ouvrir la discussion", None),
-        ("instagram.png", "Instagram", "Instagram", f"{SITE['handle']} · coulisses et réalisations",
-         SITE["instagram"], "Voir le profil", None),
-        ("tiktok.png", "TikTok", "TikTok", f"{SITE['handle']} · projets en vidéo",
-         SITE["tiktok"], "Voir le profil", None),
-    ]
-
-    cards = ""
-    for logo, _v, titre, sous_titre, href, action, copie in channels:
-        copy_btn = (f"""
-            <button type="button" class="copy-btn" data-copy="{copie}" aria-label="Copier l'adresse e-mail">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-              <span>Copier</span>
-            </button>""" if copie else "")
-        cards += f"""
-        <div class="channel" data-reveal data-spot>
-          <img class="channel-logo" src="assets/social/{logo}" alt="" width="128" height="128" loading="lazy">
-          <div class="channel-body">
-            <h2>{titre}</h2>
-            <p>{sous_titre}</p>
-          </div>
-          <div class="channel-actions">
-            <a class="btn btn--ghost" href="{href}"{' target="_blank" rel="noopener noreferrer"' if not copie else ''}>{action} {ARROW}</a>{copy_btn}
-          </div>
-        </div>"""
-
-    html = head(f"Contact · {SITE['brand']}",
-                f"Parlons de votre projet : {SITE['email']}, WhatsApp {SITE['whatsapp_display']}, Instagram et TikTok {SITE['handle']}. Réponse sous 24 h.",
-                "contact.html", jsonld)
+    html = head(f"Demander un devis · {SITE['brand']}",
+                "Un projet pour votre activité ? Quelques choix suffisent pour expliquer votre besoin et recevoir un devis personnalisé, sans engagement.",
+                "contact.html")
     html += header("contact")
-    html += f"""
-  <section class="page-hero page-hero--contact">
+    html += """<section class="page-hero page-hero--contact quote-hero">
     <div class="hero-bg" aria-hidden="true"></div>
-    <div class="grid-lines" aria-hidden="true"></div>
-    <div class="container">
-      <span class="eyebrow">Contact</span>
-      <h1 class="display">Vous avez un projet ?<br><em>Parlons-en.</em></h1>
-      <p class="lead">
-        Écrivez-moi par le canal qui vous arrange. Je réponds sous 24 h !
-      </p>
-    </div>
-  </section>
-
-  <section class="section section--tight">
-    <div class="container">
-      <div class="channels">{cards}
-      </div>
-
-      <div class="contact-brief" data-reveal>
-        <div>
-          <span class="eyebrow">Pour aller vite</span>
-          <h2 class="h3" style="margin-top:1rem">Trois lignes suffisent</h2>
-          <p class="lead" style="margin-top:1rem">
-            Pas besoin d'un cahier des charges. Avec ces trois informations, je
-            peux déjà vous répondre avec un délai et un prix.
-          </p>
-        </div>
-        <ol class="brief-list">
-          <li><b>Ce que vous faites</b><span>Votre activité et vos clients, en une phrase.</span></li>
-          <li><b>Ce dont vous avez besoin</b><span>Un site, une carte NFC, un outil, une automatisation.</span></li>
-          <li><b>Pour quand</b><span>Une date, même approximative, change tout.</span></li>
-        </ol>
-      </div>
-
-      <div class="contact-facts" data-reveal>
-        <div><b>Réponse sous 24 h</b><span>Souvent bien moins</span></div>
-        <div><b>FR · EN</b><span>Projets bilingues</span></div>
-        <div><b>Devis gratuit</b><span>Prix fixe, sans engagement</span></div>
-      </div>
-    </div>
-  </section>
-"""
-    html += other_services("")
-    html += footer()
+    <div class="container"><span class="eyebrow">Votre projet commence ici</span>
+      <h1 class="display">Quelques questions.<br><em>Un projet qui vous ressemble.</em></h1>
+      <p class="lead">Choisissez ce dont vous avez besoin. Je vous réponds personnellement, avec un devis adapté.</p>
+    </div></section>"""
+    html += quote_markup(SITE, SERVICES, icon)
+    html += footer(quote=True)
     write("contact.html", html)
+
+
+def build_thanks():
+    html = head(f"Merci pour votre demande · {SITE['brand']}", "Votre demande de devis a été envoyée.", "merci.html")
+    html = html.replace('content="index,follow,max-image-preview:large"', 'content="noindex,follow"')
+    html += header("contact") + quote_success_markup() + footer()
+    write("merci.html", html)
 
 
 def build_cgv():
@@ -1094,18 +1041,19 @@ def main():
         build_service(s)
     build_infos()
     build_contact()
+    build_thanks()
     build_legal()
     build_cgv()
     build_404()
     build_sitemap()
-    print(f"\n{len(SERVICES) + 7} pages générées dans {ROOT}")
+    print(f"\n{len(SERVICES) + 8} pages générées dans {ROOT}")
 
 
 
 # ---------------------------------------------------------------------------
 # Pages 12 et 13 — mentions légales & confidentialité
 # ---------------------------------------------------------------------------
-MAJ = "11 septembre 2026"
+MAJ = "15 septembre 2026"
 
 
 def todo(txt):
@@ -1247,11 +1195,32 @@ def build_legal():
           <a href="mailto:{SITE['email']}">{SITE['email']}</a>.
         </p>
 
-        <h2>2. Aucune collecte de données sur ce site</h2>
+        <h2>2. Votre demande de devis</h2>
         <p>
-          Ce site est un site vitrine statique. Il ne comporte ni formulaire, ni
-          espace client, ni création de compte. <strong>Aucune donnée personnelle
-          n'y est collectée, enregistrée ni transmise lors de votre visite.</strong>
+          Le questionnaire recueille le service souhaité, votre activité, l’état de
+          votre projet, son échéance, votre nom et votre e-mail. Le téléphone et
+          le message sont facultatifs. Ces informations servent à répondre à votre
+          demande et à préparer un devis. Les champs obligatoires sont nécessaires
+          pour comprendre votre besoin et vous recontacter.
+        </p>
+        <p>
+          Le traitement repose sur les mesures précontractuelles prises à votre demande.
+          Les réponses envoyées sont reçues par Benjamin Ikhmim et traitées par
+          Formspree, le service utilisé pour recevoir les formulaires. Elles ne servent
+          pas à vous inscrire à une liste publicitaire.
+        </p>
+        <p>
+          Avant l’envoi, votre navigateur conserve vos réponses dans le stockage de
+          session de l’onglet afin de reprendre le questionnaire après un
+          rafraîchissement. Vous pouvez les effacer avec « Effacer mes réponses ».
+          Elles sont retirées de ce stockage après un envoi confirmé. Les commandes
+          des démonstrations restent dans votre navigateur et ne sont pas envoyées.
+        </p>
+        <p>
+          Formspree étant un prestataire américain, le traitement peut impliquer un
+          transfert hors de l’Union européenne. Les conditions de traitement et
+          garanties proposées par ce prestataire sont consultables dans son
+          <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">document relatif à la confidentialité</a>.
         </p>
 
         <h2>3. Cookies et mesure d'audience</h2>
@@ -1278,7 +1247,7 @@ def build_legal():
 
         <h2>5. Lorsque vous me contactez</h2>
         <p>
-          Le contact se fait par e-mail, WhatsApp, Instagram ou TikTok. Dans ce
+          Vous pouvez aussi me contacter par e-mail, WhatsApp, Instagram ou TikTok. Dans ce
           cas, les informations que vous transmettez volontairement (nom, adresse,
           numéro, contenu du message) sont traitées dans le seul but de répondre à
           votre demande, d'établir un devis puis d'assurer le suivi de la mission.
@@ -1333,9 +1302,9 @@ def build_legal():
 
     legal_page(
         "confidentialite", "Politique de confidentialité",
-        f"Politique de confidentialité du site {SITE['brand']} : aucune collecte de données, aucun cookie, et comment exercer vos droits.",
+        f"Politique de confidentialité de {SITE['brand']} : questionnaire de devis, conservation des réponses et exercice de vos droits.",
         "Politique de<br><em>confidentialité.</em>",
-        "Ce site ne collecte aucune donnée et n’utilise aucun cookie. Voici ce qui se passe quand vous me contactez, et comment exercer vos droits.",
+        "Voici comment sont utilisées les informations de votre demande de devis et de vos échanges, et comment exercer vos droits.",
         confid)
 
 if __name__ == "__main__":

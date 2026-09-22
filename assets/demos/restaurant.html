@@ -1,0 +1,51 @@
+<div class="restaurant-demo" data-restaurant-view="client">
+  <div class="demo-switch restaurant-switch" role="group" aria-label="Vue de la démonstration" data-demo-control>
+    <button type="button" data-rest-view="client" aria-pressed="true">Côté client</button>
+    <button type="button" data-rest-view="kitchen" aria-pressed="false">En cuisine <span data-ticket-count></span></button>
+  </div>
+  <div class="restaurant-layout">
+    <div class="restaurant-client" data-rest-panel="client">
+      <div class="demo-device-top" aria-hidden="true"><span>9:41</span><i></i><span>•••</span></div>
+      <div class="restaurant-menu">
+        <div class="restaurant-brand"><span class="demo-overline">Votre restaurant</span><span class="demo-pill">Table 4</span></div>
+        <h3>Qu’est-ce qui<br><em>vous ferait plaisir ?</em></h3>
+        <p class="restaurant-hint">Une petite carte, pour essayer.</p>
+        <div class="restaurant-dishes">
+          <div class="restaurant-dish">
+            <span class="dish-art" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="24" cy="27" rx="18" ry="12"/><path d="M14 27c5-8 9 8 17-3M13 22c7-7 12 8 20-2M19 29l7-10M28 11l9 18M33 9l9 17"/></svg></span>
+            <div><h4>Pad thaï</h4><p>Nouilles, légumes, citron vert.</p><small>Contient de l’arachide.</small></div>
+            <div class="dish-quantity" data-demo-control><button type="button" data-dish="pad" data-delta="-1" aria-label="Retirer un pad thaï" disabled>−</button><output data-quantity="pad" aria-label="Quantité de pad thaï">0</output><button type="button" data-dish="pad" data-delta="1" aria-label="Ajouter un pad thaï">+</button></div>
+          </div>
+          <div class="restaurant-dish">
+            <span class="dish-art" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 22h32a16 16 0 0 1-32 0ZM14 39h20M16 17c-5-6 4-7 0-12M24 17c-5-6 4-7 0-12M32 17c-5-6 4-7 0-12"/></svg></span>
+            <div><h4>Curry de légumes</h4><p>Lait de coco et riz parfumé.</p><small>Végétarien · légèrement épicé.</small></div>
+            <div class="dish-quantity" data-demo-control><button type="button" data-dish="curry" data-delta="-1" aria-label="Retirer un curry de légumes" disabled>−</button><output data-quantity="curry" aria-label="Quantité de curry">0</output><button type="button" data-dish="curry" data-delta="1" aria-label="Ajouter un curry de légumes">+</button></div>
+          </div>
+          <div class="restaurant-dish">
+            <span class="dish-art" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 14h22l-3 27H16ZM12 14h24M26 14l3-9h9M17 22h15M20 28l3 4 4-4"/></svg></span>
+            <div><h4>Thé glacé</h4><p>Citron et menthe fraîche.</p></div>
+            <div class="dish-quantity" data-demo-control><button type="button" data-dish="tea" data-delta="-1" aria-label="Retirer un thé glacé" disabled>−</button><output data-quantity="tea" aria-label="Quantité de thé glacé">0</output><button type="button" data-dish="tea" data-delta="1" aria-label="Ajouter un thé glacé">+</button></div>
+          </div>
+        </div>
+        <div class="restaurant-cart" data-demo-control><span data-cart-summary aria-live="polite" aria-atomic="true">Choisissez un plat</span><button type="button" class="btn" data-send-order disabled>Envoyer en cuisine <span aria-hidden="true">↗</span></button><p class="client-order-status" data-client-status hidden></p></div>
+      </div>
+    </div>
+    <div class="restaurant-kitchen" data-rest-panel="kitchen">
+      <div class="demo-window-bar" aria-hidden="true"><span>● ● ●</span><span>Votre écran cuisine</span></div>
+      <div class="kitchen-body">
+        <div class="kitchen-heading"><div><span class="demo-overline">En cuisine</span><h3>Chaque commande,<br><em>au bon endroit.</em></h3></div><span class="demo-pill">Simulation</span></div>
+        <div class="kitchen-empty" data-kitchen-empty><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 6h22v37l-5-3-6 3-6-3-5 3ZM19 16h10M19 23h10M19 30h6"/></svg><p>La prochaine commande<br>s’affichera ici.</p><span>Choisissez un plat, puis envoyez-le en cuisine.</span></div>
+        <article class="kitchen-ticket" data-kitchen-ticket hidden>
+          <div class="ticket-heading"><h4>Table 4</h4><span>À l’instant</span></div>
+          <ul data-ticket-items></ul>
+          <ol class="order-states" aria-label="Avancement de la commande"><li data-order-state="received">Reçue</li><li data-order-state="preparing">En préparation</li><li data-order-state="ready">Prête</li></ol>
+          <p class="order-status" data-order-status role="status" aria-atomic="true"></p>
+          <button type="button" class="btn btn--ghost" data-next-order-state>Passer en préparation</button>
+        </article>
+        <p class="kitchen-note">Le client suit les mêmes étapes sur son téléphone.</p>
+        <div class="restaurant-followup" data-order-followup hidden><a class="btn" href="contact.html?service=cartes-restaurant">Je veux cette carte pour mon restaurant <span aria-hidden="true">↗</span></a><button type="button" class="demo-text-button" data-reset-order>Essayer une autre commande</button></div>
+      </div>
+    </div>
+  </div>
+  <p class="demo-fallback-note">Exemple de parcours : le client choisit ses plats, la commande arrive en cuisine, puis son état est mis à jour.</p>
+</div>

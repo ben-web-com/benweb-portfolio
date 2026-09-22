@@ -1,0 +1,53 @@
+<div class="nfc-demo">
+  <div class="nfc-layout">
+    <div class="nfc-card-area">
+      <p class="demo-overline nfc-label">La carte, en main</p>
+      <div class="nfc-card-stage" data-nfc-stage>
+        <div class="nfc-card" id="nfc-physical-card" data-nfc-card>
+          <div class="nfc-face nfc-front" data-nfc-front>
+            <div class="nfc-card-top"><span>BEN WEB</span><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 11a7 7 0 0 1 0 10M18 7a13 13 0 0 1 0 18M23 3a19 19 0 0 1 0 26"/><circle cx="8" cy="16" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+            <p class="nfc-card-title">On garde<br><em>le contact.</em></p>
+            <div class="nfc-card-bottom"><span>Digital &amp; IA</span><span>ben-web.com</span></div>
+          </div>
+          <div class="nfc-face nfc-back" data-nfc-back aria-hidden="true" inert hidden>
+            <span class="nfc-back-label">BEN WEB</span>
+            <div><p class="nfc-owner">Benjamin<br>Ikhmim</p><p class="nfc-owner-role">Freelance digital &amp; IA</p></div>
+            <p class="nfc-card-address">contact@ben-web.com</p>
+          </div>
+        </div>
+        <button type="button" class="nfc-card-trigger" data-nfc-card-trigger data-demo-control aria-label="Retourner la carte" aria-controls="nfc-physical-card"></button>
+      </div>
+      <div class="nfc-controls" data-demo-control>
+        <button type="button" class="nfc-flip" data-nfc-flip aria-controls="nfc-physical-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 8a8 8 0 0 1 13-3l3 3M20 3v5h-5M20 16a8 8 0 0 1-13 3l-3-3M4 21v-5h5"/></svg><span data-nfc-flip-label>Retourner la carte</span></button>
+        <button type="button" class="nfc-tap" data-nfc-tap aria-controls="nfc-contact"><span data-nfc-tap-label>Approcher du téléphone</span><span aria-hidden="true">↗</span></button>
+      </div>
+      <p class="nfc-hint">Un geste. Vos coordonnées<br>à portée de main.</p>
+    </div>
+    <section class="nfc-phone" data-nfc-phone aria-label="Aperçu de la fiche de contact sur téléphone">
+      <div class="nfc-phone-top" aria-hidden="true"><span>BEN WEB</span><i></i><span>•••</span></div>
+      <div class="nfc-phone-body">
+        <div class="nfc-waiting" data-nfc-waiting hidden>
+          <div class="nfc-touch-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="13" y="5" width="23" height="38" rx="5"/><path d="M21 37h7M20 18a8 8 0 0 1 0 12M25 14a14 14 0 0 1 0 20"/></svg></div>
+          <p>Votre contact.<br><em>En un geste.</em></p>
+          <span>Touchez « Approcher du téléphone » pour essayer.</span>
+        </div>
+        <div class="nfc-contact" id="nfc-contact" data-nfc-contact>
+          <picture class="nfc-portrait"><source srcset="assets/ben.webp" type="image/webp"><img src="assets/ben.png" alt="Benjamin Ikhmim" width="800" height="800" loading="lazy" decoding="async"></picture>
+          <span class="nfc-contact-brand">BEN WEB</span>
+          <h3>Benjamin Ikhmim</h3>
+          <p class="nfc-contact-role">Freelance digital &amp; IA</p>
+          <p class="nfc-contact-description">Des outils simples pour<br>faire avancer votre activité.</p>
+          <button type="button" class="nfc-save" data-nfc-save data-demo-control><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg>Enregistrer le contact</button>
+          <div class="nfc-contact-links">
+            <a href="mailto:contact@ben-web.com" aria-label="Écrire à Benjamin par e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><span>E-mail</span></a>
+            <a href="https://wa.me/66970499155" target="_blank" rel="noopener noreferrer" aria-label="Contacter Benjamin sur WhatsApp, nouvel onglet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 11.6A8.5 8.5 0 0 1 8 19.1L3 21l1.6-5.2a8.5 8.5 0 1 1 15.9-4.2Z"/><path d="M9 7.5c0 4 3 7 7 7l1-2.2-2.5-1-1.2 1.2-2.8-2.8 1.2-1.2-1-2.5Z"/></svg><span>WhatsApp</span></a>
+            <a href="tel:+66970499155" aria-label="Appeler Benjamin au +66 97 049 9155"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 3h4l2 5-3 2a14 14 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2C10 21 3 14 3 5a2 2 0 0 1 2-2Z"/></svg><span>Appeler</span></a>
+          </div>
+          <p class="nfc-contact-email">contact@ben-web.com</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <p class="nfc-status" data-nfc-status role="status" aria-atomic="true"></p>
+  <p class="nfc-simulation">Le geste NFC est simulé ici. Les coordonnées sont celles de Benjamin.</p>
+</div>

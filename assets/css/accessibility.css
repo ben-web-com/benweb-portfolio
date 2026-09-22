@@ -1,0 +1,93 @@
+/* Compléments accessibles, chargés après le design system. */
+[hidden] { display: none !important; }
+
+.header:focus-within { transform: none; }
+.section--paper :focus-visible,
+[data-demo-light] :focus-visible {
+  outline-color: var(--paper-text);
+}
+
+/* Le panneau garde tous ses liens accessibles en paysage et avec le zoom. */
+.mobile-panel {
+  transition: opacity .4s var(--ease);
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  scrollbar-gutter: stable;
+}
+.mobile-panel > * { flex-shrink: 0; }
+.mobile-panel .mobile-foot { margin-top: auto; }
+.mobile-panel nav a:focus-visible { outline-offset: -2px; }
+.js .nav-services-fallback { display: none; }
+
+/* Le contenu demeure lisible si JavaScript est désactivé ou échoue. */
+:root:not(.js) [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+:root:not(.js) .hero h1 .line > span { transform: none !important; }
+:root:not(.js) .eyebrow::before { width: 26px; }
+:root:not(.js) .faq-a {
+  display: block !important;
+  grid-template-rows: 1fr;
+}
+:root:not(.js) .faq-q { cursor: default; }
+:root:not(.js) .faq-icon,
+:root:not(.js) .nav-drop-btn,
+:root:not(.js) .nav-toggle,
+:root:not(.js) .copy-btn,
+:root:not(.js) .sc-switch { display: none; }
+
+@media (max-width: 860px) {
+  :root:not(.js) .mobile-panel {
+    display: flex !important;
+    position: relative;
+    inset: auto;
+    z-index: auto;
+    visibility: visible;
+    opacity: 1;
+    background: var(--ink);
+    backdrop-filter: none;
+    padding: 5.5rem var(--gutter) 1.5rem;
+    overflow: visible;
+  }
+  :root:not(.js) .mobile-panel nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 1rem;
+  }
+  :root:not(.js) .mobile-panel nav a {
+    font-size: 1rem;
+    opacity: 1;
+    transform: none;
+  }
+  :root:not(.js) .mobile-label {
+    grid-column: 1 / -1;
+    opacity: 1;
+    transform: none;
+  }
+  :root:not(.js) .mobile-foot { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-delay: 0s !important;
+    transition-delay: 0s !important;
+  }
+  .header,
+  .btn:hover, .btn:active,
+  .hub-card:hover, .os-card:hover, .channel:hover,
+  .contact-item:hover, .case-mini:hover,
+  .case-gallery img:hover, .sc-tab:hover,
+  .btn:hover svg, .link-arrow:hover svg,
+  .hub-card:hover .hub-link svg, .os-card:hover .os-arrow svg,
+  .contact-item:hover .arrow,
+  .case-visual .case-media img, .case-visual:hover .case-media img,
+  .hub-card:hover .hub-media img {
+    transform: none !important;
+  }
+  [data-spot]::after, .btn::after { display: none; }
+}

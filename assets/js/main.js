@@ -6,9 +6,15 @@
 (function () {
   "use strict";
 
-  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var reduced = motionPreference.matches;
   var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
+
+  function observePreference(query, callback) {
+    if (query.addEventListener) query.addEventListener("change", callback);
+    else query.addListener(callback);
+  }
 
   /* ---------------------------------------------------------------------------
      1. Barre de progression + comportement du header
@@ -29,7 +35,8 @@
     if (header) {
       header.classList.toggle("is-stuck", y > 24);
       var goingDown = y > lastY && y > 480;
-      header.classList.toggle("is-hidden", goingDown && !document.body.classList.contains("menu-open"));
+      header.classList.toggle("is-hidden", goingDown && !reduced &&
+        !header.contains(document.activeElement) && !document.body.classList.contains("menu-open"));
     }
 
     lastY = y;
@@ -42,6 +49,9 @@
       ticking = true;
     }
   }, { passive: true });
+  if (header) {
+    header.addEventListener("focusin", function () { header.classList.remove("is-hidden"); });
+  }
   onScroll();
 
   /* ---------------------------------------------------------------------------
@@ -49,22 +59,54 @@
      --------------------------------------------------------------------------- */
   var toggle = $(".nav-toggle");
   var panel = $("#mobile-panel");
+  var desktopPreference = window.matchMedia("(min-width: 861px)");
+  var menuOpen = false;
+  var menuFrame = null;
+  var menuTimer = null;
+  var frozenRegions = [];
+  var previousOverflow = "";
 
-  function setMenu(open) {
-    if (!panel || !toggle) return;
-    if (open) panel.hidden = false;
-    // Laisse un frame au navigateur pour appliquer la transition d'ouverture.
-    window.requestAnimationFrame(function () {
-      panel.classList.toggle("is-open", open);
-    });
+  function menuControls() {
+    return [toggle].concat($$("a[href], button:not([disabled]), [tabindex='0']", panel))
+      .filter(function (el) { return el && el.getClientRects().length && !el.closest("[hidden], [inert]"); });
+  }
+
+  function setMenu(open, restoreFocus) {
+    if (!panel || !toggle || menuOpen === open) return;
+    menuOpen = open;
+    window.cancelAnimationFrame(menuFrame);
+    window.clearTimeout(menuTimer);
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
     document.body.classList.toggle("menu-open", open);
-    document.body.style.overflow = open ? "hidden" : "";
-    if (!open) {
-      window.setTimeout(function () {
-        if (!panel.classList.contains("is-open")) panel.hidden = true;
-      }, 420);
+    if (open) {
+      panel.hidden = false;
+      panel.removeAttribute("inert");
+      if (header) header.classList.remove("is-hidden");
+      previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      frozenRegions = $$("main, footer").map(function (el) {
+        var wasInert = el.hasAttribute("inert");
+        el.setAttribute("inert", "");
+        return { element: el, wasInert: wasInert };
+      });
+      menuFrame = window.requestAnimationFrame(function () {
+        panel.classList.add("is-open");
+        var firstLink = $("a[href]", panel);
+        if (firstLink) firstLink.focus({ preventScroll: true });
+      });
+    } else {
+      panel.classList.remove("is-open");
+      panel.setAttribute("inert", "");
+      frozenRegions.forEach(function (region) {
+        if (!region.wasInert) region.element.removeAttribute("inert");
+      });
+      frozenRegions = [];
+      document.body.style.overflow = previousOverflow;
+      if (restoreFocus !== false) toggle.focus({ preventScroll: true });
+      menuTimer = window.setTimeout(function () {
+        if (!menuOpen) panel.hidden = true;
+      }, reduced ? 0 : 420);
     }
   }
 
@@ -75,11 +117,29 @@
   }
   if (panel) {
     $$("a", panel).forEach(function (a) {
-      a.addEventListener("click", function () { setMenu(false); });
+      a.addEventListener("click", function () { setMenu(false, false); });
     });
   }
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && document.body.classList.contains("menu-open")) setMenu(false);
+    if (!menuOpen) return;
+    if (e.key === "Escape") {
+      e.preventDefault();
+      setMenu(false);
+    } else if (e.key === "Tab") {
+      var controls = menuControls();
+      if (!controls.length) return;
+      var current = controls.indexOf(document.activeElement);
+      var next = current < 0 ? (e.shiftKey ? controls.length - 1 : 0) :
+        (current + (e.shiftKey ? -1 : 1) + controls.length) % controls.length;
+      e.preventDefault();
+      controls[next].focus();
+    }
+  });
+  observePreference(desktopPreference, function (e) {
+    if (!e.matches || !menuOpen) return;
+    setMenu(false, false);
+    var brand = header && $("a.brand", header);
+    if (brand) brand.focus({ preventScroll: true });
   });
 
   /* ---------------------------------------------------------------------------
@@ -137,6 +197,10 @@
      5. FAQ (accordéon accessible)
      --------------------------------------------------------------------------- */
   $$(".faq-q").forEach(function (btn) {
+    var answer = document.getElementById(btn.getAttribute("aria-controls"));
+    btn.setAttribute("aria-expanded", "false");
+    btn.closest(".faq-item").classList.remove("is-open");
+    if (answer) answer.hidden = true;
     btn.addEventListener("click", function () {
       var item = btn.closest(".faq-item");
       var isOpen = btn.getAttribute("aria-expanded") === "true";
@@ -145,11 +209,14 @@
         if (other !== item) {
           other.classList.remove("is-open");
           $(".faq-q", other).setAttribute("aria-expanded", "false");
+          var otherAnswer = $(".faq-a", other);
+          if (otherAnswer) otherAnswer.hidden = true;
         }
       });
 
       item.classList.toggle("is-open", !isOpen);
       btn.setAttribute("aria-expanded", String(!isOpen));
+      if (answer) answer.hidden = isOpen;
     });
   });
 
@@ -177,14 +244,24 @@
     });
     drop.addEventListener("mouseleave", function () {
       if (!window.matchMedia("(pointer: fine)").matches) return;
-      closeTimer = window.setTimeout(function () { setDrop(false); }, 180);
+      closeTimer = window.setTimeout(function () {
+        if (!drop.contains(document.activeElement)) setDrop(false);
+      }, 180);
     });
 
     document.addEventListener("click", function (e) {
       if (!drop.contains(e.target)) setDrop(false);
     });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") setDrop(false);
+      if (e.defaultPrevented || e.key !== "Escape" ||
+          dropBtn.getAttribute("aria-expanded") !== "true") return;
+      var focusInMenu = drop.contains(document.activeElement);
+      window.clearTimeout(closeTimer);
+      setDrop(false);
+      if (focusInMenu) {
+        e.preventDefault();
+        dropBtn.focus({ preventScroll: true });
+      }
     });
     drop.addEventListener("focusout", function (e) {
       if (!drop.contains(e.relatedTarget)) setDrop(false);
@@ -239,12 +316,13 @@
 
     function applySpot() {
       spotFrame = null;
-      if (!spotEl) return;
+      if (!spotEl || reduced) return;
       spotEl.style.setProperty("--mx", spotX + "px");
       spotEl.style.setProperty("--my", spotY + "px");
     }
 
     document.addEventListener("pointermove", function (e) {
+      if (reduced) return;
       var el = e.target && e.target.closest ? e.target.closest("[data-spot]") : null;
       if (!el) return;
       var box = el.getBoundingClientRect();
@@ -278,11 +356,15 @@
      11. Parallaxe douce sur les captures d'études de cas
      --------------------------------------------------------------------------- */
   var parallaxImgs = $$(".case-media img");
-  if (parallaxImgs.length && !reduced && window.matchMedia("(min-width: 861px)").matches) {
+  if (parallaxImgs.length) {
     var pTicking = false;
 
     function updateParallax() {
       pTicking = false;
+      if (reduced || !desktopPreference.matches) {
+        parallaxImgs.forEach(function (img) { img.style.removeProperty("--py"); });
+        return;
+      }
       var vh = window.innerHeight;
       parallaxImgs.forEach(function (img) {
         var box = img.getBoundingClientRect();
@@ -293,6 +375,7 @@
     }
 
     window.addEventListener("scroll", function () {
+      if (reduced || !desktopPreference.matches) return;
       if (!pTicking) { window.requestAnimationFrame(updateParallax); pTicking = true; }
     }, { passive: true });
     window.addEventListener("resize", updateParallax);
@@ -302,9 +385,9 @@
   /* ---------------------------------------------------------------------------
      12. Fondu entre les pages
      --------------------------------------------------------------------------- */
-  if (!reduced) {
+  (function () {
     document.addEventListener("click", function (e) {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (reduced || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       var a = e.target && e.target.closest ? e.target.closest("a") : null;
       if (!a || !a.getAttribute("href")) return;
       if (a.target === "_blank" || a.hasAttribute("download")) return;
@@ -325,7 +408,18 @@
     window.addEventListener("pageshow", function (e) {
       if (e.persisted) document.body.classList.remove("is-leaving");
     });
-  }
+  })();
+
+  observePreference(motionPreference, function (e) {
+    reduced = e.matches;
+    if (reduced) {
+      revealables.forEach(function (el) { el.classList.add("is-in"); });
+      if (revealObserver) revealObserver.disconnect();
+      parallaxImgs.forEach(function (img) { img.style.removeProperty("--py"); });
+      document.body.classList.remove("is-leaving");
+      if (header) header.classList.remove("is-hidden");
+    }
+  });
 
 
   /* ---------------------------------------------------------------------------
@@ -364,4 +458,6 @@
      --------------------------------------------------------------------------- */
   var year = $("#year");
   if (year) year.textContent = String(new Date().getFullYear());
+  // Le repli CSS reste actif si l'initialisation du script n'aboutit pas.
+  document.documentElement.classList.add("js");
 })();

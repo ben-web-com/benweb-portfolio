@@ -26,8 +26,12 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/InterTight-300_800.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/InstrumentSerif-400-italic.woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=20260912c">
-<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}.hero h1 .line>span{transform:none!important}</style></noscript>
+<link rel="stylesheet" href="assets/css/style.css?v=20260915a">
+<link rel="stylesheet" href="assets/css/accessibility.css?v=20260915a">
+
+<link rel="stylesheet" href="assets/demos/demos.css?v=20260915a">
+
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important;filter:none!important}.hero h1 .line>span{transform:none!important}</style></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,17 +54,18 @@
     <nav class="nav-links" aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
       <div class="nav-drop">
+        <a class="nav-services-fallback" href="index.html#services">Services</a>
         <button type="button" class="nav-drop-btn is-active" aria-expanded="false" aria-controls="services-menu">
           Services
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
         </button>
-        <div class="nav-menu" id="services-menu"><a href="applications.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Outils métier, tableaux de bord, espaces clients et back-offices sur mesure.</small></span></a><a href="sites-internet.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Sites vitrines, landing pages, boutiques et refontes, conçus sur mesure, jamais sur template.</small></span></a><a href="audit-marketing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Ce qui cloche sur votre site existant, puis ce qui ramène vraiment des clients.</small></span></a><a href="cartes-restaurant.html" aria-current="page"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Carte QR multilingue, commandes envoyées directement en cuisine, suivi client et tableau de bord.</small></span></a><a href="cartes-nfc.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Une carte physique NFC + une page de contact qui s'ouvre d'un simple contact avec le téléphone.</small></span></a><a href="ia-automatisation.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Supprimer les tâches répétitives : scripts, intégrations IA et outils connectés entre eux.</small></span></a><a href="closing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Setting & Closing</b><small>Vos leads traités, qualifiés et conclus : je réponds, je qualifie, je prends les rendez-vous et je closes.</small></span></a></div>
+        <div class="nav-menu" id="services-menu"><a href="sites-internet.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Un site à votre image pour présenter votre activité et recevoir des demandes.</small></span></a><a href="cartes-restaurant.html" aria-current="page"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Vos clients choisissent leurs plats. Les commandes arrivent directement en cuisine.</small></span></a><a href="cartes-nfc.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Votre photo, vos coordonnées et vos liens, partagés en un geste.</small></span></a><a href="audit-marketing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Un regard clair sur votre site, et les améliorations à faire en priorité.</small></span></a><a href="applications.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Un outil pour organiser vos réservations, vos dossiers ou votre suivi client.</small></span></a><a href="ia-automatisation.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Vos tâches répétitives se font seules. Vous gardez la main.</small></span></a><a href="closing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Suivi commercial</b><small>Vos demandes sont suivies, vos prospects relancés et vos rendez-vous préparés.</small></span></a></div>
       </div>
       <a href="infos.html">Infos</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn" href="contact.html">Discuter de mon projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn" href="contact.html">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-panel" aria-label="Ouvrir le menu">
         <span></span><span></span>
       </button>
@@ -72,19 +77,19 @@
   <nav aria-label="Navigation mobile">
     <a href="index.html" style="--i:1">Accueil</a>
     <p class="mobile-label" style="--i:2">Services</p>
-    <a class="mobile-sub" href="applications.html" style="--i:3">Applications web & mobile</a><a class="mobile-sub" href="sites-internet.html" style="--i:4">Création de sites internet</a><a class="mobile-sub" href="audit-marketing.html" style="--i:5">Audit & Marketing</a><a class="mobile-sub" href="cartes-restaurant.html" style="--i:6">Cartes restaurant connectées</a><a class="mobile-sub" href="cartes-nfc.html" style="--i:7">Cartes digitales & NFC</a><a class="mobile-sub" href="ia-automatisation.html" style="--i:8">IA & automatisation</a><a class="mobile-sub" href="closing.html" style="--i:9">Setting & Closing</a>
+    <a class="mobile-sub" href="sites-internet.html" style="--i:3">Création de sites internet</a><a class="mobile-sub" href="cartes-restaurant.html" style="--i:4">Cartes restaurant connectées</a><a class="mobile-sub" href="cartes-nfc.html" style="--i:5">Cartes digitales & NFC</a><a class="mobile-sub" href="audit-marketing.html" style="--i:6">Audit & Marketing</a><a class="mobile-sub" href="applications.html" style="--i:7">Applications web & mobile</a><a class="mobile-sub" href="ia-automatisation.html" style="--i:8">IA & automatisation</a><a class="mobile-sub" href="closing.html" style="--i:9">Suivi commercial</a>
     <a href="infos.html" style="--i:9">Infos</a>
     <a href="contact.html" style="--i:10">Contact</a>
   </nav>
   <div class="mobile-foot">
-    <a class="btn" href="contact.html">Discuter de mon projet</a>
+    <a class="btn" href="contact.html">Demander un devis</a>
     <p class="mobile-meta">Réponse sous 24 h · FR / EN</p>
   </div>
 </div>
 
 <main id="main">
 
-  <section class="page-hero">
+  <section class="page-hero page-hero--demo">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="grid-lines" aria-hidden="true"></div>
     <div class="container">
@@ -93,68 +98,83 @@
         <a href="index.html#services">Services</a><span aria-hidden="true">/</span>
         <span aria-current="page">Cartes restaurant connectées</span>
       </nav>
-      <span class="eyebrow">Service 04 / 07</span>
+      <span class="eyebrow">Service 02 / 07</span>
       <h1 class="display">Cartes restaurant<br><em>connectées</em></h1>
-      <p class="lead">Le client scanne le QR posé sur la table. La carte s'ouvre dans sa langue, avec les photos et les prix à jour. Il commande depuis son téléphone : la commande s'affiche immédiatement en cuisine, et il suit son avancement sans avoir à chercher un serveur du regard.</p>
+      <p class="lead">Votre client choisit ses plats sur son téléphone. Sa commande arrive en cuisine, et il suit sa préparation. Essayez juste en dessous.</p>
       <div class="hero-cta">
-        <a class="btn btn--lg" href="contact.html">Contactez-moi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn--ghost btn--lg" href="#realisations">Voir les réalisations</a>
+        <a class="btn btn--lg" href="contact.html?service=cartes-restaurant">Demander mon devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost btn--lg" href="#demo">Essayer la démo ↓</a>
       </div>
       <div class="chip-row"><span class="chip">Sans commission par commande</span><span class="chip">Carte modifiable en 10 secondes</span><span class="chip">Multilingue</span></div>
     </div>
   </section>
 
-  
-  <section class="section section--paper">
-    <div class="container">
-      <div class="two-col">
-        <div data-reveal>
-          <span class="eyebrow">Le problème</span>
-          <p class="big-text">Une carte imprimée est périmée dès qu'un prix bouge ou qu'un plat manque. Les plateformes de commande prennent une commission sur chaque ticket. Et en salle, le temps passé à prendre les commandes est du temps qui n'est pas passé à servir, surtout quand la clientèle est internationale et que la barrière de la langue ralentit tout.</p>
-        </div>
-        <div data-reveal style="--d:1">
-          <span class="eyebrow">Ma réponse</span>
-          <p class="big-text">Un site de commande à votre nom, sans intermédiaire et sans commission. La carte est multilingue et se met à jour en quelques secondes depuis votre téléphone. Les commandes arrivent directement sur l'écran de la cuisine, horodatées et numérotées par table. Le client suit son statut, paie en ligne s'il le souhaite, et vous récupérez les chiffres qui comptent dans un tableau de bord.</p>
-        </div>
-      </div>
-
-      <div class="section-head" style="margin-top:clamp(3.5rem,7vw,6rem)" data-reveal>
-        <div><span class="eyebrow">Ce qui est inclus</span>
-          <h2 class="h2" style="margin-top:1rem">Le détail<br><em>de la prestation.</em></h2></div>
-      </div>
-      <div class="inc-grid"><div class="inc-card" data-reveal style="--d:0"><b>Carte digitale multilingue</b><p>Catégories, photos, prix, allergènes, plats du jour, à jour en permanence.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Commande depuis la table</b><p>QR code par table : le numéro de table part avec la commande, sans erreur.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Affichage cuisine</b><p>Les commandes s'affichent en temps réel sur une tablette ou un écran, par ordre d'arrivée.</p></div><div class="inc-card" data-reveal style="--d:0"><b>Suivi côté client</b><p>Reçue → en préparation → prête. Moins d'attente ressentie, moins de relances en salle.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Paiement en ligne (option)</b><p>Encaissement à la commande ou à la fin du repas, selon votre fonctionnement.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Tableau de bord & KPI</b><p>Plats les plus vendus, panier moyen, heures de pointe, chiffre par service.</p></div></div>
-      <p class="honest-note" data-reveal><span>À savoir</span>Le paiement en ligne dépend d'un prestataire d'encaissement (Stripe ou équivalent) : je réalise l'intégration, les frais de transaction restent ceux du prestataire.</p>
-    </div>
-  </section>
-
-    <section class="section" id="realisations">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <div><span class="eyebrow">Réalisations</span>
-          <h2 class="h2" style="margin-top:1rem">Ce que j'ai<br><em>déjà construit.</em></h2></div>
-        <p class="lead">Des projets réels, avec leur contexte et leur statut. Rien n'est mis en scène.</p>
-      </div>
-      <div class="cases"><article class="case" data-reveal>
-          <div class="case-visual" data-spot><div class="case-frame" aria-hidden="true"><i></i><i></i><i></i><u>restaurant · carte & commandes</u></div><div class="case-cover">
-              <div><span class="eyebrow">Site multilingue · 5 langues</span>
-                <p class="cover-title" style="margin-top:.9rem">Une carte, cinq langues,<br>et les commandes<br><em>qui arrivent seules.</em></p></div>
-              <div class="cover-map"><div class="cover-node"><b>FR · EN</b><span>Clientèle locale</span></div><div class="cover-node"><b>TR · TH · ZH</b><span>Clientèle internationale</span></div><div class="cover-node"><b>Carte dynamique</b><span>Entrées → desserts</span></div><div class="cover-node"><b>Commandes</b><span>Envoyées en cuisine</span></div></div>
-              <div class="cover-foot"><span>Next.js 16 · React 19 · Tailwind</span><span>Routing i18n</span></div>
-            </div></div>
-          <div class="case-body">
-            
-            <div class="case-tags"><span class="chip chip--type">Site & outil métier</span><span class="chip">Multilingue</span><span class="chip">Prise de commande</span></div>
-            <h3>Restaurant turc à Bangkok : carte multilingue et commandes</h3>
-            <p class="case-sub">Un restaurant dont les clients parlent cinq langues et dont les commandes arrivaient par messages éparpillés.</p>
-            <div class="case-block"><h4>Problématique</h4><p>Présenter une carte complète à une clientèle internationale, et centraliser les commandes sans imposer au restaurateur un logiciel de caisse coûteux.</p></div>
-            <div class="case-block"><h4>Solution</h4><p>Un site Next.js avec routage par langue (français, anglais, turc, thaï, chinois), une carte structurée par catégories avec visuels et prix, un espace compte, une interface d'administration et des commandes envoyées automatiquement vers un tableau que le restaurant consulte depuis son téléphone.</p></div>
-            <ul class="case-features"><li>5 langues gérées par un dictionnaire typé, sans dépendance externe</li><li>Carte dynamique : entrées, plats, desserts, boissons, prix à jour</li><li>Commandes enregistrées automatiquement, consultables en salle</li><li>Pages « nous connaître », mentions légales et espace administrateur</li></ul>
-            <div class="case-stack"><span class="chip">Next.js 16</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Tailwind CSS</span><span class="chip">Google Sheets API</span></div>
-            <div class="case-foot"><span class="chip">Projet client</span><p class="case-note">Site privé avant ouverture. Démonstration en visio possible.</p></div>
+  <section class="service-demo-section" id="demo" aria-labelledby="demo-title">
+  <div class="container">
+    <div class="demo-intro"><div><span class="eyebrow">À vous d’essayer</span><h2 id="demo-title">De la table à la cuisine.</h2></div><p>Ajoutez un plat, puis envoyez la commande.</p></div>
+    <div class="service-demo" data-demo="restaurant"><div class="restaurant-demo" data-restaurant-view="client">
+  <div class="demo-switch restaurant-switch" role="group" aria-label="Vue de la démonstration" data-demo-control>
+    <button type="button" data-rest-view="client" aria-pressed="true">Côté client</button>
+    <button type="button" data-rest-view="kitchen" aria-pressed="false">En cuisine <span data-ticket-count></span></button>
+  </div>
+  <div class="restaurant-layout">
+    <div class="restaurant-client" data-rest-panel="client">
+      <div class="demo-device-top" aria-hidden="true"><span>9:41</span><i></i><span>•••</span></div>
+      <div class="restaurant-menu">
+        <div class="restaurant-brand"><span class="demo-overline">Votre restaurant</span><span class="demo-pill">Table 4</span></div>
+        <h3>Qu’est-ce qui<br><em>vous ferait plaisir ?</em></h3>
+        <p class="restaurant-hint">Une petite carte, pour essayer.</p>
+        <div class="restaurant-dishes">
+          <div class="restaurant-dish">
+            <span class="dish-art" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="24" cy="27" rx="18" ry="12"/><path d="M14 27c5-8 9 8 17-3M13 22c7-7 12 8 20-2M19 29l7-10M28 11l9 18M33 9l9 17"/></svg></span>
+            <div><h4>Pad thaï</h4><p>Nouilles, légumes, citron vert.</p><small>Contient de l’arachide.</small></div>
+            <div class="dish-quantity" data-demo-control><button type="button" data-dish="pad" data-delta="-1" aria-label="Retirer un pad thaï" disabled>−</button><output data-quantity="pad" aria-label="Quantité de pad thaï">0</output><button type="button" data-dish="pad" data-delta="1" aria-label="Ajouter un pad thaï">+</button></div>
           </div>
-        </article></div>
+          <div class="restaurant-dish">
+            <span class="dish-art" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 22h32a16 16 0 0 1-32 0ZM14 39h20M16 17c-5-6 4-7 0-12M24 17c-5-6 4-7 0-12M32 17c-5-6 4-7 0-12"/></svg></span>
+            <div><h4>Curry de légumes</h4><p>Lait de coco et riz parfumé.</p><small>Végétarien · légèrement épicé.</small></div>
+            <div class="dish-quantity" data-demo-control><button type="button" data-dish="curry" data-delta="-1" aria-label="Retirer un curry de légumes" disabled>−</button><output data-quantity="curry" aria-label="Quantité de curry">0</output><button type="button" data-dish="curry" data-delta="1" aria-label="Ajouter un curry de légumes">+</button></div>
+          </div>
+          <div class="restaurant-dish">
+            <span class="dish-art" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 14h22l-3 27H16ZM12 14h24M26 14l3-9h9M17 22h15M20 28l3 4 4-4"/></svg></span>
+            <div><h4>Thé glacé</h4><p>Citron et menthe fraîche.</p></div>
+            <div class="dish-quantity" data-demo-control><button type="button" data-dish="tea" data-delta="-1" aria-label="Retirer un thé glacé" disabled>−</button><output data-quantity="tea" aria-label="Quantité de thé glacé">0</output><button type="button" data-dish="tea" data-delta="1" aria-label="Ajouter un thé glacé">+</button></div>
+          </div>
+        </div>
+        <div class="restaurant-cart" data-demo-control><span data-cart-summary aria-live="polite" aria-atomic="true">Choisissez un plat</span><button type="button" class="btn" data-send-order disabled>Envoyer en cuisine <span aria-hidden="true">↗</span></button><p class="client-order-status" data-client-status hidden></p></div>
+      </div>
     </div>
-  </section>
+    <div class="restaurant-kitchen" data-rest-panel="kitchen">
+      <div class="demo-window-bar" aria-hidden="true"><span>● ● ●</span><span>Votre écran cuisine</span></div>
+      <div class="kitchen-body">
+        <div class="kitchen-heading"><div><span class="demo-overline">En cuisine</span><h3>Chaque commande,<br><em>au bon endroit.</em></h3></div><span class="demo-pill">Simulation</span></div>
+        <div class="kitchen-empty" data-kitchen-empty><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 6h22v37l-5-3-6 3-6-3-5 3ZM19 16h10M19 23h10M19 30h6"/></svg><p>La prochaine commande<br>s’affichera ici.</p><span>Choisissez un plat, puis envoyez-le en cuisine.</span></div>
+        <article class="kitchen-ticket" data-kitchen-ticket hidden>
+          <div class="ticket-heading"><h4>Table 4</h4><span>À l’instant</span></div>
+          <ul data-ticket-items></ul>
+          <ol class="order-states" aria-label="Avancement de la commande"><li data-order-state="received">Reçue</li><li data-order-state="preparing">En préparation</li><li data-order-state="ready">Prête</li></ol>
+          <p class="order-status" data-order-status role="status" aria-atomic="true"></p>
+          <button type="button" class="btn btn--ghost" data-next-order-state>Passer en préparation</button>
+        </article>
+        <p class="kitchen-note">Le client suit les mêmes étapes sur son téléphone.</p>
+        <div class="restaurant-followup" data-order-followup hidden><a class="btn" href="contact.html?service=cartes-restaurant">Je veux cette carte pour mon restaurant <span aria-hidden="true">↗</span></a><button type="button" class="demo-text-button" data-reset-order>Essayer une autre commande</button></div>
+      </div>
+    </div>
+  </div>
+  <p class="demo-fallback-note">Exemple de parcours : le client choisit ses plats, la commande arrive en cuisine, puis son état est mis à jour.</p>
+</div>
+</div>
+    <p class="demo-caption">Démonstration interactive. Aucune commande réelle n’est envoyée.</p>
+  </div>
+</section>
+  <section class="section section--tight service-inclusions">
+  <div class="container"><details class="service-details">
+    <summary>Ce qui est inclus dans votre projet <span aria-hidden="true">+</span></summary>
+    <div class="service-details-body"><p class="lead">Un site de commande à votre nom, sans intermédiaire et sans commission. La carte est multilingue et se met à jour en quelques secondes depuis votre téléphone. Les commandes arrivent directement sur l'écran de la cuisine, horodatées et numérotées par table. Le client suit son statut, paie en ligne s'il le souhaite, et vous récupérez les chiffres qui comptent dans un tableau de bord.</p><div class="inc-grid"><div class="inc-card" data-reveal style="--d:0"><b>Carte digitale multilingue</b><p>Catégories, photos, prix, allergènes, plats du jour, à jour en permanence.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Commande depuis la table</b><p>QR code par table : le numéro de table part avec la commande, sans erreur.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Affichage cuisine</b><p>Les commandes s'affichent en temps réel sur une tablette ou un écran, par ordre d'arrivée.</p></div><div class="inc-card" data-reveal style="--d:0"><b>Suivi côté client</b><p>Reçue → en préparation → prête. Moins d'attente ressentie, moins de relances en salle.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Paiement en ligne (option)</b><p>Encaissement à la commande ou à la fin du repas, selon votre fonctionnement.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Tableau de bord & KPI</b><p>Plats les plus vendus, panier moyen, heures de pointe, chiffre par service.</p></div></div><p class="honest-note" data-reveal><span>À savoir</span>Le paiement en ligne dépend d'un prestataire d'encaissement (Stripe ou équivalent) : je réalise l'intégration, les frais de transaction restent ceux du prestataire.</p></div>
+  </details></div>
+</section>
+
+
 <section class="section cta-band">
   <div class="container">
     <div class="cta-inner" data-reveal data-spot>
@@ -162,7 +182,7 @@
         <h2 class="h2">Un projet de<br><em>cartes restaurant connectées</em> ?</h2>
         <p class="lead" style="margin-top:1.1rem">Décrivez-le en quelques lignes. Vous recevez sous 24 h un avis honnête, un délai et un prix fixe, sans engagement.</p>
       </div>
-      <a class="btn btn--lg" href="contact.html">Contactez-moi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--lg" href="contact.html?service=cartes-restaurant">Demander mon devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -172,7 +192,7 @@
       <div><span class="eyebrow">Autres services</span>
         <h2 class="h2" style="margin-top:1rem">Explorer le reste</h2></div>
     </div>
-    <div class="os-grid" data-reveal><a class="os-card" href="applications.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Outils métier, tableaux de bord, espaces clients et back-offices sur mesure.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="sites-internet.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Sites vitrines, landing pages, boutiques et refontes, conçus sur mesure, jamais sur template.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="audit-marketing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Ce qui cloche sur votre site existant, puis ce qui ramène vraiment des clients.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="cartes-nfc.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Une carte physique NFC + une page de contact qui s'ouvre d'un simple contact avec le téléphone.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="ia-automatisation.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Supprimer les tâches répétitives : scripts, intégrations IA et outils connectés entre eux.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="closing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Setting & Closing</b><small>Vos leads traités, qualifiés et conclus : je réponds, je qualifie, je prends les rendez-vous et je closes.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    <div class="os-grid" data-reveal><a class="os-card" href="sites-internet.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Un site à votre image pour présenter votre activité et recevoir des demandes.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="cartes-nfc.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Votre photo, vos coordonnées et vos liens, partagés en un geste.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="audit-marketing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Un regard clair sur votre site, et les améliorations à faire en priorité.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="applications.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Un outil pour organiser vos réservations, vos dossiers ou votre suivi client.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="ia-automatisation.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Vos tâches répétitives se font seules. Vous gardez la main.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="closing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Suivi commercial</b><small>Vos demandes sont suivies, vos prospects relancés et vos rendez-vous préparés.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
   </div>
 </section>
 </main>
@@ -182,9 +202,9 @@
     <div class="footer-top">
       <div class="brand" aria-label="BEN WEB, accueil"><img class="brand-mark" src="assets/logo-mark.png" alt="" width="34" height="34" decoding="async"><span>BEN WEB<small>Freelance Digital & IA</small></span></div>
       <div class="footer-cols">
-        <div class="footer-col">
+        <div class="footer-col footer-services">
           <h4>Services</h4>
-          <a href="applications.html">Applications web & mobile</a><a href="sites-internet.html">Création de sites internet</a><a href="audit-marketing.html">Audit & Marketing</a><a href="cartes-restaurant.html">Cartes restaurant connectées</a><a href="cartes-nfc.html">Cartes digitales & NFC</a><a href="ia-automatisation.html">IA & automatisation</a><a href="closing.html">Setting & Closing</a>
+          <div class="footer-service-links"><a href="sites-internet.html">Création de sites internet</a><a href="cartes-restaurant.html">Cartes restaurant connectées</a><a href="cartes-nfc.html">Cartes digitales & NFC</a><a href="audit-marketing.html">Audit & Marketing</a><a href="applications.html">Applications web & mobile</a><a href="ia-automatisation.html">IA & automatisation</a><a href="closing.html">Suivi commercial</a></div>
         </div>
         <div class="footer-col">
           <h4>Le studio</h4>
@@ -212,6 +232,8 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20260912c" defer></script>
+<script src="assets/js/main.js?v=20260915a" defer></script>
+<script src="assets/demos/loader.js?v=20260915a" defer></script>
+
 </body>
 </html>

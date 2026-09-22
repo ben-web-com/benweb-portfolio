@@ -19,3 +19,20 @@
   for = "/assets/work/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Les démos publiques résident dans assets/, jamais dans tools/.
+# Leurs CSS/JS sont versionnés par le générateur avec ASSET_V.
+[[headers]]
+  for = "/assets/demos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/assets/ben.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+[[headers]]
+  for = "/merci.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"

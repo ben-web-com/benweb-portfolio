@@ -1,0 +1,52 @@
+<div class="sites-demo">
+  <div class="sites-selector" role="group" aria-label="Choisir un exemple de site" data-demo-control>
+    <button type="button" data-site-select="restaurant" aria-pressed="true" aria-controls="sites-preview">Restaurant</button>
+    <button type="button" data-site-select="avocat" aria-pressed="false" aria-controls="sites-preview">Cabinet d’avocats</button>
+    <button type="button" data-site-select="sport" aria-pressed="false" aria-controls="sites-preview">Salle de sport</button>
+    <button type="button" data-site-select="tourism" aria-pressed="false" aria-controls="sites-preview">Tourisme au Sri Lanka</button>
+  </div>
+  <div class="sites-browser">
+    <div class="sites-browser-bar"><span class="sites-browser-dots" aria-hidden="true"><i></i><i></i><i></i></span><span data-site-browser-label>Restaurant · aperçu</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18"/></svg></div>
+    <div id="sites-preview" data-sites-preview>
+      <section class="sites-panel sites-restaurant" data-site-panel="restaurant" aria-label="Exemple de site de restaurant">
+        <div class="sites-rest-hero">
+          <img class="sites-cover" src="assets/demos/images/resto-hero.webp" alt="" width="1400" height="787" loading="lazy" decoding="async">
+          <div class="sites-masthead"><span class="sites-rest-mark">Restaurant</span><span class="sites-kicker">Cuisine de saison</span></div>
+          <div class="sites-rest-copy"><h3>Une bonne table.<br><em>Une belle soirée.</em></h3><p>Une carte courte, le plaisir de partager.</p></div>
+        </div>
+        <div class="sites-rest-bottom">
+          <details class="sites-disclosure"><summary>Voir la carte <span aria-hidden="true">+</span></summary><div class="sites-detail-body"><p class="sites-detail-note">Exemple de carte</p><ul class="sites-menu-list"><li><b>Papaye verte</b><span>Cacahuète, citron vert, piment.</span></li><li><b>Pad thaï du marché</b><span>Poulet, nouilles et tamarin.</span></li><li><b>Riz gluant mangue</b><span>Lait de coco et sésame.</span></li></ul></div></details>
+          <details class="sites-disclosure"><summary>Les horaires <span aria-hidden="true">+</span></summary><div class="sites-detail-body"><p class="sites-detail-note">Exemple d’horaires</p><dl class="sites-hours"><div><dt>Mardi à jeudi</dt><dd>18 h – 23 h</dd></div><div><dt>Vendredi et samedi</dt><dd>12 h – 14 h · 18 h – minuit</dd></div><div><dt>Dimanche</dt><dd>Brunch · 11 h – 16 h</dd></div></dl></div></details>
+        </div>
+      </section>
+    </div>
+  </div>
+  <p class="sites-demo-note" data-site-note>Exemple de site. Les contenus servent à la démonstration.</p>
+  <p class="sites-announcement" data-site-announcement role="status" aria-atomic="true"></p>
+
+  <template data-site-template="avocat">
+    <section class="sites-panel sites-law" data-site-panel="avocat" aria-label="Exemple de site de cabinet d’avocats">
+      <div class="sites-masthead"><span class="sites-law-mark">Cabinet d’avocats</span><span class="sites-kicker">Conseil &amp; accompagnement</span></div>
+      <div class="sites-law-split"><div class="sites-law-copy"><p class="sites-kicker">Un premier échange</p><h3>Vos questions.<br><em>Un chemin clair.</em></h3><p>Comprendre votre situation, identifier les démarches et préparer la suite.</p></div><img src="assets/demos/images/avocat-livres.webp" alt="Des ouvrages juridiques dans une bibliothèque" width="1400" height="787" loading="lazy" decoding="async"></div>
+      <div class="sites-law-bottom">
+        <details class="sites-disclosure"><summary>Domaines d’intervention <span aria-hidden="true">+</span></summary><div class="sites-detail-body"><ul class="sites-menu-list"><li><b>Droit des affaires</b><span>Création d’entreprise et contrats commerciaux.</span></li><li><b>Droit social</b><span>Relations de travail et vie de l’entreprise.</span></li><li><b>Contentieux commercial</b><span>Différends entre professionnels.</span></li></ul></div></details>
+        <details class="sites-disclosure"><summary>Préparer un rendez-vous <span aria-hidden="true">+</span></summary><div class="sites-detail-body"><p>Présentez votre situation en quelques mots, puis rassemblez les documents et échanges qui permettent de la comprendre.</p><p class="sites-detail-note">Exemple de contenu d’accueil d’un cabinet.</p></div></details>
+      </div>
+    </section>
+  </template>
+
+  <template data-site-template="sport">
+    <section class="sites-panel sites-sport" data-site-panel="sport" aria-label="Exemple de site de salle de sport">
+      <div class="sites-sport-hero"><img class="sites-cover" src="assets/demos/images/sport-hero.webp" alt="" width="1400" height="787" loading="lazy" decoding="async"><div class="sites-masthead"><span class="sites-sport-mark">Salle de sport</span><span class="sites-kicker">À votre rythme</span></div><div class="sites-sport-copy"><h3>Bougez.<br>Progressez.<br><em>Recommencez.</em></h3><p>Force, énergie, mobilité.<br>Trouvez le cours qui vous correspond.</p></div></div>
+      <div class="sites-sport-bottom"><details class="sites-disclosure"><summary>Voir le planning <span aria-hidden="true">+</span></summary><div class="sites-detail-body"><p class="sites-detail-note">Exemple de planning · lundi</p><ul class="sites-class-list"><li><span>7 h</span><div><b>Force</b><small>Travail à la barre</small></div></li><li><span>12 h 30</span><div><b>Entraînement intensif</b><small>Enchaînements et cardio</small></div></li><li><span>19 h 30</span><div><b>Mobilité</b><small>Souplesse et récupération</small></div></li></ul></div></details></div>
+    </section>
+  </template>
+
+  <template data-site-template="tourism">
+    <section class="sites-panel sites-tourism" data-site-panel="tourism" aria-label="Extrait d’un site de tourisme au Sri Lanka" lang="fr">
+      <div class="sites-masthead"><span class="sites-tour-mark" data-tour-text="brand">Tourisme au Sri Lanka</span><div class="sites-language" role="group" aria-label="Langue de cet aperçu" lang="fr" data-demo-control><button type="button" data-site-language="fr" aria-pressed="true" aria-label="Français" lang="fr">FR</button><button type="button" data-site-language="en" aria-pressed="false" aria-label="English" lang="en">EN</button></div></div>
+      <div class="sites-tour-split"><div class="sites-tour-copy"><p class="sites-kicker">Ella, Sri Lanka</p><h3><span data-tour-text="title">De beaux jours.</span><br><em data-tour-text="titleEnd">Les chemins d’ici.</em></h3><p data-tour-text="intro">Découvrez Ella en tuk-tuk. Poursuivez le voyage au Sri Lanka en voiture ou en van.</p><span class="sites-tour-tag" data-tour-text="tag">À votre rythme.</span></div><figure class="sites-tour-photo"><img src="assets/demos/images/tourism-hero.webp" alt="Un moment partagé près d’un tuk-tuk bleu au Sri Lanka" data-tour-image width="640" height="481" loading="lazy" decoding="async"><figcaption data-tour-text="caption">Un peu d’aventure. Une belle journée.</figcaption></figure></div>
+      <div class="sites-tour-bottom"><details class="sites-disclosure"><summary><span data-tour-text="action">Découvrir l’excursion</span><span aria-hidden="true">+</span></summary><div class="sites-detail-body"><h4 data-tour-text="trip">Ella en tuk-tuk</h4><p data-tour-text="description">Le Nine Arch Bridge, Little Adam’s Peak et la boucle de Demodara : un aperçu des étapes proposées autour d’Ella.</p><p class="sites-detail-note" data-tour-text="note">Un itinéraire à préparer selon vos envies.</p></div></details></div>
+    </section>
+  </template>
+</div>

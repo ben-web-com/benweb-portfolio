@@ -1,0 +1,130 @@
+/* Quatre directions visuelles dans un aperçu responsive, sans page imbriquée. */
+.sites-demo { min-width:0; }
+.sites-demo .sites-selector { flex-wrap:wrap; gap:.5rem; margin-bottom:1.1rem; }
+.sites-demo .sites-selector button { min-height:44px; padding:.7rem 1rem; border:1px solid var(--line-strong); border-radius:99px; color:var(--muted); font-size:.8125rem; line-height:1.35; }
+.sites-demo .sites-selector button[aria-pressed="true"] { color:var(--accent-ink); border-color:var(--accent); background:var(--accent); }
+.sites-demo .sites-selector button:hover { border-color:var(--accent); }
+.sites-demo .sites-browser { border:1px solid var(--line-strong); border-radius:16px; overflow:hidden; }
+.sites-demo .sites-browser-bar { display:flex; align-items:center; gap:1rem; padding:.85rem 1rem; color:var(--muted); background:var(--surface); border-bottom:1px solid var(--line); font-size:.6875rem; line-height:1.4; }
+.sites-demo .sites-browser-bar > [data-site-browser-label] { flex:1; min-width:0; overflow-wrap:anywhere; text-align:center; }
+.sites-demo .sites-browser-bar > svg { width:16px; height:16px; flex:none; }
+.sites-demo .sites-browser-dots { display:flex; gap:4px; flex:none; }
+.sites-demo .sites-browser-dots i { width:6px; height:6px; border-radius:50%; background:var(--muted-2); }
+.sites-demo .sites-panel { background:var(--paper); color:var(--paper-text); min-width:0; }
+.sites-demo .sites-panel :focus-visible { outline-color:var(--paper-text); outline-offset:-3px; }
+.sites-demo .sites-masthead { position:relative; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.15rem clamp(1rem,3vw,2rem); z-index:1; }
+.sites-demo .sites-kicker { font-size:.625rem; letter-spacing:.13em; text-transform:uppercase; font-weight:500; line-height:1.5; }
+.sites-demo .sites-cover { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.sites-demo .sites-rest-hero, .sites-demo .sites-sport-hero { position:relative; min-height:365px; display:flex; flex-direction:column; justify-content:space-between; color:var(--text); isolation:isolate; }
+.sites-demo .sites-rest-hero::after, .sites-demo .sites-sport-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(8,9,10,.85),rgba(8,9,10,.38) 40%,rgba(8,9,10,.88)); z-index:0; }
+.sites-demo .sites-rest-mark { font-family:var(--font-serif); font-style:italic; font-size:1.45rem; line-height:1.2; }
+.sites-demo .sites-rest-copy { position:relative; z-index:1; padding:1.5rem clamp(1rem,3vw,2rem) 2.2rem; }
+.sites-demo .sites-rest-copy h3 { font-family:var(--font-serif); font-weight:400; font-size:clamp(2.2rem,5vw,4.2rem); line-height:1.02; letter-spacing:-.02em; }
+.sites-demo .sites-rest-copy h3 em { color:var(--text); }
+.sites-demo .sites-rest-copy > p { font-size:.9375rem; line-height:1.5; margin-top:1rem; max-width:34ch; }
+.sites-demo .sites-rest-bottom { display:grid; grid-template-columns:1fr 1fr; gap:1rem; padding:1.25rem clamp(1rem,3vw,2rem); align-items:start; }
+.sites-demo .sites-disclosure { border:1px solid var(--paper-line); min-width:0; }
+.sites-demo .sites-disclosure summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:48px; padding:.8rem 1rem; font-size:.8125rem; line-height:1.4; cursor:pointer; font-weight:500; touch-action:manipulation; }
+.sites-demo .sites-disclosure summary::-webkit-details-marker { display:none; }
+.sites-demo .sites-disclosure summary > [aria-hidden] { flex:none; font-size:1.125rem; line-height:1; }
+.sites-demo .sites-disclosure[open] summary > [aria-hidden] { transform:rotate(45deg); }
+.sites-demo .sites-disclosure summary:hover { background:var(--paper-2); }
+.sites-demo .sites-detail-body { padding:0 1rem 1rem; font-size:.8125rem; line-height:1.65; }
+.sites-demo .sites-detail-body > p + p { margin-top:.8rem; }
+.sites-demo .sites-detail-note { font-size:.6875rem; color:var(--paper-muted); }
+.sites-demo .sites-menu-list { margin-top:.6rem; }
+.sites-demo .sites-menu-list li { padding:.75rem 0; border-top:1px solid var(--paper-line); }
+.sites-demo .sites-menu-list li:last-child { padding-bottom:0; }
+.sites-demo .sites-menu-list b { display:block; font-size:.875rem; font-weight:500; }
+.sites-demo .sites-menu-list span { display:block; font-size:.75rem; color:var(--paper-muted); line-height:1.55; margin-top:.2rem; }
+.sites-demo .sites-hours { margin-top:.6rem; }
+.sites-demo .sites-hours > div { border-top:1px solid var(--paper-line); padding:.6rem 0; }
+.sites-demo .sites-hours dt { font-size:.8125rem; font-weight:500; }
+.sites-demo .sites-hours dd { font-size:.75rem; color:var(--paper-muted); margin-top:.2rem; }
+.sites-demo .sites-law .sites-masthead { border-bottom:1px solid var(--paper-line); }
+.sites-demo .sites-law-mark { font-size:.8125rem; font-weight:600; text-transform:uppercase; letter-spacing:.1em; line-height:1.5; }
+.sites-demo .sites-law .sites-kicker { color:var(--paper-muted); }
+.sites-demo .sites-law-split { display:grid; grid-template-columns:1.2fr .8fr; min-height:325px; }
+.sites-demo .sites-law-copy { padding:2.2rem clamp(1rem,3vw,2rem); align-self:center; }
+.sites-demo .sites-law-copy h3 { font-family:var(--font-serif); font-weight:400; font-size:clamp(2.1rem,4.2vw,3.6rem); line-height:1.07; margin-top:1rem; }
+.sites-demo .sites-law-copy > p:last-child { color:var(--paper-muted); font-size:.875rem; line-height:1.7; max-width:37ch; margin-top:1rem; }
+.sites-demo .sites-law-split > img { width:100%; height:100%; object-fit:cover; }
+.sites-demo .sites-law-bottom { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--paper-line); }
+.sites-demo .sites-law-bottom .sites-disclosure { border:0; }
+.sites-demo .sites-law-bottom .sites-disclosure + .sites-disclosure { border-left:1px solid var(--paper-line); }
+.sites-demo .sites-law-bottom summary { padding:1.1rem clamp(1rem,3vw,2rem); }
+.sites-demo .sites-law-bottom .sites-detail-body { padding-inline:clamp(1rem,3vw,2rem); }
+.sites-demo .sites-sport { background:var(--ink); color:var(--text); }
+.sites-demo .sites-sport :focus-visible { outline-color:var(--accent); }
+.sites-demo .sites-sport-hero { min-height:380px; }
+.sites-demo .sites-sport-hero .sites-cover { object-position:60% 42%; }
+.sites-demo .sites-sport-mark { font-size:.9375rem; font-weight:800; text-transform:uppercase; letter-spacing:-.03em; }
+.sites-demo .sites-sport-copy { z-index:1; position:relative; padding:1.5rem clamp(1rem,3vw,2rem) 2rem; }
+.sites-demo .sites-sport-copy h3 { font-size:clamp(2rem,4.4vw,3.75rem); line-height:.95; font-weight:800; text-transform:uppercase; letter-spacing:-.045em; }
+.sites-demo .sites-sport-copy h3 em { font-family:var(--font-sans); color:var(--accent); font-style:normal; }
+.sites-demo .sites-sport-copy > p { margin-top:1.2rem; font-size:.875rem; line-height:1.5; }
+.sites-demo .sites-sport-bottom { padding:1.2rem clamp(1rem,3vw,2rem); }
+.sites-demo .sites-sport .sites-disclosure { border-color:var(--line-strong); }
+.sites-demo .sites-sport .sites-disclosure summary { color:var(--accent); text-transform:uppercase; letter-spacing:.06em; font-weight:600; }
+.sites-demo .sites-sport .sites-disclosure summary:hover { background:var(--surface); }
+.sites-demo .sites-sport .sites-detail-note { color:var(--muted); }
+.sites-demo .sites-class-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; margin-top:.8rem; }
+.sites-demo .sites-class-list li { display:flex; align-items:baseline; gap:.8rem; padding-top:.9rem; border-top:1px solid var(--line-strong); }
+.sites-demo .sites-class-list li > span { font-size:.8125rem; color:var(--accent); white-space:nowrap; }
+.sites-demo .sites-class-list b { font-size:.875rem; line-height:1.4; display:block; }
+.sites-demo .sites-class-list small { font-size:.75rem; color:var(--muted); display:block; margin-top:.3rem; }
+.sites-demo .sites-tourism { background:var(--paper-2); }
+.sites-demo .sites-tourism .sites-masthead { padding-bottom:.8rem; }
+.sites-demo .sites-tour-mark { font-size:.875rem; font-weight:600; letter-spacing:-.02em; line-height:1.35; }
+.sites-demo .sites-language { flex:none; gap:2px; border:1px solid var(--paper-line); border-radius:99px; padding:2px; }
+.sites-demo .sites-language button { min-width:44px; min-height:44px; border-radius:50%; font-size:.6875rem; font-weight:500; }
+.sites-demo .sites-language button[aria-pressed="true"] { background:var(--paper-text); color:var(--paper); }
+.sites-demo .sites-tour-split { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:1.5rem; padding:1rem clamp(1rem,3vw,2rem) 1.6rem; }
+.sites-demo .sites-tour-copy h3 { margin-top:1rem; font-family:var(--font-serif); font-size:clamp(2.15rem,4vw,3.5rem); line-height:1.04; font-weight:400; }
+.sites-demo .sites-tour-copy > p:not(.sites-kicker) { color:var(--paper-muted); font-size:.875rem; line-height:1.65; margin-top:1rem; max-width:35ch; }
+.sites-demo .sites-tour-tag { display:inline-block; margin-top:1rem; background:var(--accent); padding:.4rem .75rem; border-radius:99px; font-size:.6875rem; font-weight:500; }
+.sites-demo .sites-tour-photo { padding:.5rem .5rem 0; background:var(--paper); border-radius:18px; border:1px solid var(--paper-line); min-width:0; }
+.sites-demo .sites-tour-photo img { width:100%; height:290px; object-fit:cover; border-radius:12px; }
+.sites-demo .sites-tour-photo figcaption { font-family:var(--font-serif); font-style:italic; font-size:1rem; line-height:1.3; padding:.8rem .4rem; text-align:center; }
+.sites-demo .sites-tour-bottom { padding:0 clamp(1rem,3vw,2rem) 1.2rem; }
+.sites-demo .sites-tour-bottom .sites-disclosure { border-radius:12px; background:var(--paper); overflow:hidden; }
+.sites-demo .sites-tour-bottom h4 { font-size:1.15rem; font-family:var(--font-serif); margin-block:.4rem .7rem; }
+.sites-demo .sites-demo-note { font-size:.75rem; color:var(--muted); margin-top:1rem; line-height:1.5; }
+.sites-demo .sites-announcement { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+@media (max-width:700px) {
+  .sites-demo .sites-selector { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.4rem; }
+  .service-demo.is-ready .sites-demo .sites-selector { display:grid; }
+  .sites-demo .sites-selector button { padding:.65rem .55rem; border-radius:12px; font-size:.75rem; }
+  .sites-demo .sites-browser { border-radius:12px; }
+  .sites-demo .sites-browser-bar { padding:.7rem .65rem; gap:.6rem; font-size:.625rem; }
+  .sites-demo .sites-masthead { flex-wrap:wrap; gap:.45rem; padding:1rem; }
+  .sites-demo .sites-rest-hero { min-height:315px; }
+  .sites-demo .sites-rest-copy { padding:1.25rem 1rem 1.5rem; }
+  .sites-demo .sites-rest-copy h3 { font-size:clamp(2rem,8.6vw,3.5rem); }
+  .sites-demo .sites-rest-copy > p { font-size:.8125rem; }
+  .sites-demo .sites-rest-bottom, .sites-demo .sites-law-bottom { grid-template-columns:1fr; gap:.65rem; }
+  .sites-demo .sites-rest-bottom { padding:1rem; }
+  .sites-demo .sites-law .sites-masthead .sites-kicker { width:100%; }
+  .sites-demo .sites-law-split { grid-template-columns:1fr; }
+  .sites-demo .sites-law-copy { padding:1.6rem 1rem; }
+  .sites-demo .sites-law-copy h3 { font-size:2.5rem; }
+  .sites-demo .sites-law-split > img { height:155px; object-position:50% 55%; }
+  .sites-demo .sites-law-bottom { gap:0; }
+  .sites-demo .sites-law-bottom .sites-disclosure + .sites-disclosure { border-left:0; border-top:1px solid var(--paper-line); }
+  .sites-demo .sites-sport-hero { min-height:345px; }
+  .sites-demo .sites-sport-copy { padding:1.5rem 1rem; }
+  .sites-demo .sites-sport-copy h3 { font-size:clamp(1.65rem,6.8vw,2.7rem); }
+  .sites-demo .sites-sport .sites-masthead .sites-kicker { width:100%; }
+  .sites-demo .sites-class-list { grid-template-columns:1fr; gap:.6rem; }
+  .sites-demo .sites-class-list li > span { min-width:4rem; }
+  .sites-demo .sites-tourism .sites-masthead { flex-wrap:nowrap; gap:.5rem; }
+  .sites-demo .sites-tour-mark { max-width:14ch; font-size:.75rem; }
+  .sites-demo .sites-tour-split { grid-template-columns:1fr; gap:1.25rem; padding:1rem; }
+  .sites-demo .sites-tour-copy h3 { font-size:clamp(2rem,8vw,3rem); }
+  .sites-demo .sites-tour-copy > p:not(.sites-kicker) { font-size:.8125rem; }
+  .sites-demo .sites-tour-photo img { height:180px; }
+  .sites-demo .sites-tour-photo figcaption { font-size:.9375rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .sites-demo *, .sites-demo *::before, .sites-demo *::after { animation:none!important; transition:none!important; }
+}

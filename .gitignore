@@ -6,3 +6,8 @@ dist/
 .env.*
 *.log
 *.zip
+tools/.preview/
+__pycache__/
+.codex/
+.firebase/
+firebase-debug.log*

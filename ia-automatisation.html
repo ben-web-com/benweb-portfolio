@@ -26,8 +26,12 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/InterTight-300_800.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/InstrumentSerif-400-italic.woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=20260912c">
-<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}.hero h1 .line>span{transform:none!important}</style></noscript>
+<link rel="stylesheet" href="assets/css/style.css?v=20260915a">
+<link rel="stylesheet" href="assets/css/accessibility.css?v=20260915a">
+
+<link rel="stylesheet" href="assets/demos/demos.css?v=20260915a">
+<link rel="stylesheet" href="assets/demos/story.css?v=20260915a">
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important;filter:none!important}.hero h1 .line>span{transform:none!important}</style></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,17 +54,18 @@
     <nav class="nav-links" aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
       <div class="nav-drop">
+        <a class="nav-services-fallback" href="index.html#services">Services</a>
         <button type="button" class="nav-drop-btn is-active" aria-expanded="false" aria-controls="services-menu">
           Services
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
         </button>
-        <div class="nav-menu" id="services-menu"><a href="applications.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Outils métier, tableaux de bord, espaces clients et back-offices sur mesure.</small></span></a><a href="sites-internet.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Sites vitrines, landing pages, boutiques et refontes, conçus sur mesure, jamais sur template.</small></span></a><a href="audit-marketing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Ce qui cloche sur votre site existant, puis ce qui ramène vraiment des clients.</small></span></a><a href="cartes-restaurant.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Carte QR multilingue, commandes envoyées directement en cuisine, suivi client et tableau de bord.</small></span></a><a href="cartes-nfc.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Une carte physique NFC + une page de contact qui s'ouvre d'un simple contact avec le téléphone.</small></span></a><a href="ia-automatisation.html" aria-current="page"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Supprimer les tâches répétitives : scripts, intégrations IA et outils connectés entre eux.</small></span></a><a href="closing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Setting & Closing</b><small>Vos leads traités, qualifiés et conclus : je réponds, je qualifie, je prends les rendez-vous et je closes.</small></span></a></div>
+        <div class="nav-menu" id="services-menu"><a href="sites-internet.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Un site à votre image pour présenter votre activité et recevoir des demandes.</small></span></a><a href="cartes-restaurant.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Vos clients choisissent leurs plats. Les commandes arrivent directement en cuisine.</small></span></a><a href="cartes-nfc.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Votre photo, vos coordonnées et vos liens, partagés en un geste.</small></span></a><a href="audit-marketing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Un regard clair sur votre site, et les améliorations à faire en priorité.</small></span></a><a href="applications.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Un outil pour organiser vos réservations, vos dossiers ou votre suivi client.</small></span></a><a href="ia-automatisation.html" aria-current="page"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>IA & automatisation</b><small>Vos tâches répétitives se font seules. Vous gardez la main.</small></span></a><a href="closing.html"><span class="mi-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Suivi commercial</b><small>Vos demandes sont suivies, vos prospects relancés et vos rendez-vous préparés.</small></span></a></div>
       </div>
       <a href="infos.html">Infos</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn" href="contact.html">Discuter de mon projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn" href="contact.html">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-panel" aria-label="Ouvrir le menu">
         <span></span><span></span>
       </button>
@@ -72,19 +77,19 @@
   <nav aria-label="Navigation mobile">
     <a href="index.html" style="--i:1">Accueil</a>
     <p class="mobile-label" style="--i:2">Services</p>
-    <a class="mobile-sub" href="applications.html" style="--i:3">Applications web & mobile</a><a class="mobile-sub" href="sites-internet.html" style="--i:4">Création de sites internet</a><a class="mobile-sub" href="audit-marketing.html" style="--i:5">Audit & Marketing</a><a class="mobile-sub" href="cartes-restaurant.html" style="--i:6">Cartes restaurant connectées</a><a class="mobile-sub" href="cartes-nfc.html" style="--i:7">Cartes digitales & NFC</a><a class="mobile-sub" href="ia-automatisation.html" style="--i:8">IA & automatisation</a><a class="mobile-sub" href="closing.html" style="--i:9">Setting & Closing</a>
+    <a class="mobile-sub" href="sites-internet.html" style="--i:3">Création de sites internet</a><a class="mobile-sub" href="cartes-restaurant.html" style="--i:4">Cartes restaurant connectées</a><a class="mobile-sub" href="cartes-nfc.html" style="--i:5">Cartes digitales & NFC</a><a class="mobile-sub" href="audit-marketing.html" style="--i:6">Audit & Marketing</a><a class="mobile-sub" href="applications.html" style="--i:7">Applications web & mobile</a><a class="mobile-sub" href="ia-automatisation.html" style="--i:8">IA & automatisation</a><a class="mobile-sub" href="closing.html" style="--i:9">Suivi commercial</a>
     <a href="infos.html" style="--i:9">Infos</a>
     <a href="contact.html" style="--i:10">Contact</a>
   </nav>
   <div class="mobile-foot">
-    <a class="btn" href="contact.html">Discuter de mon projet</a>
+    <a class="btn" href="contact.html">Demander un devis</a>
     <p class="mobile-meta">Réponse sous 24 h · FR / EN</p>
   </div>
 </div>
 
 <main id="main">
 
-  <section class="page-hero">
+  <section class="page-hero page-hero--demo">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="grid-lines" aria-hidden="true"></div>
     <div class="container">
@@ -95,75 +100,69 @@
       </nav>
       <span class="eyebrow">Service 06 / 07</span>
       <h1 class="display">IA &<br><em>automatisation</em></h1>
-      <p class="lead">Chaque semaine, la même série de gestes : recopier, renommer, relancer, republier. Ce temps-là est récupérable. L'objectif n'est jamais la technologie, c'est le nombre d'heures que vous ne passerez plus dessus.</p>
+      <p class="lead">Moins de messages à recopier et de documents à classer. Vos outils se transmettent les informations et préparent la suite, selon les règles que vous choisissez.</p>
       <div class="hero-cta">
-        <a class="btn btn--lg" href="contact.html">Contactez-moi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn--ghost btn--lg" href="#realisations">Voir les réalisations</a>
+        <a class="btn btn--lg" href="contact.html?service=ia-automatisation">Demander mon devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost btn--lg" href="#demo">Essayer la démo ↓</a>
       </div>
       <div class="chip-row"><span class="chip">Gain de temps mesurable</span><span class="chip">Connecté à vos outils</span><span class="chip">Sans abonnement imposé</span></div>
     </div>
   </section>
 
-  
-  <section class="section section--paper">
-    <div class="container">
-      <div class="two-col">
-        <div data-reveal>
-          <span class="eyebrow">Le problème</span>
-          <p class="big-text">Les tâches répétitives ne se voient pas dans un bilan, mais elles coûtent : la saisie de commandes, la mise à jour d'un catalogue, la rédaction de fiches produits, les relances, les rapports mensuels. Ce sont souvent plusieurs heures par semaine, tous les mois de l'année.</p>
-        </div>
-        <div data-reveal style="--d:1">
-          <span class="eyebrow">Ma réponse</span>
-          <p class="big-text">Je repère les tâches automatisables, puis je construis l'automatisation correspondante : un script, une intégration entre vos outils, ou un assistant connecté à un modèle IA. Vous gardez le contrôle et la validation ; la machine fait le travail mécanique.</p>
-        </div>
-      </div>
-
-      <div class="section-head" style="margin-top:clamp(3.5rem,7vw,6rem)" data-reveal>
-        <div><span class="eyebrow">Ce qui est inclus</span>
-          <h2 class="h2" style="margin-top:1rem">Le détail<br><em>de la prestation.</em></h2></div>
-      </div>
-      <div class="inc-grid"><div class="inc-card" data-reveal style="--d:0"><b>Automatisation de tâches</b><p>Import, export, mise à jour, publication, relances : déclenchés seuls ou en un clic.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Intégration IA</b><p>Génération et traitement de textes, tri, résumé, classification, extraction de données.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Assistant / chatbot</b><p>Un assistant nourri de vos documents pour répondre à vos clients ou à vos équipes.</p></div><div class="inc-card" data-reveal style="--d:0"><b>Génération de contenu</b><p>Fiches produits, articles SEO, descriptions : produits en série et publiés automatiquement.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Connexion entre outils</b><p>Site, tableur, Drive, e-mail, CRM, facturation : les données circulent enfin toutes seules.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Scripts métier</b><p>Les opérations spécifiques à votre activité, celles qu'aucun logiciel du marché ne couvre.</p></div></div>
-      
-    </div>
-  </section>
+  <section class="service-demo-section" id="demo" aria-labelledby="demo-title">
+  <div class="container">
+    <div class="demo-intro"><div><span class="eyebrow">Un aperçu concret</span><h2 id="demo-title">Les tâches répétitives s’enchaînent seules.</h2></div><p>Suivez une demande, du message reçu à la réponse préparée.</p></div>
+    <div class="service-demo" data-demo="story" data-scene="automatisation"><div class="story-dashboard"><div class="demo-window-bar"><span aria-hidden="true">● ● ●</span><span>Votre activité · suivi automatique</span></div>
+  <div class="story-dashboard-body">
+    <div class="workflow-intro"><div><span class="demo-overline">Une demande, moins de recopie</span><h3>Le travail avance.<br><em>Vous gardez la main.</em></h3></div><div class="workflow-message"><small>Exemple de message reçu</small><p>« Bonjour, peut-on réserver une table pour vendredi soir ? »</p></div></div>
+    <ol class="workflow-nodes" aria-label="Exemple de traitement d’une demande">
+      <li class="workflow-node" data-seq data-step-label="La demande est reçue."><span aria-hidden="true">01</span><h4>Message reçu</h4><p>La demande arrive depuis le formulaire de votre site.</p></li>
+      <li class="workflow-node" data-seq data-step-label="Le sujet et la date sont repérés."><span aria-hidden="true">02</span><h4>Demande comprise</h4><p>L’IA repère le sujet et la date : une réservation pour vendredi.</p></li>
+      <li class="workflow-node" data-seq data-step-label="La demande est ajoutée au suivi."><span aria-hidden="true">03</span><h4>Suivi mis à jour</h4><p>Une ligne est préparée dans votre tableau, avec le message d’origine.</p></li>
+      <li class="workflow-node" data-seq data-step-label="La réponse est prête à être vérifiée. Aucun message n’a été envoyé."><span aria-hidden="true">04</span><h4>Réponse à valider</h4><p>Un brouillon demande l’heure et le nombre de personnes. Vous le vérifiez avant envoi.</p></li>
+    </ol>
+    <div class="workflow-result"><span aria-hidden="true">✓</span><p>Vous décidez de la suite, selon vos disponibilités.</p></div>
+    <div class="story-foot"><p data-story-status role="status" aria-live="polite">La réponse est prête à être vérifiée. Aucun message n’a été envoyé.</p><button type="button" class="demo-text-button" data-replay-story data-demo-control>Rejouer les étapes</button></div>
+  </div>
+</div>
+</div>
+    <p class="demo-caption">Simulation : aucun outil externe ni aucune IA ne sont appelés ici. Le fonctionnement réel est adapté à votre activité.</p>
+  </div>
+</section>
+  <section class="section section--tight service-inclusions">
+  <div class="container"><details class="service-details">
+    <summary>Ce qui est inclus dans votre projet <span aria-hidden="true">+</span></summary>
+    <div class="service-details-body"><p class="lead">Je repère les tâches automatisables, puis je construis l'automatisation correspondante : un script, une intégration entre vos outils, ou un assistant connecté à un modèle IA. Vous gardez le contrôle et la validation ; la machine fait le travail mécanique.</p><div class="inc-grid"><div class="inc-card" data-reveal style="--d:0"><b>Automatisation de tâches</b><p>Import, export, mise à jour, publication, relances : déclenchés seuls ou en un clic.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Intégration IA</b><p>Génération et traitement de textes, tri, résumé, classification, extraction de données.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Assistant / chatbot</b><p>Un assistant nourri de vos documents pour répondre à vos clients ou à vos équipes.</p></div><div class="inc-card" data-reveal style="--d:0"><b>Génération de contenu</b><p>Fiches produits, articles SEO, descriptions : produits en série et publiés automatiquement.</p></div><div class="inc-card" data-reveal style="--d:1"><b>Connexion entre outils</b><p>Site, tableur, Drive, e-mail, CRM, facturation : les données circulent enfin toutes seules.</p></div><div class="inc-card" data-reveal style="--d:2"><b>Scripts métier</b><p>Les opérations spécifiques à votre activité, celles qu'aucun logiciel du marché ne couvre.</p></div></div></div>
+  </details></div>
+</section>
 
     <section class="section" id="realisations">
     <div class="container">
       <div class="section-head" data-reveal>
         <div><span class="eyebrow">Réalisations</span>
-          <h2 class="h2" style="margin-top:1rem">Ce que j'ai<br><em>déjà construit.</em></h2></div>
-        <p class="lead">Des projets réels, avec leur contexte et leur statut. Rien n'est mis en scène.</p>
+          <h2 class="h2" style="margin-top:1rem">Quelques<br><em>réalisations.</em></h2></div>
+        <p class="lead">Des projets à découvrir, avec leur contexte et leur statut.</p>
       </div>
-      <div class="cases"><article class="case" data-reveal>
+      <div class="cases cases--mini"><article class="case-mini" data-reveal data-spot>
           <div class="case-visual" data-spot><div class="case-frame" aria-hidden="true"><i></i><i></i><i></i><u>meen · boutique en ligne</u></div><div class="case-media"><img src="assets/work/meen.webp" alt="Page d'accueil de la boutique Meen : hero produit et bandeau de réassurance" width="1440" height="1000" loading="lazy" decoding="async"></div></div>
-          <div class="case-body">
-            
-            <div class="case-tags"><span class="chip chip--type">E-commerce</span><span class="chip">Shopify</span><span class="chip">Automatisation Python</span></div>
+          <div class="case-mini-body">
+            <div class="case-tags"><span class="chip chip--type">E-commerce</span><span class="chip">Shopify</span></div>
             <h3>Meen, boutique beauté et contenu SEO automatisé</h3>
-            <p class="case-sub">Marque de soin capillaire : boutique en ligne complète, du thème sur mesure jusqu'à la production de contenu.</p>
-            <div class="case-block"><h4>Problématique</h4><p>Lancer une boutique crédible autour d'un produit unique, avec un tunnel d'achat clair et suffisamment de contenu pour exister sur Google, sans équipe marketing derrière.</p></div>
-            <div class="case-block"><h4>Solution</h4><p>Un thème Shopify retravaillé (page produit orientée conversion, réassurance, pages légales complètes) puis une couche d'automatisation en Python : déploiement du thème, des produits, de la navigation et des redirections via l'API Admin Shopify, et génération/publication d'articles de blog SEO en série.</p></div>
-            <ul class="case-features"><li>Page produit conçue pour la conversion (offre, réassurance, garanties)</li><li>6 articles de blog SEO créés et publiés automatiquement par script</li><li>Déploiement du thème, du catalogue et des menus en une commande</li><li>Pages légales, cookies et CGV structurées pour la vente en ligne</li></ul>
-            <div class="case-stack"><span class="chip">Shopify / Liquid</span><span class="chip">HTML · CSS · JS</span><span class="chip">Python</span><span class="chip">API Admin Shopify</span><span class="chip">OAuth</span><span class="chip">SEO</span></div>
-            <div class="case-foot"><span class="chip">Projet client</span><p class="case-note">Boutique privée. Démonstration détaillée disponible en visio.</p></div>
+            <p>Marque de soin capillaire : boutique en ligne complète, du thème sur mesure jusqu'à la production de contenu.</p>
+            <div class="case-foot"><span class="chip">Projet client</span></div>
           </div>
-        </article><article class="case" data-reveal>
+        </article><article class="case-mini" data-reveal data-spot>
           <div class="case-visual" data-spot><div class="case-frame" aria-hidden="true"><i></i><i></i><i></i><u>my digital career · plateforme</u></div><div class="case-cover">
               <div><span class="eyebrow">Application web complète</span>
                 <p class="cover-title" style="margin-top:.9rem">Du questionnaire client<br>à la livraison du site,<br><em>en un seul flux.</em></p></div>
               <div class="cover-map"><div class="cover-node"><b>Questionnaire</b><span>Brief guidé</span></div><div class="cover-node"><b>Commande</b><span>Panier & paiement</span></div><div class="cover-node"><b>Espace client</b><span>Validation & fichiers</span></div><div class="cover-node"><b>Back-office</b><span>Suivi & messages</span></div></div>
               <div class="cover-foot"><span>Next.js 14 · TypeScript · Tailwind</span><span>19 routes API</span></div>
             </div></div>
-          <div class="case-body">
-            
-            <div class="case-tags"><span class="chip chip--type">Application web</span><span class="chip">Next.js</span><span class="chip">Espace client & admin</span></div>
+          <div class="case-mini-body">
+            <div class="case-tags"><span class="chip chip--type">Application web</span><span class="chip">Next.js</span></div>
             <h3>My Digital Career, plateforme de production de sites</h3>
-            <p class="case-sub">Projet entrepreneurial : industrialiser la création de sites, de la prise de brief à la livraison.</p>
-            <div class="case-block"><h4>Problématique</h4><p>Vendre un service digital sans passer ses journées en allers-retours par mail : il fallait un parcours où le client commande, dépose ses informations, valide sa maquette et récupère ses fichiers tout seul.</p></div>
-            <div class="case-block"><h4>Solution</h4><p>Une application Next.js complète : site public animé, questionnaire de brief, panier et commande, espace client authentifié (suivi, validation, téléchargements), back-office administrateur (tableau de bord, statuts, messages, devis pro) et persistance branchée sur Google Sheets / Drive plutôt que sur une infrastructure coûteuse.</p></div>
-            <ul class="case-features"><li>Authentification par jetons JWT (jose) et mots de passe hachés (bcrypt)</li><li>Espace client : suivi de commande, validation, téléchargement des livrables</li><li>Back-office : tableau de bord, statuts, messagerie, devis professionnels</li><li>Webhook de paiement, consentement cookies et suivi d'événements</li><li>Interface multilingue et animations Framer Motion</li></ul>
-            <div class="case-stack"><span class="chip">Next.js 14</span><span class="chip">TypeScript</span><span class="chip">Tailwind CSS</span><span class="chip">Framer Motion</span><span class="chip">Google APIs</span><span class="chip">JWT · bcrypt</span></div>
-            <div class="case-foot"><span class="chip">Projet entrepreneurial</span><p class="case-note">Application privée (données clients). Visite guidée du back-office sur demande.</p></div>
+            <p>Projet entrepreneurial : industrialiser la création de sites, de la prise de brief à la livraison.</p>
+            <div class="case-foot"><span class="chip">Projet entrepreneurial</span></div>
           </div>
         </article></div>
     </div>
@@ -175,7 +174,7 @@
         <h2 class="h2">Un projet de<br><em>ia & automatisation</em> ?</h2>
         <p class="lead" style="margin-top:1.1rem">Décrivez-le en quelques lignes. Vous recevez sous 24 h un avis honnête, un délai et un prix fixe, sans engagement.</p>
       </div>
-      <a class="btn btn--lg" href="contact.html">Contactez-moi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--lg" href="contact.html?service=ia-automatisation">Demander mon devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -185,7 +184,7 @@
       <div><span class="eyebrow">Autres services</span>
         <h2 class="h2" style="margin-top:1rem">Explorer le reste</h2></div>
     </div>
-    <div class="os-grid" data-reveal><a class="os-card" href="applications.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Outils métier, tableaux de bord, espaces clients et back-offices sur mesure.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="sites-internet.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Sites vitrines, landing pages, boutiques et refontes, conçus sur mesure, jamais sur template.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="audit-marketing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Ce qui cloche sur votre site existant, puis ce qui ramène vraiment des clients.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="cartes-restaurant.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Carte QR multilingue, commandes envoyées directement en cuisine, suivi client et tableau de bord.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="cartes-nfc.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Une carte physique NFC + une page de contact qui s'ouvre d'un simple contact avec le téléphone.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="closing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Setting & Closing</b><small>Vos leads traités, qualifiés et conclus : je réponds, je qualifie, je prends les rendez-vous et je closes.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    <div class="os-grid" data-reveal><a class="os-card" href="sites-internet.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span><b>Création de sites internet</b><small>Un site à votre image pour présenter votre activité et recevoir des demandes.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="cartes-restaurant.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M16 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6zM16 12v9"/></svg></span><span><b>Cartes restaurant connectées</b><small>Vos clients choisissent leurs plats. Les commandes arrivent directement en cuisine.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="cartes-nfc.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5a4 4 0 0 1 0 5M12.5 7a7 7 0 0 1 0 10"/></svg></span><span><b>Cartes digitales & NFC</b><small>Votre photo, vos coordonnées et vos liens, partagés en un geste.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="audit-marketing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8.5 12.5v-2M11 13V9M13.5 12.5v-3"/></svg></span><span><b>Audit & Marketing</b><small>Un regard clair sur votre site, et les améliorations à faire en priorité.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="applications.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg></span><span><b>Applications web & mobile</b><small>Un outil pour organiser vos réservations, vos dossiers ou votre suivi client.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="os-card" href="closing.html" data-spot><span class="os-ico"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></svg></span><span><b>Suivi commercial</b><small>Vos demandes sont suivies, vos prospects relancés et vos rendez-vous préparés.</small></span><span class="os-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
   </div>
 </section>
 </main>
@@ -195,9 +194,9 @@
     <div class="footer-top">
       <div class="brand" aria-label="BEN WEB, accueil"><img class="brand-mark" src="assets/logo-mark.png" alt="" width="34" height="34" decoding="async"><span>BEN WEB<small>Freelance Digital & IA</small></span></div>
       <div class="footer-cols">
-        <div class="footer-col">
+        <div class="footer-col footer-services">
           <h4>Services</h4>
-          <a href="applications.html">Applications web & mobile</a><a href="sites-internet.html">Création de sites internet</a><a href="audit-marketing.html">Audit & Marketing</a><a href="cartes-restaurant.html">Cartes restaurant connectées</a><a href="cartes-nfc.html">Cartes digitales & NFC</a><a href="ia-automatisation.html">IA & automatisation</a><a href="closing.html">Setting & Closing</a>
+          <div class="footer-service-links"><a href="sites-internet.html">Création de sites internet</a><a href="cartes-restaurant.html">Cartes restaurant connectées</a><a href="cartes-nfc.html">Cartes digitales & NFC</a><a href="audit-marketing.html">Audit & Marketing</a><a href="applications.html">Applications web & mobile</a><a href="ia-automatisation.html">IA & automatisation</a><a href="closing.html">Suivi commercial</a></div>
         </div>
         <div class="footer-col">
           <h4>Le studio</h4>
@@ -225,6 +224,8 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20260912c" defer></script>
+<script src="assets/js/main.js?v=20260915a" defer></script>
+<script src="assets/demos/loader.js?v=20260915a" defer></script>
+
 </body>
 </html>
