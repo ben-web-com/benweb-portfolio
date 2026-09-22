@@ -16,8 +16,6 @@
 .service-demo.is-ready [data-demo-enhanced] { display:block; }
 .demo-overline { font-size:.6875rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase; }
 .demo-pill { display:inline-flex; align-items:center; padding:.35rem .65rem; border:1px solid currentColor; border-radius:999px; font-size:.6875rem; white-space:nowrap; line-height:1.2; }
-.demo-window-bar { display:flex; gap:1rem; align-items:center; padding:.8rem 1rem; border-bottom:1px solid var(--line); font-size:.6875rem; color:var(--muted); }
-.demo-window-bar > :first-child { letter-spacing:.15rem; }
 .demo-device-top { display:flex; justify-content:space-between; align-items:center; height:34px; padding:0 1.1rem; font-size:.625rem; }
 .demo-device-top i { width:64px; height:13px; background:var(--ink); border-radius:999px; }
 .demo-switch { display:flex; flex-wrap:wrap; gap:.4rem; }

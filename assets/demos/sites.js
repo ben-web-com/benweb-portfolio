@@ -4,7 +4,6 @@
   window.BenDemos.sites = function (root) {
     var preview = root.querySelector("[data-sites-preview]");
     var controls = Array.prototype.slice.call(root.querySelectorAll("[data-site-select]"));
-    var browserLabel = root.querySelector("[data-site-browser-label]");
     var note = root.querySelector("[data-site-note]");
     var announcement = root.querySelector("[data-site-announcement]");
     var panels = { restaurant: root.querySelector("[data-site-panel='restaurant']") };
@@ -82,7 +81,6 @@
       controls.forEach(function (button) {
         button.setAttribute("aria-pressed", String(button.dataset.siteSelect === name));
       });
-      browserLabel.textContent = labels[name] + " · aperçu";
       note.textContent = name === "tourism" ?
         "Extrait adapté d’une réalisation en cours au Sri Lanka. Essayez aussi le changement de langue." :
         "Exemple de site. Les contenus servent à la démonstration.";

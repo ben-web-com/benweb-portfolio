@@ -1206,60 +1206,38 @@ em, .serif {
 .hub-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(0.9rem, 1.6vw, 1.25rem);
+  gap: 2px;
+  background: var(--line);
+  border-radius: var(--radius-l);
+  overflow: hidden;
 }
 .hub-card {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-l);
-  background: linear-gradient(160deg, var(--surface), var(--ink-2));
+  display: block;
+  aspect-ratio: 5 / 4;
   overflow: hidden;
-  transition: border-color 0.4s var(--ease), transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
-}
-.hub-card:hover {
-  border-color: var(--line-strong);
-  transform: translateY(-4px);
-  box-shadow: 0 40px 70px -45px rgba(0, 0, 0, 0.95);
-}
-.hub-card--featured { grid-column: span 2; }
-.hub-card--featured .hub-body { padding: clamp(1.5rem, 2.6vw, 2.1rem); }
-.hub-card--featured h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
-
-.hub-media {
-  position: relative;
-  aspect-ratio: 16 / 9.2;
-  overflow: hidden;
-  border-bottom: 1px solid var(--line);
   background: var(--ink-2);
 }
-.hub-media img {
+.hub-card--featured { grid-column: span 2; }
+.hub-card--featured h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
+
+.hub-photo {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
   transition: transform 0.9s var(--ease);
 }
-.hub-card:hover .hub-media img { transform: scale(1.04); }
-.hub-media--icon {
+.hub-card:hover .hub-photo { transform: scale(1.04); }
+.hub-photo--icon {
   display: grid;
   place-items: center;
   background:
     radial-gradient(70% 70% at 25% 10%, rgba(203, 255, 77, 0.13), transparent 62%),
     radial-gradient(70% 70% at 90% 100%, rgba(90, 140, 255, 0.14), transparent 64%),
     var(--ink-2);
-}
-.hub-media--icon::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
-  background-size: 38px 38px;
-  mask-image: radial-gradient(75% 75% at 50% 50%, #000, transparent 78%);
-  -webkit-mask-image: radial-gradient(75% 75% at 50% 50%, #000, transparent 78%);
 }
 .hub-glyph {
   position: relative;
@@ -1270,12 +1248,16 @@ em, .serif {
   opacity: 0.9;
 }
 
-.hub-body {
-  padding: clamp(1.25rem, 2.2vw, 1.6rem);
+.hub-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  flex: 1;
+  gap: 0.4rem;
+  padding: clamp(1.1rem, 2.4vw, 1.6rem);
+  padding-top: clamp(2.5rem, 8vw, 4.5rem);
+  background: linear-gradient(180deg, transparent, rgba(4, 5, 7, 0.55) 55%, rgba(4, 5, 7, 0.92) 100%);
+  color: #fff;
 }
 .hub-num {
   font-family: var(--font-serif);
@@ -1283,17 +1265,15 @@ em, .serif {
   font-size: 1.15rem;
   color: var(--accent);
 }
-.hub-card h3 { font-size: clamp(1.15rem, 1.7vw, 1.35rem); letter-spacing: -0.03em; }
-.hub-card p { font-size: 0.9rem; color: var(--muted); }
+.hub-card h3 { font-size: clamp(1.15rem, 1.7vw, 1.35rem); letter-spacing: -0.03em; color: #fff; }
 .hub-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: auto;
-  padding-top: 0.9rem;
+  padding-top: 0.15rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--text);
+  color: rgba(255, 255, 255, 0.82);
 }
 .hub-link svg { width: 14px; height: 14px; color: var(--accent); transition: transform 0.35s var(--ease); }
 .hub-card:hover .hub-link svg { transform: translateX(4px); }
@@ -2084,13 +2064,11 @@ body.is-leaving { animation: none; opacity: 0; transition: opacity 0.18s ease; }
   .hub-card--featured { grid-column:span 3; }
   .hub-card:nth-last-child(-n+2) { grid-column:span 3; }
 }
-.hub-link { padding-top:.65rem; }
 .hero-bg::before, .hero-bg::after { animation:none; will-change:auto; }
 .dot { animation:none; }
 .inc-label span { color:var(--paper-text); }
 .service-details .inc-label span { color:var(--accent); }
-.hub-media, .case-media { background:var(--ink-2); }
-.hub-media--contain img { object-fit:contain; }
+.case-media { background:var(--ink-2); }
 /* Sept services : quatre liens à gauche, trois à droite. */
 .footer-service-links {
   display:grid;

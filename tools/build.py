@@ -22,7 +22,7 @@ from quote import quote_markup, quote_success_markup  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Version des assets : évite qu'un navigateur serve un ancien CSS après mise à jour.
-ASSET_V = "20260915a"
+ASSET_V = "20260922a"
 
 ARROW = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
          'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>')
@@ -331,19 +331,18 @@ def build_index():
     cards = ""
     for s in SERVICES:
         if s.get("thumb"):
-            media = (f'<div class="hub-media{" hub-media--contain" if s.get("thumb_contain") else ""}"><img src="{s["thumb"]}" alt="{s.get("thumb_alt", "")}" '
-                     f'width="{s.get("thumb_width", 1440)}" height="{s.get("thumb_height", 1000)}" loading="lazy" decoding="async"></div>')
+            media = (f'<img class="hub-photo" src="{s["thumb"]}" alt="{s.get("thumb_alt", "")}" '
+                     f'width="{s.get("thumb_width", 1440)}" height="{s.get("thumb_height", 1000)}" loading="lazy" decoding="async">')
         else:
-            media = f'<div class="hub-media hub-media--icon">{icon(s["icon"], "hub-glyph")}</div>'
+            media = f'<span class="hub-photo hub-photo--icon">{icon(s["icon"], "hub-glyph")}</span>'
         cards += f"""
         <a class="hub-card{' hub-card--featured' if s.get('featured') else ''}" href="{s['slug']}.html" data-reveal data-spot>
           {media}
-          <div class="hub-body">
+          <span class="hub-overlay">
             <span class="hub-num">{s['num']}</span>
             <h3>{s['nav']}</h3>
-            <p>{s['hub_line']}</p>
             <span class="hub-link">Découvrir le service {ARROW}</span>
-          </div>
+          </span>
         </a>"""
 
     html = head(
