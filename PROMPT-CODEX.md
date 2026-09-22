@@ -235,3 +235,37 @@ photos de plats génériques (pas de vrai client, clairement une démo) seront
 fournies dans `assets/demo-food/` avant que tu démarres ce chantier. Utilise-
 les seulement si elles sont présentes ; sinon construis le menu en attendant
 avec des blocs de couleur nommés, sans placeholder photo générique.
+
+---
+
+## 8. Précision du 22/09 — la démo restaurant a 3 vues, pas 2
+
+La ligne du CHANTIER 1 sur `cartes-restaurant.html` est complétée : la démo
+n'est pas seulement « client commande → cuisine reçoit », elle inclut une
+**troisième vue : un dashboard admin**, accessible par un onglet ou un
+sélecteur dans la même démo (pas une page ni un site séparé — ça reste une
+démonstration dans `cartes-restaurant.html`, sans authentification, sans
+backend).
+
+Le dashboard admin doit être **complet, réaliste et ludique** :
+- vue d'ensemble du jour : nombre de commandes, chiffre d'affaires simulé,
+  temps de préparation moyen
+- le menu du restaurant avec, pour chaque plat, un interrupteur
+  disponible/rupture — le visiteur peut cliquer et voir l'effet immédiat
+  côté client (un plat en rupture disparaît ou grise sur le téléphone)
+- historique des commandes récentes, avec leur statut (reçue / en
+  préparation / prête / servie), cohérent avec les tickets de l'écran cuisine
+- si tu as l'espace et le temps : un petit graphique (plats les plus
+  commandés, ou répartition horaire) — reste dans le design system existant,
+  pas de bibliothèque de graphiques, du SVG ou du CSS suffit pour ce volume
+  de données fictives
+
+Objectif : que le visiteur (un restaurateur) comprenne en un coup d'œil qu'il
+ne reçoit pas qu'une carte digitale, mais un outil de pilotage. La bascule
+entre les 3 vues (client / cuisine / admin) doit être évidente et fluide,
+avec le même niveau de fini que le reste — pas un onglet ajouté à la hâte.
+
+**Photos de plats** : elles seront déposées dans `assets/demo-food/` avant que
+tu démarres ce chantier (6 photos, format 16:9, générées pour l'occasion,
+aucun vrai client). Utilise-les dans le menu client ET dans le dashboard
+admin pour que les deux vues soient cohérentes visuellement.
